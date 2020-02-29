@@ -1,0 +1,1379 @@
+\documentclass [12pt]{article}
+\usepackage{latexsym,amsfonts,amssymb,amsmath,amsbsy}
+\usepackage{graphics}
+\usepackage[croatian]{babel}
+\usepackage[cp1250]{inputenc}
+\usepackage{color}
+
+\textwidth=15.5cm \textheight=24cm
+
+\setlength{\oddsidemargin}{.25in}
+\setlength{\evensidemargin}{.25in} \addtolength\topmargin{-.5in}
+
+\renewcommand{\thesection}{\arabic{section}.}
+\renewcommand{\thesubsection}{\thesection\arabic{subsection}.}
+\renewcommand{\thesubsubsection}{\thesubsection\arabic{subsubsection}.}
+
+\newtheorem{sadrzaj}{Sadr\v{z}aj}[section]
+\newtheorem{zadatak}{Zadatak}[section]
+\newtheorem{primjer}{Primjer}[section]
+\newtheorem{rjesenje}{Rje\v{s}enje}[section]
+\newtheorem{teorem}{Teorem}[section]
+\newtheorem{korolar}{Korolar}[section]
+\newtheorem{propozicija}{Propozicija}[section]
+\newtheorem{problem}{Problem}[section]
+\newtheorem{primjedba}{Primjedba}[section]
+\newtheorem{tvrdnja}{Tvrdnja}[section]
+\newtheorem{lema}{Lema}[section]
+\newtheorem{Def}{Definicija}[section]
+\renewcommand{\thesadrzaj}{\thesection\arabic{sadrzaj}}
+\renewcommand{\thezadatak}{\thesection\arabic{zadatak}}
+\renewcommand{\therjesenje}{\thesection\arabic{rjesenje}}
+\renewcommand{\theprimjer}{\thesection\arabic{primjer}}
+\renewcommand{\thetvrdnja}{\thesection\arabic{tvrdnja}}
+\renewcommand{\theteorem}{\thesection\arabic{teorem}}
+\renewcommand{\thekorolar}{\thesection\arabic{korolar}}
+\renewcommand{\thepropozicija}{\thesection\arabic{propozicija}}
+\renewcommand{\theproblem}{\thesection\arabic{problem}}
+\renewcommand{\theprimjedba}{\thesection\arabic{primjedba}}
+\renewcommand{\thelema}{\thesection\arabic{lema}}
+\renewcommand{\theDef}{\thesection\arabic{Def}}
+
+\def\C{{\mathbb{C}}}
+\def\R{{\mathbb{R}}}
+\def\Z{{\mathbb{Z}}}
+\def\N{{\mathbb{N}}}
+\def\R{{\mathbb{R}}}
+\def\Q{{\mathbb{Q}}}
+\def\C{{\mathbb{C}}}
+\def\N{{\mathbb{N}}}
+\def\Z{{\mathbb{Z}}}
+
+\newcommand{\ord}[1]{\textnormal{ord}\left(#1\right)}
+\newcommand{\ordm}[2]{\textnormal{ord}_{#2}\left(#1\right)}
+\newcommand{\lcm}[1]{\textnormal{lcm}\left(#1\right)}
+\newcommand{\dom}[1]{\textnormal{dom}\left(#1\right)}
+\newcommand{\cod}[1]{\textnormal{cod}\left(#1\right)}
+\renewcommand{\ker}[1]{\textnormal{ker}\left(#1\right)}
+\newcommand{\ran}[1]{\textnormal{ran}\left(#1\right)}
+\newcommand{\cyc}[1]{\left\langle#1\right\rangle}
+\newcommand{\Aut}[1]{\textnormal{Aut}\left(#1\right)}
+\newcommand{\cis}[1]{\textnormal{cis}\left(#1\right)}
+\newcommand{\Orb}[2]{\textnormal{Orb}_{#2}\left(#1\right)}
+\newcommand{\Stab}[2]{\textnormal{Stab}_{#2}\left(#1\right)}
+\newcommand{\End}[1]{\textnormal{End}\left(#1\right)}
+\newcommand{\Fix}[2]{\textnormal{Fix}_{#2}\left(#1\right)}
+\newcommand{\Norm}[2]{\textnormal{N}_{#2}\left(#1\right)}
+\newcommand{\Syl}[2]{\textnormal{Syl}_{#1}\left(#2\right)}
+\newcommand{\rad}[1]{\textnormal{rad}\left(#1\right)}
+\newcommand{\Ann}[1]{\textnormal{Ann}\left(#1\right)}
+\newcommand{\zmod}[1]{\Z\slash #1\Z}
+\newcommand{\zmodinv}[1]{\left(\Z\slash #1\Z\right)^{\ast}}
+
+\font\tencyr=wncyr10
+
+\def\cyr{\tencyr\cyracc}
+
+\begin{document}
+\baselineskip=17pt
+
+\begin{center}
+{\bf Konstrukcija skupa $\Z$}
+\end{center}
+
+\vskip 0.5cm
+
+Skup $\N=\{1,2,3,\ldots\}$ nazivamo skupom prirodnih brojeva. Skup prirodnih brojeva uz zbrajanje je komutativna polugrupa (zbrajanje je definirano i jedinstveno za svaki $a,b\in\N$, zatim $a+b\in\N$, za svaki $a,b\in\N$; takoðer vrijedi i asocijativnost). Za sada neæemo ulaziti u detaljnija obrazloženja, no pretpostavit æemo, ukoliko ne prihvaæamo ova svojstva sama po sebi oèitima, da je $\N$ definiran pomoæu Peanovih aksioma. Tada se iz njih može formalno definirati zbrajanje i slièno. Takoðer, $\N$ uz $\leq$ je potpuno ureðen skup. Pretpostavit æemo kako za svaki $a,b,c\in\N$, gdje je $a>c$ (ili $b>c$), iz $a=b$ slijedi $a-c=b-c$ i obratno. Takoðer pretpostavit æemo kako je $(a+b)-c=a+(b-c)$, za svaki $a,b,c\in\N$ i $b>c$. Takoðer, neka je $a=a+(b-b)$ i $a=(a-b)+b$, za svaki $a,b\in\N$. Detaljnija pojašnjenja ostavljam za jedan drugi put.
+
+\noindent\newline{\bf Lema.} Neka su $a,b,c,d\in\N$ i neka vrijedi $a+d=b+c$. Neka je $a>b$. Tada je $c>d$.
+
+\noindent\newline{\bf Dokaz.} Kako je $a>b$, tada je i $a+d>b$ pa vrijedi $(a+d)-b=(b+c)-b$. Kako je zbrajanje komutativno, to je $(a+d)-b=(c+b)-b$. Po pretpostavci imamo $(a+d)-b=c+(b-b)$, a to je $(a+d)-b=c$. Opet, po komutativnosti zbrajanja, to je ekvivalentno $(d+a)-b=c$. Po prethodnoj pretpostavci slijedi $d+(a-b)=c$, iz èega imamo $c>d$.
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\noindent\newline{\bf Lema.} Neka su $a,b,c,d\in\N$ i neka vrijedi $a+d=b+c$. Neka je $a=b$. Tada je $c=d$.
+
+\noindent\newline{\bf Dokaz.} Imamo $a+d=b+c$. Kako je $a=b$ to je $a+d=a+c$. Iz toga slijedi, jer je $(a+d)>a$ i $(a+c)>c$, da je $(a+d)-a=(a+c)-a$. Po komutativnosti imamo $(d+a)-a=(c+a)-a$, tj. $d+(a-a)=c+(a-a)$ i napokon $d=c$, tj. $c=d$.
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\noindent{\bf Definicija.} Neka je za svaki $(a,b),(c,d)\in\N\times\N$ definirana relacija $(a,b)\sim(c,d)$ ako i samo ako $a+d=b+c$.
+
+\noindent\newline{\bf Propozicija.} Relacija $\sim$ iz prethodne definicije je relacija ekvivalencije.
+
+\noindent\newline{\bf Dokaz.} {\it Refleksivnost.} Vrijedi $a+b=a+b$ pa je $(a,b)\sim(a,b)$. {\it Simetriènost.} Neka je $(a,b)\sim(c,d)$. Tada vrijedi $a+d=b+c$, što je ekvivalentno $b+c=a+d$. Kako je zbrajanje komutativno, prethodan izraz ekvivalentan je $c+b=d+a$, što povlaèi $(c,d)\sim(a,b)$. {\it Tranzitivnost.} Neka je $(a,b)\sim(c,d)$ i $(c,d)\sim(e,f)$. To znaèi $a+d=b+c$ i $c+f=d+e$. Pretpostavimo kako je $a>b$. Tada po prethodnoj lemi imamo $c>d$. To opet povlaèi $e>f$. Stoga, iz $a+d=b+c$ slijedi $d+a=c+b$, zatim $(d+a)-b=(c+b)-b$ pa $d+(a-b)=c+(b-b)$ i napokon $c=(a-b)+d$. Iz $c+f=d+e$ slijedi $(c+f)-f=(d+e)-f$ te $c+(f-f)=d+(e-f)$, što je $c=(e-f)+d$. Dakle, $(a-b)+d=(e-f)+d$, tj. $a-b=e-f$. Iz toga imamo $(a-b)+b=(e-f)+b$, a to je $a=(e-f)+b$, tj. $a=b+(e-f)$. Zatim iz toga slijedi $a+f=(b+(e-f))+f$, što je po asocijativnosti $a+f=b+((e-f)+f)$. Iz toga napokon dobivamo $a+f=b+e$ što povlaèi $(a,b)\sim(e,f)$. Dokaz za $a<b$ se provodi analogno. Ukoliko je $a=b$, po prethodnoj lemi mora biti $c=d$, a zatim i $e=f$. Stoga je $a+e=b+e$ pa $a+f=b+e$, pa je opet $(a,b)\sim(e,f)$.
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\noindent{\bf Definicija.} Neka je $[(a,b)]=\{(c,d)\in\N\times\N:\ (a,b)\sim (c,d)\}$. Neka su $a,m\in\N$. Definiramo:
+
+\begin{eqnarray*}
+m^{+}:&=&[(a+m,a)],\\
+0:&=&[(a,a)],\\
+m^{-}:&=&[(a,a+m)].
+\end{eqnarray*}
+
+\noindent\newline Nadalje, neka je $\Z:=\{m^{+}:\ m\in\N\}\cup\{0\}\cup\{m^{-}:\ m\in\N\}$.
+
+\noindent\newline{\bf Propozicija.} Neka su $a,m\in\N$ i $\pi:\N\rightarrow\N$ funkcija definirana s $\pi(x)=x+1$. Tada je $[(a,a+m)]=[(1,\pi(m))]$, $[(a,a)]=[(1,1)]$ i $[(a+m,a)]=[(\pi(m),1)]$.
+
+\noindent\newline{\bf Dokaz.} Direktno slijedi iz svojstva $x\in[y]$ povlaèi $[x]=[y]$. Imamo $(1,\pi(m))\sim(a,a+m)$ jer $1+(a+m)=\pi(m)+a$, tj. $1+(m+a)=\pi(m)+a$ što nas dovodi do $(1+m)+a=\pi(m)+a$; to je ekvivalentno $(m+1)+a=\pi(m)+a$, tj. $\pi(m)+a=\pi(m)+a$. Stoga, $(1,\pi(m))\in[(a,a+m)]$ pa je $[(a,a+m)]=[(1,1+m)]$. Ostali se dokazi provode analogno.
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\noindent{\bf Definicija.} Neka su $(x,y),(z,w)\in\N\times\N$. Definiramo binarnu operaciju $+:\Z\rightarrow\Z$ kao $[(x,y)]+[(z,w)]:=[(x+z,y+w)]$.
+
+\noindent\newline{\bf Propozicija.} Skup $\Z$ uz operaciju iz prethodne definicije je komutativna grupa.
+
+\noindent\newline{\bf Dokaz.} Zatvorenost i definiranost (uz nasljedstvo definiranosti zbrajanja iz $\N$) vrijede po definiciji; kako je $(x+z,y+w)\in\N\times\N$, imamo $[X]\in\Z$ takav da je $(x+z,y+w)\in[X]$ što povlaèi $[X]=[(x+z,y+w)]$. Zatim, operacija je jedinstveno definirana, jer, uzmemo li $(x_1,y_1),(x_2,y_2),(z_1,w_1),(z_2,w_2)\in\N\times\N$ takve da je $(x_1,y_1)=(x_2,y_2)$ i $(z_1,w_1)=(z_2,w_2)$, imamo $[(x_1,y_1)]+[(z_1,w_1)]=[(x_1+z_1,y_1+w_1)]$ te $[(x_2,y_2)]+[(z_2,w_2)]=[(x_2+z_2,y_2+w_2)]$. No, kako je $(x_1,y_1)=(x_2,y_2)$ i $(z_1,w_1)=(z_2,w_2)$, takoðer je i $[(x_1,y_1)]=[(x_2,y_2)]$ te $[(z_1,w_1)]=[(z_2,w_2)]$ (po obiènoj supstituciji). Tada imamo $[(x_1,y_1)]+[(z_1,w_1)]=[(x_2+z_2,y_2+w_2)]$, tj. $[(x_1+z_1,y_2+w_2)]=[(x_2+z_2,y_2+w_2)]$. {\it Asocijativnost.} Imamo $\left([(x,y)]+[z,w]\right)+[(p,q)]=[(x+z,y+w)]+[(p,q)]=[((x+z)+p,(y+w)+q)]$. Obzirom da vrijedi asocijativnost u $\N$, imamo $[((x+z)+p,(y+w)+q)]=[(x+(z+p),y+(w+q))]=[(x,y)]+[(z+p,w+q)]=[(x+y)]+\left([(z,w)]+[(p,q)]\right)$. {\it Neutralan element.} Imamo $[(x,y)]+[(1,1)]=[(x+1,y+1)]$. No, kako je $x+(y+1)=y+(x+1)$, vrijedi $(x,y)\sim(x+1,y+1)$ što implicira $[(x,y)]=[(x+1,y+1)]$. Dakle, $[(x,y)]+[(1,1)]=[(x,y)]$. Isto se pokaže i za $[(1,1)]+[(x,y)]=[(x,y)]$. Stoga je $[(1,1)]\in\Z$ neutralan element. {\it Inverzni elementi.} Neka je $[(x,x+m)]\in\Z$. Tada je $[(x+m,x)]\in\Z$ i imamo $[(x,x+m)]+[(x+m,x)]=[(x+m,x+m)]=[(1,1)]$ (po prethodnoj propoziciji). Slièno se pokaže i za $[(x,x+m)]\in\Z$, te za $[(x,x)]\in\Z$. {\it Komutativnost.} Neka je $[(x,y)],[(z,w)]\in\Z$. Tada je $[(x,y)]+[(z,w)]=[(x+z,y+w)]=[(z+x,w+y)]=[(z,w)]+[(x,y)]$.
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\noindent\newline {\bf Primjedba.} Primijetimo kako iz gornje propozicije slijedi da je $0\in\Z$ neutralan element obzirom na operaciju zbrajanja u $\Z$. Takoðer, uzmemo li $m^{+}\in\Z$, njegov inverzan element obzirom na zbrajanje je $m^{-}\in\Z$, tj. vrijedi $m^{+}+m^{-}=m^{-}+m^{+}=0$.
+
+\noindent\newline{\bf Definicija.} Neka je $\leq$ relacija na skupu $\Z$ takva da $[(x,y)]\leq[(z,w)]$ ako i samo ako $x+w\leq y+z$, za svaki $[(x,y)],[(z,w)]\in\Z$.
+
+\noindent\newline{\bf Propozicija.} Skup $\Z$ uz $\leq$ je potpuno ureðen skup.
+
+\noindent\newline{\bf Dokaz.} Po definiciji relacije, relacija je definirana za svaka dva elementa skupa $\Z$. {\it Refleksivnost.} Vrijedi $x+y\leq x+y$ pa je $[(x,y)]\leq[(x,y)]$. {\it Antisimetriènost.} Neka je $[(x,y)]\leq[(z,w)]$ i $[(z,w)]\leq[(x,y)]$. Tada je $x+w\leq y+z$ i $z+y\leq w+x$, iz èega slijedi $x+w=y+z$, tj. $[(x,y)]\sim[(z,w)]$ pa onda $[(x,y)]=[(z,w)]$. {\it Tranzitivnost.} $[(x,y)]\leq[(z,w)]$ i $[(z,w)]\leq[(p,q)]$ je ekvivalentno $x+w\leq y+z$ i $z+q\leq w+p$. Vrijedi $w\leq y+z-x$ i $z+q-p\leq w$. Stoga imamo $z+q-p\leq y+z-x$ i $q+x\leq y+p$, tj. $x+q\leq y+p$ što povlaèi $[(x,y)]\leq[(p,q)]$.
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\noindent\newline{\bf Primjedba.} Slièno se definira slabija relacija $<$ uz koju je skup $\Z$ parcijalno ureðen skup. Dakle, $[(x,y)]<[(z,w)]$ ako i samo ako $x+w<y+z$, za svaki $[(x,y)],[(z,w)]\in\Z$.
+
+\noindent{\bf Propozicija.} Vrijedi $m^{-} < 0 < n^{+}$, za svaki $m^{-},n^{+}\in\Z$.
+
+\noindent\newline{\bf Dokaz.} Imamo $m^{-}=[(1,\pi(m))]$, $0=[(1,1)]$ i $n^{+}=[(\pi(m),1)]$. Vrijedi $1+1<\pi(m)+1$, tj. $1<\pi(m)$, što je istinito za svaki $m\in\N$ (jer broj $1$ nije sljedbenik nijednom prirodnom broju). Dakle, $m^{-}<0$. Takoðer, $1+1<\pi(m)+\pi(n)$, tj. $2<\pi(m)+\pi(n)$. Obzirom da je $1<\pi(m)$ i $1<\pi(n)$ oèito je $2<\pi(m)+\pi(n)$ pa je $m^{-}<n^{+}$, za svaki $m^{-},n^{+}\in\Z$. Takoðer, $1+1<1+\pi(m)$, tj. $1<\pi(m)$ pa je i $0<n^{+}$.
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\noindent{\bf Napomena.} Uvedimo sada oznaku $m:=m^{+}$ i $-m:=m^{-}$.
+
+\noindent\newline{\bf Propozicija.} Neka je $m\in\Z$. Ako je $m<0$ tada je $-m>0$ (u smislu aditivnog inverza). Takoðer, ako je $m>0$ tada je $-m<0$.
+
+\noindent\newline{\bf Dokaz.} Pretpostavimo da je $m<0$. Tada je, po prethodnoj propoziciji, $m=[(1,\pi(m))]$, $0=[(1,1)]$ pa zbog $m<0$ vrijedi $1+1<\pi(m)+1$, tj. $1<\pi(m)$. Pretpostavimo kako je $-m\leq 0$. Tada bi, zbog $-m=[(\pi(m),1)]$ vrijedilo $\pi(m)+1\leq 1+1$, tj. $\pi(m)\leq 1$, što je u suprotnosti s $\pi(m)>1$. Dakle, $m<0$ povlaèi $-m>0$. Po rezultatu iz teorije grupa, kako je $-m$ aditivni inverz od $m$, vrijedi $-(-m)=m$. Dokaz za $m>0$ se provodi analogno.
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\noindent{\bf Propozicija.} Neka su $m,n\in\Z$. Ako je $m\leq n$, tada $-n\leq -m$ (u smislu aditivnih inverza).
+
+\noindent\newline{\bf Dokaz.} Pretpostavimo kako je $m>0$ i $n>0$. Tada je $m=[(\pi(m),1)]$ i $n=[(\pi(n),1)]$. Tada je $-m=[(1,\pi(m))]$ i $-n=[(1,\pi(n))]$. Iz $[(\pi(m),1)]\leq[(\pi(n),1)]$ slijedi $\pi(m)+1\leq \pi(n)+1$, tj. $\pi(m)\leq\pi(n)$. Pretpostavimo da je $-m<-n$. Tada vrijedi $1+\pi(n)<1+\pi(m)$, tj. $\pi(n)<\pi(m)$. No, to je u suprotnosti s pretpostavkom $\pi(m)\leq\pi(n)$. Dokaz za $m<0$ i $n<0$ slijedi analogno. Sluèaj kada je $m>0$ i $n<0$ uz $m\leq n$ je nemoguæ po prethodnoj propoziciji. Pretpostavimo kako je $-n<-m$. No, tada je $-n>0$ i $-m<0$. No, uz $-n<-m$ to je nemoguæe pa može biti samo $-m\leq -n$.
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\noindent{\bf Teorem (Well Ordering of $\Z^{+}$).} Neka je $A\subseteq\Z^{+}$ i $A\neq\emptyset$. Tada postoji $m\in A$ takav da je $m\leq a$ za svaki $a\in A$.
+
+\noindent\newline{\bf Dokaz.} Dokaz se provodi matemematièkom indukcijom. Prvo pokažimo kako tvrdnja vrijedi za sve konaène podskupove od $\Z^{+}$. Neka je $|A_1|=1$ i $A_1\subseteq\Z^{+}$, i.e. $A_1=\{a\}$. Tada je oèito $\min{A_1}=a$. Pretpostavimo kako tvrdnja vrijedi za neki $k\in\N$; neka za svaki skup $A_k\subseteq\Z^{+}$, gdje je $|A_k|=k$, postoji $m\in A$ takav da je $m\leq a$, za svaki $a\in A_k$. Neka je $A_{k+1}\subseteq\Z^{+}$ takav da je $|A_{k+1}|=k+1$. Neka je $a'\in A_{k+1}$. Tada je $\left|A-\{a'\}\right|=k$ pa postoji $m\in A-\{a'\}$ takav da je $m\leq a$, za svaki $a\in A-\{a'\}$. Vrijedi $m\leq a'$ ili $m\leq a'$. U prvom sluèaju je oèito $\min{A_{k+1}}=m$ (jer je tada i dalje $m\leq a$, za svaki $a\in A_{k+1}$), a u drugom sluèaju je $\min{A_{k+1}}=a'$ (jer je tada $a'\leq m\leq a$, za svaki $a\in A_{k+1}$). Stoga tvrdnja vrijedi za sve skupove velièine $n\in\N$.
+
+Pokažimo sada kako tvrdnja vrijedi i za beskonaène podskupove od $\Z^{+}$. Neka je $A\in\Z^{+}$. Neka je $A_x=\{0,\ldots,x\}$, za $x\in\Z^{+}$. Tada je $A\cap A_x$ konaèan skup i vrijedi kako postoji $m\in A\cap A_x$ takav da je $m\leq a$, za svaki $a\in A\cap A_x$. Po definiciji presjeka, ako je $a\in A\cap A_x$ tada je $a\in A$ i $a\cap A_x$. Stoga, slabljenjem tvrdnje, postoji $m\in A$ takav da je $m\leq a$, za svaki $a\in A$.
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\newpage
+
+\begin{center}
+{\bf Djeljivost}
+\end{center}
+
+\vskip 0.5cm
+
+\noindent\newline{\bf Definicija.} Neka je $x\in\R$. Tada funkciju $|\cdot|:\R\rightarrow\R^{+}_0$ definiranu formulom
+
+\begin{equation*}
+|x|=x\mathcal{I}_{\left[0,\infty\right]}(x)+(-x)\mathcal{I}_{\left\langle-\infty,0\right\rangle}(x),
+\end{equation*}
+
+\noindent\newline gdje je $\mathcal{I}_S:\R\rightarrow\{0,1\}$ indikator funkcija za skup $S$, nazivamo apsolutna vrijednost (broja $x$).
+
+\noindent\newline{\bf Primjedba.} Iz definicije je lako vidjeti kako vrijedi $|x|\geq 0$, za svaki $x\in\R$.
+
+\noindent\newline{\bf Propozicija.} Za svaki $a\in\R$ vrijedi $a\leq|a|$.
+
+\noindent\newline{\bf Dokaz.} Ako je $a\geq 0$ tada je $|a|=a$, po definiciji. Ako je $a<0$ tada je $|a|=-a$ i vrijedi $|a|>0$ pa tako i $|a|>a$ (jer je $a<0$). Uzevši oba sluèaja u obzir to je $|a|\geq a$.
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\noindent{\bf Propozicija.} Neka su $a,b\in\R$. Ako je $a=b$ tada je $|a|=|b|$. Obrat opæenito ne vrijedi.
+
+\noindent\newline{\bf Dokaz.} Neka je $a=b$. Uzmimo prvo $a\geq0$. Tada je i $b\geq0$ pa je $|a|=a$ i $|b|=b$. Iz pretpostavke propozicije direktno slijedi $|a|=a=b=|b|$, tj. $|a|=|b|$ (ako su $a,b\in\R^{+}_0$). Dalje, uzmimo $a<0$. Tada je i $b<0$ pa je $|a|=-a$ i $|b|=-b$. Vrijedi $-(-a)=a$ i $-(-b)=b$. Iz pretpostavke je $-|a|=-(-a)=a=b=-(-b)=-|b|$, i.e. $-|a|=-|b|$. To je $|a|=|b|$ za $a<0$ i $b<0$ pa uzevši i prvi sluèaj u obzir vrijedi $|a|=|b|$, za svaki $a,b\in\R$.
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\noindent{\bf Propozicija.} Neka su $a,b\in\Z$. Vrijedi $|a|\cdot |b|=|a\cdot b|$.
+
+\noindent\newline{\bf Dokaz.} Neka je $a\geq 0$ i $b\geq0$. Tada je $a b>0$ i stoga $|a b|=a b$. Isto tako je i $|a|=a$ i $|b|=b$ pa je $|a||b|=a b$. Iz oba izraza slijedi $|a b|=|a||b|$ za $a,b\geq 0$. Ukoliko su $a,b<0$ vrijedi $a b>0$ pa je $|a b|=a b$. Isto tako je $|a|=-a$ i $|b|=-b$ pa je $|a||b|=-a\cdot(-b)=a b=|a b|$. Ako je $a\geq 0$ i $b<0$ (isto se pokaže i za $a<0$ i $b\geq 0$), vrijedi $a b<0$ pa je $|a b|=-a b$. No, isto tako $|a|=a$ i $|b|=-b$ pa je $|a||b|=a\cdot(-b)=-a b=|a b|$. Time smo iscrpili sve moguænosti i vrijedi tvrdnja propozicije.
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\noindent\newline{\bf Definicija.} Neka je $a\in\Z$ i $b\in\Z\backslash\{0\}$. Reæi æemo kako $b$ dijeli $a$, odnosno da je $a$ djeljiv s $b$ (i to zapisati kao $b|a$) ukoliko postoji $k\in\Z$ takav da vrijedi $a=b k$. Takoðer tada kažemo da je $b$ {\bf djelitelj} od $a$ ili da je $a$ {\bf višekratnik} broja $b$.
+
+\noindent\newline{\bf Primjer.} Pogledajmo par primjera kako bi nam bilo jasnije. Broj $6$ je djeljiv s $3$ jer vrijedi $6=3\cdot 2$ (ovdje je $k=2$ i vrijedi $3|6$). No što ako imamo $-6$ i $3$? Tada je $k=-2$ pa æe vrijediti $3|(-6)$ jer je $-6=3\cdot(-2)$. Slièno, ako imamo $-6$ i $-3$ vrijedit æe $-3|(-6)$ jer je $-6=-3\cdot 2$ (dakle, ovdje je opet $k=2$).
+
+\noindent\newline{\bf Propozicija.} Ako je $b\in\Z\backslash\{0\}$ djelitelj od $a\in\Z$ vrijedi $b\leq|b|\leq|a|$.
+
+\noindent\newline{\bf Dokaz.} Po prethodnoj propoziciji, ako je $a=k b$ tada je i $|a|=|k b|=|k||b|$. Kako su $|a|$, $|k|$ i $|b|$ nenegativni (što je lako uoèiti iz definicije apsolutne vrijednosti), tada je $|b|\leq|a|$. Po prethodnoj propoziciji je $b\leq|b|$ pa je $b\leq|b|\leq|a|$.
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\noindent{\bf Propozicija.} Postoji konaèno mnogo djelitelja za svaki $a\in\Z$.
+
+\noindent\newline{\bf Dokaz.} Za svaki $b$ koji je djelitelj od $a$ vrijedi, po prethodnoj propoziciji, da je $b\leq|a|$. To je $-a\leq b\leq a$, tj. $b\in\left[-a,a\right]\cap\Z$. U ovom intervalu ima konaèno mnogo cijelih brojeva (najviše $2a$ jer $0$ ne može biti djelitelj, po definiciji).
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\noindent{\bf Teorem (o dijeljenju s ostatkom).} Za svaki $a,b\in\Z$, $b\neq 0$, postoje jedinstveni $q\in\Z$ ({\bf kvocijent}) i $r\in\N_0$ ({\bf ostatak}) takvi da vrijedi $a=bq+r$ i $0\leq r<|b|$.
+
+\noindent\newline{\bf Dokaz.} {\it Egzistencija.} Promotrimo prvo koje sluèajeve moramo uzeti u obzir. Prvo može biti $a,b>0$, zatim $a,b<0$. No, isto tako može biti i $a<0$, $b>0$ te $a>0$ i $b<0$. Pogledajmo neke primjere prije nego prosudimo što nam je èiniti. Uzmimo brojeve èije su apsolutne vrijednosti $7$ i $3$. Vrijedit æe $7=3\cdot 2+1$. Zatim, $-7=3\cdot(-3)+2$ (želimo da $r$ bude pozitivan i manji od $|b|$, što ne bismo dobili u sluèaju da smo uzeli $3$; ostatak bi morao biti negativan). Takoðer, $7=-3\cdot(-2)+1$ i $-7=-3\cdot 3+2$. Vidimo kako sluèajevi kada su ili oboje pozitivni ili $a>0$, a $b<0$ nisu problem. Dakle, sluèaj ako je $a>0$ i $b<0$ možemo lako svesti na prvi tako da jednostavno uzmemo $b'=-b$ i $a'=a$. Tada æe vrijediti (ukoliko dokažemo za sluèaj kada su oba pozitivna) $a'=b'q'+r$, gdje je $0\leq r<|b'|$ a time i $a=-b q'+r$, gdje je $0\leq r<|-b|=|b|$. Uzmemo li $q=-q'$ lako dobivamo $a=-b\cdot(-q)+r$, tj. $a=b q+r$. No, uzmimo još jedan primjer za ostale sluèajeve. Znamo kako je $27=6\cdot 4+3$. No, tako je $-27=6\cdot(-5)+3$ (ne može biti $-4$ jer bi ostatak bio negativan). Slièno i kada su oba negativna vrijedi $-27=-6\cdot 5+3$. Dakle, ako je $a<0$, a $b>0$ uzmemo $a'=-a$ i $b'=b$. Imat æemo (opet, uz pretpostavku da dokažemo za oba pozitivna) $a'=b'q'+r'$ te $0\leq r'<|b'|$. Tada je i $-a=b q'+r'$ i vrijedi $0\leq r'<b$, te $q'\geq0$. Pomnožimo jednakost s $-1$ i dobivamo $a=-b q'-r'$. Želimo se riješiti minusa uz $b$, a za to æe nam trebati negativan kvocijent. Uzmemo li, po uzoru na primjer, supstituciju $q'=-(q+1)$ imat æemo $a=b(q+1)-r'$, to je $a=bq+b-r'$. Vidimo da je dovoljno uzeti $r=b-r'$. Naš $r'$ je manji od $b$ pa vrijedi $r>0$, a time i $r\geq 0$. Kako je $r'\geq 0$ i $r+r'=b$ vrijedi $r<b$. Tako je zadovoljen i uvjet da je $0\leq r<b=|b|$. Ukoliko imamo $a,b<0$, uzimamo $a'=-a$ i $b'=-b$. Tada je $a'=b'q'+r'$, gdje je $q'\geq0$ i $0\leq r'<b'=-b$. Tada vrijedi i $-a=-b q'+r'$. Pomnožimo jednakost s $-1$ i dobivamo $a=b q'-r'$. No, opet, ne možemo imati negativan ostatak, pa uzimamo $q'=(q-1)$. Tada je $a=bq-b-r'$. Isto kao i u prethodnom primjeru, kako je $r'<-b$, tako je $0<-r'-b=r$, a time i $r\geq 0$. Slièno, $r'\geq 0$ i $r+r'=-b$ (zapamtimo $-b$ je pozitivan), vrijedi i $r<-b$, a zbog $b<0$, to je $r<|b|$. Stoga imamo $a=bq+r$, gdje je $0\leq r<|b|$. Ovim smo pokazali kako se oba sluèaja mogu svesti na prvi, kada su oba pozitivna.
+
+Pokažimo sada da tvrdnja vrijedi za sluèaj kada je $a>0$ i $b>0$. Uzmimo $R=\{a-bm:\ m\in\Z\}\cap\Z^{+}_0$ i $r=\min R$. Po {\it well-ordering} principu, ako je $R$ neprazan i sadrži samo nenegativne elemente, tada ima i najmanji element, odnosno minimum. Kako je $R$ zapravo definiran kao presjek sa skupom nenegativnih cijelih brojeva, on æe sadržavati samo nenegativne cijele brojeve - ukoliko takvi postoje u presjeku. Pokažimo da postoje, tj. da je $R$ neprazan. Uzmemo li $m=-1$, imat æemo $a-b\cdot(-1)\in\Z^{+}_0$ a tako i $a+b\in R$. Dakle, skup $R$ sadrži barem $a+b$ (oba su nenegativna pa im je i zbroj nenegativan). Dakle, $R$ ima minimum, a tako i njemu pridružen broj $m\in\Z$ takav da vrijedi $r=a-bm$. Obzirom da je $r\in R$, vrijedi $r\geq 0$. Sada pretpostavimo da je $r\geq b$. Tada bi vrijedilo $a-bm\geq b$, a time i $a-b(m+1)\geq 0$. No, $b m < b m+b=b(m+1)$ (jer je, ne zaboravimo, $b>0$) pa je $-b m>-b(m+1)$. Iz toga slijedi kako je $a-b m>a-b(m+1)\geq 0$, a tako i $a-b(m+1)\in R$. No, to je u suprotnosti s pretpostavkom da je $a-b m$ minimum skupa $R$ ($a-b(m+1)$ ne može biti manji). Stoga mora biti $r<b$, a time i $0\leq r<b=|b|$. Promotrimo samo još sluèaj kada je $a=0$. Za primjer uzmimo $0=7\cdot0+0$. Dakle, u tom sluèaju, $q=0$ i $r=0$ pa vrijedi i dalje $a=bq+r$, gdje je $0\leq r<|b|$.
+
+{\it Jedinstvenost.} Pretpostavimo da postoji neki $q'\neq q$ i $r'\neq r$ takvi da vrijedi $a=bq+r$ i $a=bq'+r'$, gdje je $r,r'\in\left[0,b\right\rangle\cap\N_0$. To implicira $bq+r=bq'+r'$. Prebacimo sve na desnu stranu i imamo $0=bq'+r'-bq-r$, tj. $0=b(q-q')+(r'-r)$. Kako je $b\neq0$ i $b|0$, vrijedi $0=b\cdot0+0$. Stoga mora biti $q-q'=0$, tj. $q=q'$ i $r'-r=0$, tj. $r=r'$.
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\noindent{\bf Primjedba.} (i) Neka za neke $a,b\in\Z$, $b\neq 0$ vrijedi $a=q b+r$ gdje je $q,r\in\Z$ i $0\leq r<|b|$. Ako je $r=0$ lako je vidjeti kako $b\mid a$; tada postoji $q\in\Z$ takav da je $a=b q$. Ako je $r>0$, tada možemo vidjeti kako $b\nmid a$, tj. ne postoji $k\in\Z$ za koji bi vrijedilo $a=b k$. To se vidi iz definicije skupa $R=\{a-bm:\ m\in\Z\}\cap\N_0$ i definicije $r=\min R$. Ako bi postojao neki $m\in\Z$ takav da je $a=bm$ tada bi bilo $a-bm=0$ pa bi i ostatak bio jednak nuli, tj. bilo bi $r=0$ jer za svaki $x\in R$ po definiciji skupa $R$ vrijedi $x\geq 0$. No, to je u suprotnosti s pretpostavkom da je $r>0$ pa ne postoji $m\in\Z$ takav da bude $a=bm$. (ii) Ako su $a,b,q,r\in\Z$, $b\neq 0$, $0\leq r<|b|$ takvi da vrijedi $a=b q+r$. Tada je oèito kako $b|(a-r)$ jer je $a-r=b q$, a $q\in\Z$.
+
+\noindent\newline{\bf Korolar.} Neka je $x\in\Q$. Tada postoje jedinstveni $k\in\Z$, $m\in\N_0$, i $n\in\N$, takvi da vrijedi $x=k+\frac{m}{n}$ i $0\leq m<n$ (tj. $\frac{m}{n}$ je pravi razlomak).
+
+\noindent\newline{\bf Dokaz.} {\it Egzistencija.} Kako je $x\in\Q$, možemo ga zapisati u obliku $x=\frac{a}{b}$ gdje je $a\in\Z$ i $b\in\N$. Tada, po teoremu o dijeljenju s ostatkom postoje jedinstveni $q,r\in\Z$ takvi da je $a=b q+r$ i $0\leq r<|b|=b$ (pretpostavili smo kako je $b\in\N$). Podijelimo li izraz za $a$ s $b$ dobivamo $\frac{a}{b}=q+\frac{r}{b}$. Uzmemo $k=q$, $r=m$ i $b=n$ te zbog $x=\frac{a}{b}$ i $\frac{a}{b}=q+\frac{r}{b}$ imamo $x=k+\frac{m}{n}$, gdje, zbog $0\leq r<b$, dobivamo i $0\leq m<n$.
+
+{\it Jedinstvenost.} Prepostavimo kako $x=k+\frac{m}{n}$ i $x=k'+\frac{m'}{n'}$ i $0\leq m,m'<n,n'$. Uzmimo $r=\frac{m}{n}$ i $r'=\frac{m'}{n'}$. Tada je $0\leq r,r'<1$ (zbog $m<n$ i $m'<n'$. Izjednaèimo li obzirom na $x$ ove dvije jednakosti dobivamo $k+r=k'+r'$ i iz toga $r=k'+r'-k$, tj. $r=(k'-k)+r'$. Kako je $r<1$ i $r'<1$ mora biti i $|k'-k|<1$, a to je jedino moguæe samo kada je $k-k'=0$, tj. $k=k'$. Tada imamo $r=0+r'$ i napokon $r=r'$.
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\noindent{\bf Definicija.} Neka su zadani $a,b\in\Z\backslash\{0\}$. Prirodan broj $x\in\N$ za koji vrijedi da $x|a$ i $x|b$ zovemo {\bf zajednièki djelitelj} od $a$ i $b$. Najveæi takav broj zovemo {\bf najveæi zajednièki djelitelj} (eng. {\it greatest common divisor}) od $a$ i $b$. Èinjenicu da je $x$ najveæi zajednièki djelitelj od $a$ i $b$ zapisujemo kao $\gcd(a,b)=x$ (dakle, $\gcd(a,b)=\min\{x\in\N:\ x|a\ \wedge\ x|b\}.$).
+
+\noindent\newline{\bf Definicija.} Brojeve $a,b\in\Z\backslash\{0\}$ za koje vrijedi $\gcd(a,b)=1$ kažemo da su {\bf relativno prosti}. Za broj $p\in\N\backslash\{1\}$ kažemo da je {\bf prost} ukoliko ne postoji $n\in\N\backslash\{1,p\}$ takav da $n|p$. U suprotnom kažemo da je {\bf složen}. 
+
+\noindent\newline{\bf Propozicija.} Neka su $a,b,c\in\Z$, takvi da $c|a$ i $c|b$. Tada $c|(a x+b y)$, za svaki $x,y\in\Z$.
+
+\noindent\newline{\bf Dokaz.} Kako $c|a$ i $c|b$, postoje $k_1,k_2\in\Z$ takvi da vrijedi $a=c k_1$ i $b=c k_2$. Neka su $x,y\in\Z$. Pokažimo da postoji $k\in\Z$ takav da je $a x+b y=c k$. Uzmemo $w=a x+b y$ i zamijenimo $a$ i $b$ s jednakostima iz poèetka dokaza. Dobivamo $w=c k_1 x+c k_2 y$. Po distributivnosti množenja prema zbrajanju, to je $w=c(k_1 x+k_2 y)$. Pronašli smo $k_1 x+k_2 y=k\in\Z$ takav da vrijedi $w=c k$, tj. $a x+b y=c k$ pa $c|(a x+b y)$.
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\noindent{\bf Propozicija.} Neka su $a,b,q,r\in\Z$ te $a,b,r\neq0$, $0<r<|b|$ takvi da vrijedi $a=b q+r$. Tada je $\gcd(a,b)=\gcd(b,r)$.
+
+\noindent\newline{\bf Dokaz.} Uzmimo $a=bq+r$ pa je to $r=a-bq$. Neka je $g=\gcd(a,b)$. Tada $g|a$ i $g|b$ i to je najveæi takav cijeli broj. Tada $g$ po prethodnoj propoziciji dijeli i svaku cjelobrojnu kombinaciju od $a$ i $b$, tj. vrijedi da $g|(a x+b y)$, za svaki $x,y\in\Z$. Tako vrijedi i za $x=1$ i $y=-q$, tj. $g|(a-b q)$. To je jednako ostatku pa $g|r$. Dakle, $g$ je zajednièki djelitelj od $b$ i $r$. Uzmimo $g'=\gcd(b,r)$. Oèito vrijedi $g'\geq g$. No, $g'|b$ i $g'|(a-bq)$ pa tako i $g'|a$. Stoga je $g'$ zajednièki djelitelj od $a$ i $b$. No, kako je $g$ najveæi zajednièki djelitelj od $a$ i $b$ vrijedi $g\geq g'$. Dakle, $g=g'$. 
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\noindent{\bf Teorem (Bezoutova lema).} Neka su $a,b\in\Z\backslash\{0\}$. Vrijedi:
+
+\begin{equation*}
+\gcd(a,b)=\min{\{a x+b y:\ x,y\in\Z\}}\cap\N.
+\end{equation*}
+
+\noindent\newline{\bf Dokaz.} Neka je $L=\{a x+b y:\ x,y\in\Z\}\cap\N$. Uzmimo $g_1=\gcd(a,b)$ i $g_2=\min{L}$. Pokažimo da je $g_1=g_2$. No, prvo moramo pokazati da $g_2$ postoji. Ako su $a,b>0$, dovoljno je uzeti $x=1$ i $y=1$ jer æe tada biti $a+b>0$, a time i $(a+b)\in L$. Ako je $a,b<0$, uzimamo $x=y=-1$ i tada je $-a-b>0$ i $-a-b\in L$. Ako je $a>0$ i $b<0$ (ili obratno) možemo uzeti $x=1$ i $y=-1$ pa æe biti $a-b>0$ i $a-b\in L$ (ako je obratno, tj. $a<0$ i $b>0$ tada je $b-a\in L$). Dakle, skup $L$ je neprazan i sadrži samo pozitivne brojeve pa po {\it well-ordering} principu, ima i najmanji element $g_2=\min{L}$.
+
+Pretpostavimo da $g_2$ ne dijeli $a$ (ili $g_2$ ne dijeli $b$). Tada postoje jedinstveni $q,r\in\Z$ takvi da vrijedi $a=g_2 q+r$, gdje je $0<r<g_2$ (ako bi bilo $0\leq r$, uzeli bismo u obzir i to da je $a$ djeljiv s $g_2$). To znaèi da je $a=a q x+b q y+r$. Imamo $a-a q x-b q y=r$. Izluèimo faktore tako da bude $a(1-q x)+b(-q y)=r$. Kako su $1-q x,-q y\in\Z$ vrijedi da je $r=a(1-q x)+b(-q y)\in L$. No, kako je $0<r<g_2=a x+b y$, tj. $0<a(1-q x)+b(-q y)<a x-b y$, došli smo u kontradikciju s pretpostavkom da je $a x-b y$ najmanji element u $L$. Dakle, $g_2|a$ i $g_2|b$.
+
+Promotrimo sada $g_1=\gcd(a,b)$. Kako $g_2|a$ i $g_2|b$ oboje su zajednièki djelitelji od $a$ i $b$. No, $g_1$ je najveæi zajednièki djelitelj pa vrijedi $g_1\geq g_2$. Ipak, vrijedi i da $g_1|a$ i $g_1|b$. Po definiciji djeljivosti postoje $k_1,k_2\in\Z$ takvi da $a=k_1 g_1$ i $b=k_2 g_1$. Za neke $x,y\in\Z$ imamo $g_2=a x+b y=k_1 g_1 x+k_2 g_1 y$. Nakon izluèivanja to je $g_2=g_1(k_1 x+k_2 y)$, dakle $g_1|g_2$ te je $g_2\geq g_1$. Kako imamo $g_2\geq g_1$ i $g_1\geq g_2$, slijedi da je $g_1=g_2$, tj. $\gcd(a,b)=\min{\left(\{a x+b y:\ x,y\in\Z\}\cap\N\right)}$.
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\noindent{\bf Korolar.} Neka su $a,b\in\Z\backslash\{0\}$. Cijeli broj $n$ jednak je linearnoj kombinaciji od $a$ i $b$ ako i samo ako je višekratnik od $\gcd{(a,b)}$.
+
+\noindent\newline{\bf Dokaz.} Neka je $g=\gcd{(a,b)}$. {\it Nužnost.} Neka je $n\in\Z$ te neka je $a x+b y=n$, za neki $x,y\in\Z$. Treba pokazati kako postoji $k\in\Z$ takav da je $n=g k$. Vrijedi $g|a$ i $g|b$ pa možemo zapisati $a=g a'$ i $b=g b'$, za $a',b'\in\Z$. Stoga imamo $n=a'g x+b'g y$. To je $n=g(a'x+b'y)$ pa $g|n$, tj. postoji $k\in\Z$ takav da je $n=g k$.
+
+{\it Dovoljnost.} Neka je $n=g k$, za neki $k\in\Z$. Za $g$ po Bezoutovoj lemi vrijedi $g=a x+b y$ za neki $x,y\in\Z$. Pomnožimo li taj izraz s $k$ dobivamo $g k=a x k+b y k$, tj. $n=a(x k)+b(y k)$. Kako su $xk,yk\in\Z$, radi se o linearnoj kombinaciji brojeva $a$ i $b$ koja je jednaka broju $n$.
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\noindent{\bf Teorem (Euklidova lema).} Neka su zadani brojevi $a,b,c\in\Z$ takvi da vrijedi $\gcd(a,b)=1$ i $a|b c$. Tada $a|c$.
+
+\noindent\newline{\bf Dokaz.} Buduæi da $a| b c$, tada postoji $k\in\Z$ takav da vrijedi $b c=k a$. Kako je $\gcd(a,b)=1$, tada postoje $x,y\in\Z$ takvi da je $a x+b y=1$, tj. $b y=1-ax$. Pomnožimo $b c=k a$ s $y$ i imamo $b c y=k a y$. Uvršavajuæi izraz za $b y$ dobivamo $c(1-a x)=k a y$. To je $c-c a x=k a y$. Premjestimo èlanove tako da bude $c=k a y+c a x$. Izluèimo s desne strane $a$ i imamo $c=a(k y+c x)$. Kako su $k,y,c,x\in\Z$ tako je i $l=(k y+c x)\in\Z$ pa smo pronašli $l\in\Z$ takav da vrijedi $c=a l$ što znaèi da $a|c$.
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\noindent{\bf Korolar.} Neka je $p$ prost broj i $a,b\in\Z$ i neka $p|a b$. Tada $p|a$ ili $p|b$ (ili oboje).
+
+\noindent\newline{\bf Dokaz.} Pretpostavimo da $p\nmid a$. Tada je $\gcd(p,a)=1$, što po Euklidovoj lemi znaèi da $p|b$. Slièno, pretpostavimo da $p\nmid b$. Tada je $\gcd(p,b)=1$ što znaèi da $p|a$. Pretpostavimo da je $a=b$. Tada je oèito kako, ukoliko $p|a^2$, onda (po prethodna dva dokazana sluèaja) $p|a$ (a time i $p|b$).
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\noindent{\bf Korolar.} Neka su $p,q,r\in\N$ prosti brojevi. Ako $p\mid q r$ tada vrijedi ili $p=q$ ili $p=r$ (ili oboje).
+
+\noindent\newline{\bf Dokaz.} Kako su $p,q$ i $r$ prosti brojevi, tako su i u parovima relativno prosti pa vrijedi $\gcd(p,q)=1$ i $\gcd(p,r)=1$. Tako po prethodnom korolaru slijedi da $p\mid q$ odnosno $p\mid r$. No, kako je $p\neq 1$, a $q$ i $r$ su djeljivi samo s jedan ili sami sa sobom, ostaje da mora biti ili $p=r$ ili $p=q$. U sluèaju da je $r=q$ vrijedi $p=r=q$.
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\noindent{\bf Propozicija.} Neka je $a\in\Z\backslash\{-1,0\}$. Tada vrijedi $\gcd(a,a+1)=1$.
+
+\noindent\newline{\bf Dokaz.} Pretpostavimo da je $g=\gcd(a,a+1)$ i $g>1$. Tada $g|a$ i $g|(a+1)$. To znaèi da postoje $k,l\in\Z$ takvi da je $a=g k$ i $a+1=g l$. Odatle slijedi kako mora biti $g k+1=g l$, a to je $g k-g l=-1$. Dakle, $g(l-k)=1$. No, kako $g>1$ ne mogu postojati cijeli brojevi $k$ i $l$ takvi da vrijedi $g(l-k)=1$. Zato mora biti $g=1$, tj. $\gcd(a,a+1)=1$.
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\noindent{\bf Lema.} Neka je $a\in\Z\backslash\{0\}$. Najveæi djelitelj od $a$ je $|a|$, a najmanji $1$.
+
+\noindent\newline{\bf Dokaz.} Uzmimo $S=\{d\in\Z\backslash\{0\}:\ a=k d\}\cap\N$. Oèito je kako je $\min S=1$ jer $a=a\cdot 1$. Upravo iz toga slijedi i $\max S=|a|$ jer $a=-|a|$ za $a<0$ i $a=|a|$ za $a>0$. Nijedan drugi cijeli broj $k$ ne postoji u intervalu $\langle-1,1\rangle\backslash\{0\}$, za koje bi $\max S$ bio veæi, a $\min S$ manji.
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\noindent{\bf Lema.} Neka su $a,b\in\Z\backslash\{0\}$ takvi da $a|b$. Tada je $\gcd{(a,b)}=|a|$. Vrijedi i obrat.
+
+\noindent\newline{\bf Dokaz.} {\it Nužnost.} Znamo kako $a|b$, ali i da $a|a$. To je najveæi broj koji dijeli $a$ i vrijedi $a|b$ i $a|a$ pa je $\gcd(a,b)=|a|$ (dodajemo apsolutnu vrijednost kako bismo osigurali da je $\gcd(a,b)\in\N$).
+
+{\it Dovoljnost.} Pretpostavimo kako je $\gcd{(a,b)}=|a|$. To znaèi kako $|a|$ dijeli $a$ i $|a|$ dijeli $b$, tj. postoji $k\in\Z$ takav da je $b=|a| k$. Ukoliko je $b$ negativan, tada mora biti da je $k$ negativan. Stoga, ako je $a$ negativan, uzimamo $b=a k'$, gdje je $k'\in\Z$ i $k'=|k|$ pa vrijedi $a|b$. Ukoliko je $a$ pozitivan, jednostavno imamo $b=a k$ i vrijedi $a|b$. Ako je $b$ pozitivan, mora biti i da je $k$ pozitivan pa za pozitivan $a$ uzimamo $b=a k$ i onda $a|b$. Ako je $a$ pak negativan, dovoljno je uzeti $k'=-k$ i imamo $b=a k'$, gdje je $k'\in\Z$ pa opet $a|b$. Kako smo u svim sluèajevima dobili $a|b$ vrijedi pretpostavka obrata tvrdnje.
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\noindent{\bf Teorem (Euklidov algoritam).} Neka su zadani $a,b\in\Z\backslash\{0\}$. Tada, postupkom
+
+\begin{eqnarray*}
+a&=&b q_0+r_1,\\
+b&=&r_1 q_1+r_2,\\
+r_1&=&r_2 q_2+r_3,\\
+\vdots\\
+r_{n-2}&=&r_{n-1} q_{n-1}+r_n,\\
+r_{n-1}&=&r_n q_n,
+\end{eqnarray*}
+
+\noindent\newline gdje je $0<r_i<r_{i-1}$, za $i\in\{2,\ldots,n\}$ te $0<r_1<|a|$, dobivamo $\gcd(a,b)=r_{n}$.
+
+\noindent\newline{\bf Dokaz.} Ovaj postupak traje konaèno upravo zbog uzastopne primjene teorema o dijeljenju s ostatkom. Obzirom da je $0<r_1<|a|$ i $0<r_i<r_{i-1}$, za $i\in\{2,\ldots,n\}$ zbog {\it well-ordering} svojstva skupa $\Z^{+}$, moramo doæi do nule (što se vidi u $r_{n-1}=r_n q_n$). Zatim, po prethodnoj propoziciji vrijedi $\gcd(a,b)=\gcd(b,r_1)$. No, tako vrijedi i, po drugom koraku, $\gcd(b,r_1)=\gcd(r_1,r_2)$. Tako za $n$-ti ostatak vrijedi $\gcd(r_{n-2},r_{n-1})=\gcd(r_{n-1},r_n)$. Tako je $\gcd(a,b)=\gcd(r_{n-1},r_n)$. No, kako $r_n|r_{n-1}$, po prethodnoj lemi vrijedi $\gcd(r_{n-1},r_n)=r_n$. Tako je $\gcd(a,b)=r_n$.
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\noindent{\bf Propozicija.} Neka su $a,b\in\Z^{\ast}$. Iz Euklidovog algoritma možemo dobiti $x,y\in\Z$ takve da je $\gcd{(a,b)}=a x+b y$.
+
+\noindent\newline{\bf Dokaz.} Primijenimo li Euklidov algoritam na $a$ i $b$, dobivamo:
+
+\begin{eqnarray*}
+a&=&b q_0+r_1,\\
+b&=&r_1 q_1+r_2,\\
+r_1&=&r_2 q_2+r_3,\\
+\vdots\\
+r_{n-3}&=&r_{n-2} q_{n-2}+r_{n-1},\\
+r_{n-2}&=&r_{n-1} q_{n-1}+r_n,\\
+r_{n-1}&=&r_n q_n.
+\end{eqnarray*}
+
+\noindent\newline Uzmemo $r_n=r_{n-2}-r_{n-1} q_{n-1}$. Zatim, $r_n=r_{n-2}-(r_{n-3}-r_{n-2} q_{n-2}) q_{n-1}$, tj. $r_n=r_{n-2}(1+q_{n-2})-r_{n-3} q_{n-1}$. Pretpostavimo kako $r_n=r_{i+1}x'+r_{i}y'$. Tada, jer je $r_{i-1}=r_{i} q_{i}+r_{i+1}$ imamo $r_n=x'(r_{i-1}-r_i q_{i})+r_i y'$, tj. $r_n=x' r_{i-1}+r_i(y'-q_{i} x')$. Dakle, nastavimo li tom analogijom, dolazimo i da $r_n=x' r_2+y' r_1$. No, $r_2=b-r_1 q_1$ pa imamo $r_n=x'(b-r_1 q_1)+y' r_1$, tj. $r_n=x' b+r_1(y'-q_1 x')$. Uzmimo $y'-q_1 x'=x$. Dalje, $r_1=a-b q_0$ pa je $r_n=x' b+(a-b q_0)x$, tj. $r_n=b(x'-q_0 z)+a x$. Uzemo li $y=(x'-q_0 z)$ imamo $r_n=a x+b y$, tj. $\gcd{(a,b)}=a x+b y$ za $x,y\in\Z$.
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\noindent\newline{\bf Propozicija.} Neka je $a\in\Z$. Tada je $\gcd(a,0)=a$.
+
+\noindent\newline{\bf Dokaz.} Vrijedi da $a|a$ i $a|0$. To je najveæi takav broj koji dijeli $a$ pa je $\gcd(a,0)=a$.
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\noindent{\bf Propozicija.} Za $a,b,k\in\Z$, $a,b\neq 0$, vrijedi $\gcd(a,b)=\gcd(a,b+a k)$.
+
+\noindent\newline{\bf Dokaz.} Uzmimo $g=\gcd(a,b)$. Tada $g|a$ i $g|b$ i to je najveæi takav broj. Tada $g$ dijeli i cjelobrojnu kombinaciju od $a$ i $b$ pa i $b+a k$. Stoga $g|a$ i $g|(b+a k)$. Uzmimo $g'=\gcd(a,b+a k)$. Tada vrijedi $g'\geq g$ jer je $g$ djelitelj od $a$ i $b+a k$, a $g'$ je najveæi takav. No, kako $g'|a$ i $g'|(b+a k)$, tada je $a=g'x$, za neki $x\in\Z$ i $b+a k=g'y$, za neki $y\in\Z$. Tako je $b+g'x k=g'y$, tj. $b=g'y-g'x k=g'(y-x k)$. Dakle, $g'|b$. Kako $g'|a$ i $g'|b$ on je zajednièki djelitelj od $a$ i $b$ pa je $g'\leq g$ jer je $g$ najveæi takav. No, imamo $g'\leq g$ i $g'\geq g$ pa je $g'=g$.
+
+Drugi naèin da se pokaže ova propozicija je ovisan o prethodno dokazanoj propoziciji. Uzmemo li $c=b+a k$, oèito je kako je $b$ ostatak pri dijeljenju $c$ s $a$. Pa ako je $g=\gcd(a,c)$ tada je, po prethodno dokazanoj propoziciji $\gcd(a,c)=\gcd(a,b)$. To je $\gcd(a,b+a k)=\gcd(a,b)$.
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\noindent{\bf Propozicija.} Neka su $m,n,k\in\Z^{\ast}$ takvi da $\gcd{(m,n)}=1$ i $k|n$. Tada je $\gcd{(m,k)}=1$.
+
+\noindent\newline{\bf Dokaz.} Kako $k|n$, postoji $q\in\Z$ takav da je $n=q k$. Pretpostavimo kako postoji $r,m',k'\in\Z$ tako da vrijedi $m=r m'$ i $k=r k'$. Kako je $\gcd{(m,n)}=1$, postoje $x,y\in\Z$ takvi da je $x m+y n=1$. No, tada imamo $x r m'+y q r k'=1$, tj. $r(x m'+y q k')=1$. No kako je $r\in\Z$ i $(x m'+y q k')\in\Z$, oba broja moraju biti jednaka ili $1$ ili $-1$. Dakle $r=\pm 1$, što znaèi da su brojevi $m$ i $k$ relativno prosti.
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\noindent{\bf Propozicija.} Neka su $m,n,k\in\Z^{\ast}$ takvi da $\gcd{(m n,k)}=1$. Tada $\gcd{(m,k)}=1$ i $\gcd{(n,k)}=1$.
+
+\noindent\newline{\bf Dokaz.} Imamo $\gcd{(m n,k)}=1$. Neka je $\gcd{(m,k)}=q$. To znaèi kako postoje $u,v\in\Z$ takvi da je $m=q u$ i $k=q v$. Iz toga slijedi kako je $m n=q u n$. Jer je $\gcd{(m n,k)}=1$, postoje $w,z\in\Z$ takvi da vrijedi $m n w+k z=1$. Imamo $q u n w+q v z=1$, tj. $q(u n w+v z)=1$ pa je $q=\frac{1}{u n w+v z}$. No, $(u n w+v z)\in\Z$ pa stoga mora biti i $u n w+v z=1$ i imamo $q=1$. Dakle, jedini zajednièki djelitelj od $m$ i $k$ je $1$ pa mora biti $\gcd{(m,k)}=1$. Analogno se dokazuje i za $\gcd{(n,k)}=1$.
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\noindent{\bf Propozicija.} Neka su $k,n,m\in\Z^{\ast}$ takvi da je $\gcd{(n,m)}=1$. Tada je $\gcd{(k n,k m)}=k$.
+
+\noindent\newline{\bf Dokaz.} Neka je $g=\gcd{(k n,k m)}$. Pokažimo da je $g=k$. Oèito je kako $k|(k n)$ i $k|(k m)$, stoga je $k$ zajednièki djelitelj od $k n$ i $k m$ pa $k|g$. Pokažimo da $g|k$. Vrijedi da $g|(k n)$ i $g|(k m)$. Imamo $k n=g x$ i $k m=g y$, za $x,y\in\Z$. Pomnožimo li prvu jednadžbu s $y$ dobivamo $k n y=g x y$ te je $k n y=k m x$, tj. $n y=m x$. To znaèi kako $n|(m x)$. No, po Euklidovoj lemi mora biti da $n|x$, tj. $\frac{x}{n}\in\Z$. Uzmimo $c=\frac{x}{n}$. Stoga iz $k n=g x$ imamo $k=g\frac{x}{n}$, i.e. $k=g c$, za $c\in\Z$ pa po definiciji $g|k$. Stoga je $g=k$.
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\noindent{\bf Propozicija.} Neka su $m,n\in\Z^{\ast}$. Tada je $\gcd{(m n,m)}=m$.
+
+\noindent\newline{\bf Dokaz.} Uzmimo $g=\gcd{(m n,m)}$. Pokažimo kako je $g=m$. Oèito $g|(m n)$ i $g|m$ (iz toga slijedi $g\leq m$). No, isto tako $m|(m n)$ i $m|m$ pa je $m$ zajednièki djelitelj od $m n$ i $m$ te vrijedi, obzirom da je $g$ po pretpostavci najveæi, $m\leq g$. Kako imamo $g\leq m$ i $m\leq g$, vrijedi $g=m$.
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\noindent{\bf Propozicija.} Neka su $k,l,n\in\Z^{\ast}$ takvi da je $\gcd{(k,n)}=1$ i $\gcd{(l,n)}=1$. Tada je $\gcd{(k l,n)}=1$.
+
+\noindent\newline{\bf Dokaz.} Pretpostavimo da postoji $q\in\Z$ takav da $q|(k l)$ i $q|n$ te $q\neq\pm1$. To znaèi kako je $k l=q x$ i $n=q y$, za $x,y\in\Z$. Pomnožimo li prvu jednadžbu s $y$ dobivamo $k l y=n x$. To znaèi kako $n|(k l y)$. No, po Euklidovoj lemi, $n\nmid k$ stoga $n|(l y)$. Ali, opet po Euklidovoj lemi, $n\nmid l$ pa $n|y$. Stoga je $\frac{y}{n}\in\Z$. Iz $n=q y$ dobivamo $1=q\frac{y}{n}$. No, to znaèi da $q|1$ i $\frac{y}{n}|1$, a to može biti samo ako $q=\frac{y}{n}=\pm1$ (fali preciznosti, ali bit je tu). To je u suprotnosti s pretpostavkom da je $\gcd{(k l,n)}\neq\pm 1$.
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\noindent{\bf Napomena.} Od sada æemo u tekstu uzeti oznaku $\Z^{\ast}=\Z\backslash\{0\}$.
+
+\noindent\newline{\bf Definicija.} Neka je $a,b\in\Z^{\ast}$. Svaki broj $m\in\Z^{\ast}$ takav da $m|a$ i $m|b$ zovemo {\bf zajednièki višekratnik} od $a$ i $b$. Najmanji takav broj zovemo {\bf najmanji zajednièki višekratnik} od $a$ i $b$ te pišemo $m=\textnormal{lcm}(a,b)$.
+
+\noindent\newline{\bf Propozicija.} Za svaki $a,b\in\Z^{\ast}$ ne postoji najveæi zajednièki višekratnik.
+
+\noindent\newline{\bf Dokaz.} Pretpostavimo da je $m$ zajednièki višekratnik od $a$ i $b$ i to najveæi takav. No, uzmemo li $m'=m |a|$, vrijedi da $m'|m$ i $m'|a$, pa tako i $m'|b$. Stoga je $m'$ zajednièki višekratnik od $a$ i $b$. No, kako je $m'=m|a|$, vrijedi $m\leq m'$ što je u suprotnosti s pretpostavkom da je $m$ najveæi zajednièki višekratnik.
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\noindent{\bf Propozicija.} Za svaki $a,b\in\Z^{\ast}$ vrijedi:
+
+\begin{equation*}
+\textnormal{lcm}(a,b)=\frac{|a b|}{\gcd(a,b)}.
+\end{equation*}
+
+\noindent\newline{\bf Dokaz.} Neka je $l=\textnormal{lcm}(a,b)$ i $l'=\frac{|a b|}{\gcd(a,b)}$. Po definiciji vrijedi $a|l$, $b|l$ i $l\leq l'$ (jer je to najmanji zajednièki višekratnik - ukoliko je $l'$ zajednièki višekratnik). Pokažimo kako je $l'$ uistinu zajednièki višekratnik od $a$ i $b$, tj. da $a|l$ i $b|l$. Uzmimo $g=\gcd(a,b)$. Tada po definiciji najveæeg zajednièkog djelitelja $g|a$ i $g|b$, tj. $\exists x,y\in\Z$ takvi da $a=g x$ i $b=g y$. Uzmemo li $l'=\frac{|a b|}{g}=\frac{|a g x|}{g}$. Kako je $g$ pozitivan, vrijedi $l'=|a x|$ pa $a|l'$. Na isti naèin se pokaže da $b|l'$ pa je $l'$ zajednièki višekratnik od $a$ i $b$. Pokažimo da $l|l'$. Uzmemo li $\frac{l}{l'}$ imamo:
+
+\begin{equation*}
+\frac{l}{l'}=\frac{l g}{|a b|}.
+\end{equation*}
+
+\noindent\newline Po prethodno dokazanoj propoziciji vrijedi $g=az+bw$ za neki $z,w\in\Z^{\ast}$. Tada je $lg=alz+blw$. Kako $a|l$ i $b|l$ postoje $m,n\in\Z$ takvi da je $l=a m$ i $l=b n$. Stoga je $lg=a b n z+ a b m w=a b(n z+m w)$ pa $(a b)|(l g)$. Stoga je $\frac{l}{l'}=u$, gdje je $u\in\Z$ takav da je $l g=a b u$. Dakle, $l=l' u$, i.e. $l'|l$ pa mora biti $l'\leq l$ (ne moramo paziti na apsolutnu vrijednost jer uzimamo u obzir samo pozitivne višekratnike). Kako je $l\leq l'$ ($l$ je najmanji zajednièki višekratnik) i $l'\leq l$ vrijedi $l=l'$ i time je dokazana propozicija.
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\noindent{\bf Korolar.} Ako za $a,b\in\Z^{\ast}$ vrijedi $\gcd(a,b)=1$ tada je $\textnormal{lcm}(a,b)=|a b|$.
+
+\noindent\newline{\bf Dokaz.} Slijedi direktno iz prethodne propozicije. Ako je $\gcd(a,b)=1$, tada je:
+
+\begin{equation*}
+\textnormal{lcm(a,b)}=\frac{|a b|}{\gcd(a,b)}=\frac{|a b|}{1}=|a b|.
+\end{equation*}
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\noindent{\bf Korolar.} Neka su $a,b\in\Z^{\ast}$ takvi da $b|a$. Tada je $\textnormal{lcm}(a,b)=|a|$.
+
+\noindent\newline{\bf Dokaz.} Vrijedi da je, po prethodnoj lemi, $\gcd(a,b)=|b|$ (ako $b|a$) pa direktnim uvršavanjem u formulu iz prethodne propozicije dobivamo:
+
+\begin{equation*}
+\textnormal{lcm}(a,b)=\frac{|a b|}{\gcd{a,b}}=\frac{|a|\cdot |b|}{|b|}=|a|.
+\end{equation*}
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\noindent{\bf Teorem (Fundamentalni teorem aritmetike).} Svaki se prirodan broj veæi od $2$ može prikazati kao umnožak prostih brojeva (ili je prost broj) na jedinstven naèin do na poredak.
+
+\noindent\newline{\bf Dokaz.} {\it Egzistencija} Dokaz se provodi jakom matematièkom indukcijom. Neka je $n=2$. Tada je $n$ prost broj pa vrijedi baza indukcije. Pretpostavimo da se svaki $k<n$ može prikazati kao umnožak prostih brojeva ili je sam prost broj. Ako je $n$ prost, tada smo gotovi. Ako $n$ nije prost, tada postoji neki $n_1$ i $n_2$, razlièiti od $1$, takvi da je $n=n_1 n_2$. No, $n_1<n$ i $n_2<n$, pa se po pretpostavci indukcije mogu prikazati kao umnošci prostih brojeva.
+
+{\it Jedinstvenost.} Pretpostavimo da je $p_1 p_2\cdots p_n=q_1 q_2\cdots q_m$, gdje su $m,n\in\N$ i $m>n$. Po Euklidovoj lemi, ukoliko podijelimo cijeli izraz s $p_1$, i kako su svi $p_i$ i $q_j$ prosti, mora biti da je $p_1$ jednak nekom $q_j$ (bez smanjenja opæenitosti možemo pretpostaviti kako je to upravo $q_1$). Tako dijeleæi sa svakim $p_i$ (isto, bez smanjenja opæenitosti možemo pretpostaviti da æe odgovarati upravo broju $q_i$), dobivamo $1=q_{n+1}q_{n+2}\cdots q_m$. No, tada $q_{n+1},q_{n+2},\ldots, q_m$ moraju biti jednaki $1$. Po tome imamo $p_i=q_i$, za svaki $i\in\{1,\ldots,n\}$ dok su ostali $q_j=1$ i time nebitni.
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\noindent{\bf Lema.} Neka su $p\neq q$ prosti brojevi te $i,j\in\N$. Tada je $\gcd{(p^i,q^j)}=1$.
+
+\noindent\newline{\bf Dokaz.} Oèito je kako $p^i=\underbrace{p\cdot p\cdots p}_{i\textnormal{ puta}}$ i $q^j=\underbrace{q\cdot q\cdots q}_{j\textnormal{ puta}}$ ne sadrže nijedan zajednièki djelitelj.
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\noindent{\bf Propozicija.} Neka je $n\in\N$. Ako $p^i|n$ i $q^j|n$, za neke proste brojeve $p\neq q$, te prirodne brojeve $i$, $j$. Tada $p^i q^j|n$.
+
+\noindent\newline{\bf Dokaz.} Kako $p^i|n$, postoji $k\in\N$ (radimo u skupu prirodnih brojeva, i $p^i$ i $n$ su prirodni pa mora biti i $k$) takav da je $n=p^i k$. Takoðer, za $q^j|n$ postoji $l\in\N$ takav da je $n=q^j l$. Primijetimo kako odavdje trivijalno slijedi $p^i\nmid k$ i $q^j\nmid l$. Takoðer, bitna opaska jeste da su $p^i$ i $q^j$ relativno prosti. Imamo $p^i k=q^j l$. Ukoliko podijelimo jednadžbu s $p^i$, po Euklidovoj lemi (i prethodnoj opasci) mora biti $p^i|l$. Za neki $l'\in\N$ je $l=l'p^i$. Tada je $n=q^j l' p^i$, za neki $l'\in\N$, pa stoga $p^i q^j|n$.
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\noindent{\bf Teorem (Euklidov teorem).} Postoji beskonaèno mnogo prostih brojeva.
+
+\noindent\newline{\bf Dokaz.} Pretpostavimo da postoji $n$ prostih brojeva $p_1,p_2,\ldots,p_n$. Tada postoji složen broj $a=p_1 p_2\cdots p_n$. Uzmimo $b=a+1$. Tada je po prethodno dokazanoj propoziciji $\gcd(a,b)=1$, tj. $a$ i $b$ nemaju zajednièkih djelitelja. No, kako se svaki prirodan broj, po fundamentalnom teoremu aritmetike, može prikazati kao umnožak prostih faktora ili je sam prost broj, vrijedi da je ili $b$ prost ili je $b$ umnožak nekih prostih faktora. Ukoliko je $b$ prost, a nijedan $p_i\nmid b$, tada $b$ mora biti prost broj razlièit od svih $p_i$. Ako $b$ nije prost, a nijedan $p_i\nmid b$, $b$ mora biti umnožak nekih prostih faktora razlièitih od $p_i$.
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\newpage
+
+\begin{center}
+{\bf Kongruencija}
+\end{center}
+
+\vskip 0.5cm
+
+\noindent{\bf Definicija.} Neka su $a,b\in\Z$, $m\in\N\backslash\{1\}$. Kažemo kako je $a$ kongruentan $b$ modulo $m$ i pišemo $a\equiv b\pmod m$ ako vrijedi $m|(a-b)$.
+
+\noindent\newline{\bf Primjer.} Oèito je $17\equiv 2\pmod 5$ jer $5|(17-2)$. Isto tako i $2\equiv 17\pmod 5$ jer $5|(2-17)$. Slièno, $-17\equiv -2\pmod 5$ i $-2\equiv -17\pmod 5$, ali nije $-17\equiv 2\pmod 5$ i nije $-2\equiv 17\pmod 5$. Ipak bi bilo npr. $-13\equiv 2\pmod 5$.
+
+\noindent\newline{\bf Primjedba.} Iako jeste $15\equiv 0\pmod 5$ u biti ekvivalentno izjavi $5|15$, ipak nije preporuèljivo gledati na to u istom svjetlu.
+
+\noindent\newline{\bf Propozicija.} Relacija kongruencije je relacija ekvivalencije.
+
+\noindent\newline{\bf Dokaz.} (i) {\it Refleksivnost.} Znamo kako $m|0$ jer za $0\in\Z$ vrijedi $0=0\cdot m$. Kako je, oèito, $a-a=0$ za svaki $a\in\Z$, vrijedi da $m|(a-a)$. Tako $a\equiv a\pmod m$ što dokazuje reflektivnost relacije kongruencije.
+
+(ii) {\it Simetriènost.} Ukoliko imamo $a\equiv b\pmod m$ to znaèi da $m|(a-b)$, dakle postoji $k\in\Z$ takav da je $a-b=m k$. To je $-(b-a)=m k$ pa pomnoživši sve s $-1$ dobivamo $b-a=m\cdot(-k)$. Stoga postoji $k'\in\Z$, $k'=-k$ takav da $b-a=k'm$ pa $m|(b-a)$. Tj. $b\equiv a\pmod m$. Simetriènost, dakle, vrijedi.
+
+(iii) {\it Tranzitivnost.} Ako je $a\equiv b\pmod m$ i $b\equiv c\pmod m$, tada vrijedi $m|(a-b)$ i $m|(b-c)$. To znaèi kako postoje $k,l\in\Z$ takvi da $a-b=m k$ i $b-c=m l$. Zbrojimo li te dvije jednakosti dobivamo $a-c=m(k+l)$. Uzevši $k'=k+l$ imamo $a-c=k'm$ pa $m|(a-c)$. To znaèi da $a\equiv c\pmod m$. Time je dokazana i tranzitivnost relacije kongruencije.
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\noindent{\bf Propozicija.} Neka su $a,b,c\in\Z$ i $m\in\N$. Ako je $a\equiv b\pmod m$, tada je
+
+\begin{enumerate}
+\item[(i)] $a c\equiv b c\pmod m$,
+\item[(ii)] $a+c\equiv b+c\pmod m$.
+\end{enumerate}
+
+\noindent{\bf Dokaz.} Kako je $a\equiv b\pmod m$ to znaèi da $m|(a-b)$, tj. da postoji $k\in\Z$ takav da je $a-b=k m$. (i) Pomnožimo li tu jednakost s $c$ dobivamo $(a-b)c=k m c$, što možemo grupirati tako da bude $a c-b c=m(k c)$. Uzmemo li $k'\in\Z$ takav da je $k'=k c$ imamo $a c-b c=k' m$ pa $m|(a c-b c)$. To znaèi da je $a c\equiv b c\pmod m$. (ii) Dodamo li jednakosti $a-b=km$ broj $c$ tada je $a-b+c=km+c$, tj. $a-b+c-c=k m$. Nakon grupiranja to je $(a+c)-(b+c)=k m$ pa $m|((a+c)-(b+c))$. Stoga je $a+c\equiv b+c\pmod m$.
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\noindent{\bf Propozicija.} Vrijedi $a\equiv a+k m\pmod m$, za svaki $a,k\in\Z$ i $m\in\N$.
+
+\noindent\newline{\bf Dokaz.} Vrijedi $m|(a-k m)$ a to je ekvivalentno $m|(a-a-k m)$, tj. $m|(a-(a+k m))$ pa je $a\equiv a+k m\pmod m$.
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\noindent{\bf Propozicija.} Neka su $a,b,k\in\Z$ i $m\in\N$. Tada, $a\equiv b+k m\pmod m$ ako i samo ako $a\equiv b\pmod m$.
+
+\noindent\newline{\bf Dokaz.} {\it Nužnost.} Ako je $a\equiv b+m k\pmod m$, tada $m|(a-b-m k)$, tj. postoji $q\in\Z$ takav da je $a-b-m k=m q$. Iz toga dobivamo $a-b=m(q+k)$ pa $m|(a-b)$, tj. $a\equiv b\pmod m$. {\it Dovoljnost.} Ako je $a\equiv b\pmod m$, tada postoji $q\in\Z$ takav da je $m q=a-b$. Uzmimo $k\in\Z$. Tada je $m q=a-b+k m-k m$. Iz toga dobivamo $m(q-k)=a-b-k m$, tj. $m(q-k)=a-(b+k m)$. Iz toga slijedi $a\equiv b+k m\pmod m$.
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\noindent{\bf Propozicija.} Neka su $a,b\in\Z$ i $k,m\in\N$. Tada iz $a\equiv b\pmod k m$ slijedi $a\equiv b\pmod m$.
+
+\noindent\newline{\bf Dokaz.} Po definiciji $k m|(a-b)$, tj. postoji $q\in\Z$ takav da je $a-b=k m q$. To možemo zapisati kao $a-b=m(k q)$ pa oèito $m|(a-b)$, tj. $a\equiv b\pmod m$.
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\noindent{\bf Propozicija.} Neka su $a,b\in\Z$ i $0\leq a,b<m$. Tada iz $a\equiv b\pmod m$ slijedi $a=b$.
+
+\noindent\newline{\bf Dokaz.} Iz $a\equiv b\pmod m$ slijedi $m|(a-b)$, tj. postoji $q\in\Z$ takav da je $a-b=m q$. Drugim rijeèima, $a=m q+b$. Kako je $0\leq b<m$, imamo $m q\leq m q+b<m$, iz èega slijedi $m q\leq a<m$, što je moguæe samo ako je $q=0$. Stoga, mora biti $a=m\cdot 0+b$ pa je $a=b$.
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\noindent{\bf Propozicija.} Neka su $a,b,c,d\in\Z$ i $m\in\N$ Ako je $a\equiv b\pmod m$ i $c\equiv d\pmod m$ tada je $a+c\equiv b+d\pmod m$.
+
+\noindent\newline{\bf Dokaz.} Kako je $a\equiv b\pmod m$ tada $m|(a-b)$ pa postoji $k\in\Z$ takav da je $a-b=m k$. Isto tako postoji $l\in\Z$ takav da je $c-d=m l$. Zbrojimo li ova dva izraza dobivamo $(a+c)-(b+d)=m(k+l)$ pa $m|((a+c)-(b+d))$. Stoga je $a+c\equiv b+d\pmod m$.
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\noindent{\bf Propozicija.} Neka su $a,b,c,d\in\Z$ i $m\in\N$ Ako je $a\equiv b\pmod m$ i $c\equiv d\pmod m$ tada je $a c\equiv b d\pmod m$.
+
+\noindent\newline{\bf Dokaz.} Kako je $a\equiv b\pmod m$ i $c\equiv d\pmod m$, postoje $k,l\in\Z$ takvi da je $a-b=m k$ i $c-d=m l$. Iz zadnje jednakosti imamo $c=d+m l$. Pomnožimo prvu jednadžbu s $c$ i dobivamo $a c-b c=m k c$. Zatim, uvrstimo izraz za $c$ tako da dobijemo $a c-b d-m l=m k c$. To je pak ekvivalentno izrazu $a c-b d=m k c+m l$. Zajednièki faktor $m$ možemo izluèiti te dobivamo $a c-b d=m(k c+l)$. Kako su $k,c,l\in\Z$, tada je i $(k c+l)\in\Z$ pa vrijedi $m|(a c-b d)$ što je po definiciji kongruencije $a c\equiv b d\pmod m$.
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\noindent{\bf Propozicija.} Neka su $x,y\in\Z$ i $a\in\Z^{\ast}$. Ako je $a x\equiv a y\pmod a m$, tada je $x\equiv y\pmod m$.
+
+\noindent\newline{\bf Dokaz.} Imamo $a m|(a x-a y)$, tj. postoji $q\in\Z$ takav da je $a x-a y=a m q$. Izluèimo zajednièki faktor $a$ i dobivamo $a(x-y)=a(m q)$. Obzirom da je $a\neq 0$ po pretpostavci propozicije, cijeli izraz možemo podijeliti s $a$ i dobiti $x-y=m q$. Po definiciji to je $x\equiv y\pmod m$.
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\noindent{\bf Propozicija.} Neka su $x,y\in\Z$ i $a\in\Z^{\ast}$. Ako je $a x\equiv a y\pmod m$ i $\gcd{(a,m)}=1$ vrijedi $x\equiv y\pmod m$.
+
+\noindent\newline{\bf Dokaz.} Iz $a x\equiv a y\pmod m$ dobivamo $m|(a x-a y)$, tj. $m|a(x-y)$. Po Euklidovoj lemi, obzirom da je $\gcd{(m,a)}=1$, mora biti $m|(x-y)$, tj. $x\equiv y\pmod m$.
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\noindent{\bf Propozicija.} Neka je $m\in\Z$. Tada $m|(q m+1)^n-1$, za svaki $q\in\Z$ i $n\in\N$.
+
+\noindent\newline{\bf Dokaz.} Neka je $m,q\in\Z$ i $n\in\N$. Pokažimo da $m|(q m+1)^n-1$. Neka je $n=1$. Imamo $(q m+1)^1-1=q m+1-1=q m$, iz èega je oèito kako $m|q m$. Pretpostavimo kako tvrdnja vrijedi za $n=k$, tj. neka postoji $q'\in\Z$ takav da je $(q m+1)^k-1=q' m$. Dokažimo da tvrdnja vrijedi za $n=k+1$. Imamo:
+
+\begin{equation*}
+(q m+1)^{k+1}-1=(q m+1)^k(q m+1)-1=q m(q m+1)^k+(q m+1)^k-1.
+\end{equation*}
+
+\noindent\newline Primijetimo kako iz pretpostavke indukcije možemo iskoristiti $(q m+1)^k-1=q'm$. Stoga je:
+
+\begin{equation*}
+(q m+1)^{k+1}-1=q m(q m+1)^k+q'm.
+\end{equation*}
+
+\noindent\newline Gornjem izrazu možemo dodati i oduzeti $m$ pa je:
+
+\begin{equation*}
+(q m+1)^{k+1}-1=q m(q m+1)^k-m+m+q'm=m\left((q m+1)^k-1+1+q'\right).
+\end{equation*}
+
+\noindent\newline Opet iskoristimo pretpostavku indukcije i dobivamo:
+
+\begin{equation*}
+(q m+1)^{k+1}-1=m(q'm+1+q')=m\left(q'(m+1)+1\right).
+\end{equation*}
+
+\noindent\newline Iz toga slijedi kako $m|(q m+1)^{k+1}$ te je tvrdnja dokazana za svaki $n\in\N$. Stoga iz $a^n-1=(q m+1)^n-1$ imamo $m|(q m+1)^n-1$, a tako i $m|a^n-1$, što je ekvivalentno, po definiciji kongruencije, $a^n\equiv 1\pmod m$.
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\noindent{\bf Propozicija.} Neka je $a\equiv b\pmod m$. Tada je $a^n\equiv b^n\pmod m$, za svaki $n\in\N$.
+
+\noindent\newline{\bf Dokaz.} Za $n=1$ oèito vrijedi $a\equiv b\pmod m$, po pretpostavci propozicije. Pretpostavimo kako je $a^k\equiv b^k\pmod m$, za neki $k\in\N$. Pokažimo kako tvrdnja vrijedi za $k+1$. Koristeæi prethodno dokazanu propoziciju, pretpostavku i bazu indukcije, slijedi $a a^k\equiv b b^k\pmod m$, tj. $a^{k+1}\equiv b^{k+1}\pmod m$.
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\noindent{\bf Propozicija.} Ako je $a\equiv 1\pmod m$, tada je $a^n\equiv 1\pmod m$, za svaki $n\in\N$.
+
+\noindent\newline{\bf Dokaz.} Iz prethodne propozicije, uvrštavanjem $b=1$ i koristeæi èinjenicu kako je $1^n=1$, direktno slijedi $a^n\equiv 1\pmod m$.
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\noindent{\bf Propozicija.} Neka je $x\equiv y\pmod m$. Tada vrijede sljedeæe tvrdnje:
+
+\begin{enumerate}
+\item Ako je $z\equiv x+w\pmod m$, tada je $z\equiv y+w\pmod m$.
+\item Ako je $z\equiv x w\pmod m$, tada je $z\equiv y w\pmod m$.
+\end{enumerate}
+
+\noindent{\bf Dokaz.} {\it Ad $1$.} Postoje $k,l\in\Z$ takvi da je $m k=x-y$ i $m l=z-(x+w)$. Imamo $x=m k+y$ i $m l=z-x-w$. Iz toga slijedi kako je $m l=z-mk-y-w$, tj. $m(l+k)=z-(y+w)$ što je ekvivalentno $z\equiv y+w\pmod m$.
+
+{\it Ad $2$.} Postoje $k,l\in\Z$ takvi da je $m k=x-y$ i $m l=z-x w$. Tada je $x=m k+y$ pa uvrštavanjem dobivamo $m l=z-(m k+y) w$, tj. $m l=z-m k w-y w$. To je ekvivalentno $m(l+k w)=z-y w$ što implicira $z\equiv y w\pmod m$.
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\noindent{\bf Propozicija.} Neka je $a\in\Z^{\ast}$ i $m\in\N$. Tada, $\gcd{(a,m)}=1$ ako i samo ako postoji $b\in\Z$ takav da je $a b\equiv 1\pmod m$.
+
+\noindent\newline{\bf Dokaz.} {\it Nužnost.} Neka je $\gcd{(a,m)}=1$. Tada po Bezoutovoj lemi postoje $x,y\in\Z$ takvi da je $a x+m y=1$. To je ekvivalentno izrazu $m y=1-a x$, što znaèi kako $m|(1-a x)$ pa je po definiciji $1\equiv a x\pmod m$. Po simetriènosti relacije kongruencije vrijedi $a x\equiv 1\pmod m$. Uzmemo li $b=x$, imamo da postoji $b\in\Z$ takav da je $a b\equiv 1\pmod m$.
+
+{\it Dovoljnost.} Neka postoji $b\in\Z$ takav da je $a b\equiv 1\pmod m$. Tada, po definiciji kongruencije, $m|(a b-1)$, tj. postoji $q\in\Z$ takav da je $a b-1=m q$. Uzmemo li $q'=-q$, imamo $1-a b=m q'$ i to je ekvivalentno $1=m q'+a b$. Uzmimo $\gcd{(a,b)}=g$. Tada $g|m$ i $g|a$, te postoje $m',a'\in\Z$ takvi da je $m=m'g$ i $a=a'g$. Uvrštavajuæi to u prethodnu jednakost dobivamo $m'g q'+a'g b=1$. Izluèimo zajednièki faktor te imamo $g(m'q'+a'b)=1$, što znaèi da $g|1$. Dakle, $|g|=1$, što znaèi kako su $a$ i $m$ relativno prosti.
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\noindent{\bf Napomena.} Primijetimo kako, ukoliko je $\gcd{(a,m)}=1$, te $a b\equiv 1\pmod m$, mora biti i $\gcd{(b,m)}=1$. Jer, kada dobijemo $a b\equiv 1\pmod m$, to je ekvivalentno $a b-1=m q$, za $q\in\Z$, pa je $1=m q'+a b$, za $q'=-q$. Pretpostavimo li $\gcd{(b,m)}=g$, imamo $1=m'g q'+a b'g$, za $m',b'\in\Z$. Tada je $g(m'q'+a b')=1$ pa mora biti $g|1$ i $|g|=1$ pa su $b$ i $m$ takoðer relativno prosti.
+
+\noindent\newline{\bf Propozicija.} Neka su $a,b\in\Z^{\ast}$ i $m\in\N$. Ako je $a b\equiv 1\pmod m$, tada je $a(b+k m)\equiv 1\pmod m$, za svaki $k\in\Z$.
+
+\noindent\newline{\bf Dokaz.} Neka je $a b\equiv 1\pmod m$. To znaèi kako je $a b-1=m q$, za neki $q\in\Z$. Uzmemo li $a(b+k m)=a b+a k m$ imamo $a(b+k m)=m q+1+a k m$, a iz toga $a(b+k m)=1+m(q+a k)$. To je pak ekvivalentno $a(b+k m)-1=m(q+ a k)$, pa je $a(b+k m)\equiv 1\pmod m$.
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\noindent{\bf Propozicija.} Neka je $a\in\Z^{\ast}$ i $m\in\N$. Ako je $\gcd{(a,m)}\neq 1$, onda ne postoji $b\in\Z^{\ast}$ takav da je $a b\equiv 1\pmod m$.
+
+\noindent\newline{\bf Dokaz.} Neka je $g=\gcd{(a,m)}$ i $g\neq 1$. Tada je $a=a'g$ i $m=m' g$ za $a',m'\in\Z$. Pretpostavimo da postoji $b\in\Z^{\ast}$ takav da je $a b\equiv 1\pmod m$. Imamo $a b-1=m q$, za neki $q\in\Z$. No, takoðer $a'g b-1=m'g q$. Iz toga dobivamo $g(a' b-m'q)=1$. No, to znaèi kako mora biti $g=\pm 1$, što je u suprotnosti s pretpostavkom da je $g\neq 1$. Dakle, ne postoji $b\in\Z^{\ast}$ takav da je $a b\equiv 1\pmod m$.
+
+\begin{flushright}
+$\square$
+\end{flushright}
+
+\noindent{\bf Propozicija.} Neka je $x\in\Z^{-}$ i $m\in\N$. Tada postoji $k\in\N$ takav da je $0\leq x+k m<m$.
+
+\noindent\newline{\bf Dokaz.} Po teoremu o dijeljenju s ostatkom $x=q m+r$, gdje je $0\leq r<|m|=m$. Dovoljno je uzeti $q=-k$ te dobivamo $x=-k m+r$. Iz toga je $r=x+k m$ i $0\leq r<m$.
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\noindent{\bf Napomena.} Primijetimo kako pomoæu Euklidovog algoritma možemo dobiti $x,y\in\Z$ takve da je $a x+m y=\gcd{(a,m)}$, tj. $a x+m y=1$. Tada je $a x\equiv 1\pmod m$. Ukoliko je $x<0$, koristeæi prethodnu propoziciju, lagano možemo uzeti $b=x+k m$. Po prethodnoj propoziciji takoðer možemo uzeti takav $b$, po teoremu o dijeljenju s ostatkom, tako da bude $0\geq b<m$. Ovo je jedan efikasan algoritam za pronalaženje (multiplikativnog) inverza u $\left(\Z\slash n\Z\right)^{\ast}$.
+
+\noindent\newline{\bf Propozicija.} Neka je $n\in\N-2\N$. Tada vrijedi $(n+1)^2\equiv n+1\pmod{2n}$.
+
+\noindent\newline{\bf Dokaz.} Kako je $n\in\Z^{+}-2\Z$, možemo uzeti $n=2k+1$, gdje je $k\in\Z^{+}_0$. Imamo:
+
+\begin{equation*}
+(n+1)^2=((2k+1)+1)^2=(2k+2)^2=4k^2+8k+4.
+\end{equation*}
+
+\noindent\newline Takoðer imamo $n+1=(2k+1)+1=2k+2$ i $2n=2(2k+1)=4k+2$. Pokazat æemo kako $4k+2|(4k^2+8k+4)-(2k+2)$, tj. kako $4k+2|4k^2+6k+2$. Po formuli za rješenja kvadratne jednadžbe imamo:
+
+\begin{eqnarray*}
+k_{1,2}&=&\frac{-6\pm\sqrt{6^2-4\cdot 4\cdot 2}}{2\cdot 4}\\\\
+&=&\frac{-6\pm\sqrt{36-32}}{8}=\frac{-6\pm\sqrt{4}}{8}\\\\
+&=&\frac{-6\pm 2}{8}.
+\end{eqnarray*}
+
+\noindent\newline Iz toga dobivamo:
+
+\begin{eqnarray*}
+k_1&=&\frac{-6-2}{8}=\frac{-8}{8}=-1\\\\
+k_2&=&\frac{-6+2}{8}=\frac{-4}{8}=-\frac{1}{2}.
+\end{eqnarray*}
+
+\noindent\newline Po tome je:
+
+\begin{equation*}
+4k^2+6k+2=4\left(k+1\right)\left(k+\frac{1}{2}\right)=\left(k+1\right)\left(4k+2\right).
+\end{equation*}
+
+\noindent\newline Iz gornjeg rezultata vidljivo je kako $(4k+2)|(4k^2+6k+2)$ te je time propozicija dokazana. 
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\noindent{\bf Propozicija.} Neka je $n,k\in\Z^{+}$ i $n>k$. Tada je:
+
+\begin{equation*}
+\binom{n}{k}=\binom{n-1}{k-1}+\binom{n-1}{k}.
+\end{equation*}
+
+\noindent\newline{\bf Dokaz.} Primijetimo kako po ogranièenjima propozicije na $n$ i $k$, u nijednom retku ispod neæemo dobiti negativan faktorijel. Imamo:
+
+\begin{eqnarray*}
+\binom{n-1}{k-1}+\binom{n-1}{k}&=&\frac{(n-1)!}{(n-(k-1))!(k-1)!}+\frac{(n-1)!}{(n-k)!k!}\\\\
+&=&\frac{(n-1)!}{(n-(k-1))(n-k)!(k-1)!}+\frac{(n-1)!}{(n-k)!k(k-1)!}\\\\
+&=&\frac{(n-1)!k+(n-1)!(n-k)}{(n-k)!k!}=\frac{(n-1)!(k+(n-k))}{(n-k)!k!}\\\\
+&=&\frac{(n-1)!n}{(n-k)!k!}=\frac{n!}{(n-k)!k!}=\binom{n}{k}.
+\end{eqnarray*}
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\noindent{\bf Propozicija.} Neka je $n\in\Z^{+}_0$. Tada je:
+
+\begin{equation*}
+\binom{n}{0}=\binom{n}{k}=1.
+\end{equation*}
+
+\noindent\newline{\bf Dokaz.} Po definiciji je:
+
+\begin{eqnarray*}
+\binom{n}{0}&=&\frac{n!}{(n-0)!0!}=\frac{n!}{n!0!}=1,\\\\
+\binom{n}{n}&=&\frac{n!}{(n-n)!n!}=\frac{n!}{0!n!}=1.
+\end{eqnarray*}
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\noindent{\bf Propozicija.} Neka su $n,k\in\Z^{+}_0$ i $n\leq k$. Tada je $\binom{n}{k}\in\Z^{+}$.
+
+\noindent\newline{\bf Dokaz.} Dokaz se provodi matematièkom indukcijom. Ako je $n=k$ ili $k=0$, imamo $\binom{n}{0}=\binom{n}{n}=1$ pa je $\binom{n}{0},\binom{n}{n}\in\Z^{+}$. Za $n=0$ imamo $\binom{0}{k}=1\in\Z^{+}$, za svaki $0\leq k\leq n$ (tj. za $k=0$). Pretpostavimo kako je tvrdnja istinita za neki $n\in\Z^{+}_0$ (i za sve $0\leq k\leq n$; po bazi indukcije smo pokazali kako je toèno za $n=0$ i sve $0\leq k\leq n$, tj. za $k=0$). Za $n+1$, obzirom da æemo promatrati $0<k<n$ (za $k=0$ i $k=n$ je dokazano) i jer je $n+1\in\Z^{+}$, po prethodnoj propoziciji imamo:
+
+\begin{equation*}
+\binom{n+1}{k}=\binom{n}{k-1}+\binom{n}{k}.
+\end{equation*}
+
+\noindent\newline Po pretpostavci indukcije, oba su èlana pozitivni cijeli brojevi pa je i njihov zbroj pozitivan cijeli broj te je $\binom{n+1}{k}\in\Z^{+}$.
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\noindent{\bf Propozicija.} Neka je $p\in P$ i $n\in\N$, $n<p$. Tada:
+
+\begin{equation*}
+\binom{p}{n}\equiv 0\pmod p.
+\end{equation*}
+
+\noindent\newline{\bf Dokaz.} Po formuli za binomni koeficijent imamo:
+
+\begin{equation*}
+\binom{p}{n}=\frac{p!}{(p-n)!n!}=\frac{p(p-1)\cdots(p-n+1)(p-n)!}{(p-n)!n!}=\frac{p(p-1)\cdots(p-n+1)}{n!}.
+\end{equation*}
+
+\noindent\newline Obzirom da u nazivniku imamo $n$ faktora, a svi su strogo manji od $p$ i manji od $n$, oni ne mogu dijeliti $p$, jer je $p$ prost broj (osim u sluèaju kada je $n=1$, no tada je binomni koeficijent oèito jednak $p$). No, jer je binomni koeficijent cijeli broj, po Euklidovoj lemi, $n!$ mora dijeliti preostale èlanove, tj. $n!|(p-1)\cdots(p-n+1)$. Dakle, razlomak $\frac{(p-1)\cdots(p-n+1)}{n!}=k$ je cijeli broj pa imamo:
+
+\begin{equation*}
+\binom{p}{n}=p k.
+\end{equation*}
+
+\noindent\newline Po definiciji djeljivosti, $p|\binom{p}{n}$. Drugim rijeèima, $p|\binom{p}{n}-0$ pa je po definiciji kongruencije:
+
+\begin{equation*}
+\binom{p}{n}\equiv 0\pmod p.
+\end{equation*}
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\newpage
+
+\begin{center}
+{\bf Rješavanje kongruencija}
+\end{center}
+
+\vskip 0.5cm
+
+\noindent{\bf Propozicija.} Neka je $m\in\N$ i $a\in\Z$. Rješenje od $x\equiv a\pmod m$ je svaki $x\in\{a+k m:\ k\in\Z\}$.
+
+\noindent\newline{\bf Dokaz.} Za svaki $k\in\Z$ definiramo $x_k=a+k m$. Tada, uvrstimo to u kongruenciju i dobivamo $x_k\equiv a\pmod m$, tj. $a+k m\equiv a\pmod m$. Po prethodnoj propoziciji to je ekvivalentno $a\equiv a\pmod m$.
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\noindent{\bf Propozicija.} Neka je $m\in\N$ i $a,b\in\Z$ takvi da je $\gcd{(a,m)}=1$. Linearna kongruencija $a x\equiv b\pmod m$ tada ima jedinstveno rješenje modulo $m$.
+
+\noindent\newline{\bf Dokaz.} {\it Postojanje.} Kako je $\gcd{(a,m)}=1$, po Bezoutovoj lemi postoje $a',m'\in\Z$ takvi da je $a'a+m'm=1$, tj. $m'm=1-a'a$. To je ekvivalentno, po definiciji kongruencije, $1\equiv a'a\pmod m$. Uzmemo li dakle $a x\equiv b\pmod m$ i pomnožimo li tu kongruenciju s dobivenim $a'\in\Z$, dobivamo $a'a x\equiv a'b\pmod m$. No, $a'a\equiv 1\pmod m$ pa imamo $x\equiv a'b\pmod m$.
+
+{\it Jedinstvenost.} Pretpostavimo kako postoji $x'\in\Z$ takav da je $a x'\equiv b\pmod m$, ali $x'$ nekongruentno s $x_0$. To znaèi kako $m\nmid x'-x_0$ tj. po teoremu o dijeljenju s ostatkom postoje $q,r\in\Z$, takvi da je $x'-x_0=q m+r$, gdje je $0\leq r<|m|=m$. Stoga je $x'-x_0\equiv r\pmod m$. No, obzirom da je $a x'\equiv b\pmod m$, dobivamo $x'\equiv a_0 b\pmod m$ (po prethodnom postupku). No $x_0=a_0 b$ pa imamo $0\equiv r\pmod m$, tj. $r=m r'$, za neki $r'\in\Z$. Stoga imamo $x'-x_0=q m+m r'$, tj. $x'-x_0=m(q+r')$. Dakle, $x'\equiv x_0\pmod m$, što je u kontradikciji s pretpostavkom da $m\nmid x'-x_0$.
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\noindent{\bf Teorem (Kineski teorem o ostatcima).} Neka su $a,b\in\Z$ i $m,n\in\Z^{+}$ takvi da je $\gcd{(m,n)}=1$. Tada sustav $x\equiv a\pmod m$, $x\equiv b\pmod n$ ima jedinstveno rješenje modulo $m n$.
+
+\noindent\newline{\bf Dokaz.} {\it Postojanje.} Kako je $\gcd{(m,n)}=1$, po Bezoutovoj lemi postoje $p,q\in\Z$ takvi da je $m p+n q=1$. Odatle slijedi $m p\equiv 1\pmod n$ i $n q\equiv 1\pmod m$. Uzmemo li $x_0=m p b+n q a$, lako se vidi kako æe takav $x_0$ zadovoljavati obje kongruencije. Prvo, $m p b+n q a\equiv a\pmod m$ daje $m p b+n q a-a=m s$, za neki $s\in\Z$. Iz toga slijedi $n q a-a=m(s-p b)$, tj. $n q a\equiv a\pmod m$. No, zbog $n q\equiv 1\pmod m$, imamo $a\equiv a\pmod m$. Slièno, $m p b+n q a\equiv b\pmod n$ daje $m p b+n q a-b=n t$, za neki $t\in\Z$. Tada je $m p b-b=n(t-q a)$ što je ekvivalentno kongruenciji $m p b\equiv b\pmod n$. Zbog $m p\equiv 1\pmod n$ imamo $b\equiv b\pmod n$. Dakle, $x_0=m p b+n q a$ je rješenje sustava, a brojevi $p$ i $q$ se mogu dobiti pomoæu Euklidovog algoritma.
+
+{\it Jedinstvenost.} Pretpostavimo kako postoji i $y_0\in\Z$ takav da je $y_0\equiv a\pmod m$ i $y_0\equiv b\pmod n$. Iz toga slijedi $x_0\equiv y_0\pmod m$ i $x_0\equiv y_0\pmod n$. To znaèi kako $m|x_0-y_0$ i $n|x_0-y_0$. Iz prvog uvjeta dobivamo da postoji $q\in\Z$ takav da je $x_0-y_0=m q$. No, kako $n|x_0-y_0$, tj. $n|m q$, obzirom da je $\gcd{(m,n)}=1$, po Euklidovoj lemi imamo $n|q$, tj. postoji $p\in\Z$ takav da je $m q=m n p$. Stoga je $x_0-y_0=m n p$, tj. $x_0\equiv y_0\pmod{m n}$.
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\noindent{\bf Korolar.} Neka je $k\in\Z^{+}-\{1\}$ i neka su $a_1,\ldots,a_k\in\Z$ i $m_1,\ldots,m_k\in\Z$ takvi da je $\gcd{(m_i,m_j)}=1$, za svaki $i\neq j$, $i,j\in\{1,\ldots,k\}$. Tada sustav $x\equiv a_1\pmod{m_1},\ldots,x\equiv a_k\pmod{m_k}$ ima jedinstveno rješenje modulo $m_1\cdots m_k$.
+
+\noindent\newline{\bf Dokaz.} Provodi se po indukciji. Neka je $k=2$. Tada sustav $x\equiv a_1\pmod{m_1}$, $x\equiv a_2\pmod{m_2}$ po prethodnom teoremu ima jedinstveno rješenje $x_0$ modulo $m_1 m_2$. Prepostavimo kako tvrdnja vrijedi za neki $k\in\Z$. Pokažimo da vrijedi za $k+1$. Imamo $x\equiv a_1\pmod{m_1},\ldots,x\equiv a_k\pmod{m_k},x\equiv a_{k+1}\pmod{m_{k+1}}$. Po pretpostavci indukcije, sustav $x\equiv a_1\pmod{m_1},\ldots,x\equiv a_k\pmod{m_k}$ ima jedinstveno rješenje $x_0$ modulo $M=m_1\cdots m_k$. Kako je $\gcd{(m_{k+1},m_i)}=1$, za svaki $i\in\{1,\ldots,k\}$, tada je i $\gcd{(M,m_{k+1})}=1$. Iz toga imamo $M q+m_{k+1} p=1$. Uzmemo:
+
+\begin{equation*}
+y_0=M q a_{k+1}+m_{k+1} p x_0.
+\end{equation*}
+
+\noindent\newline Vidimo kako æe biti $M q a_{k+1}+m_{k+1}p x_0\equiv a_i\pmod{m_i}$, za svaki $i\in\{1,\ldots,k\}$ jer $M q a_{k+1}+m_{k+1}p x_0-a_i=m_i s_i$, gdje je $s_i\in\Z$. No, obzirom da $m_i|M$ (po definiciji broja $M$), imamo $M=m_i t_i$, za neki $t_i\in\Z$. Stoga imamo $m_i t_i q a_{k+1}+m_{k+1} p x_0-a_i=m_i s_i$ što je ekvivalentno $m_{k+1} p x_0-a_i=m_i(s_i-t_i q a_{k+1})$, odnosno $m_{k+1} p x_0\equiv a_i\pmod{m_i}$. Sada još moramo primijetiti kako je, zbog $M q+m_{k+1} p=1$, zapravo $1-m_{k+1}p=M q$, tj. $1-m_{k+1}p=m_i t_i q$. Iz toga dobivamo $m_{k+1}p\equiv 1\pmod{m_i}$ pa iz $m_{k+1} p x_0\equiv a_i\pmod{m_i}$ slijedi $x_0\equiv a_i\pmod{m_i}$, što je u skladu s pretpostavkom. Nadalje, pokazat æemo i kako $y_0\equiv a_{k+1}\pmod{m_{k+1}}$. Imamo $M q a_{k+1}+m_{k+1} p x_0\equiv a_{k+1}\pmod{m_{k+1}}$, tj. $M q a_{k+1}+m_{k+1} p x_0-a_{k+1}=m_{k+1} s_{k+1}$, gdje je $s_{k+1}\in\Z$. To je pak ekvivalentno $M q a_{k+1}-a_{k+1}=m_{k+1}(s_{k+1}-p x_0)$, tj. $M q a_{k+1}\equiv a_{k+1}\pmod{m_{k+1}}$. Još ostaje primijetiti kako iz $M q+m_{k+1} p=1$ slijedi $1-M q=m_{k+1} p$, tj. $M q\equiv 1\pmod{m_{k+1}}$. Stoga iz $M q a_{k+1}\equiv a_{k+1}\pmod{m_{k+1}}$ slijedi $a_{k+1}\equiv a_{k+1}\pmod{m_{k+1}}$, što je istinito. Dakle $y_0$ je rješenje zadanog sustava. Pretpostavimo još kako postoji $z_0\in\Z$ takav da je $z_0\equiv a_1\pmod{m_1},\ldots,z_0\equiv a_{k+1}\pmod{m_{k+1}}$. No, tada je i $z_0\equiv y_0\pmod{m_1},\ldots,z_0\equiv y_0\pmod{m_{k+1}}$ pa $m_i|z_0-y_0$ za svaki $i\in\{1,\ldots,k+1\}$. To naravno povlaèi kako $m_1\cdots m_{k+1}|z_0-y_0$, tj. $z_0\equiv y_0\pmod{m_1\cdots m_{k+1}}$. Time je jedinstvenost rješenje modulo $m_1\cdots m_{k+1}$ dokazana i tvrdnja vrijedi za svaki $k\in\Z$.
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\newpage
+
+\begin{center}
+{\bf Eulerova funkcija}
+\end{center}
+
+\vskip 0.5cm
+
+\noindent{\bf Definicija.} Neka je $x\in\R$. Definiramo $\left\lfloor x\right\rfloor=\max{\{k\in\Z:\ k\leq x\}}$.
+
+\noindent\newline{\bf Primjedba.} Neka je $\frac{n}{m}\in\Q$. Tada je:
+
+\begin{equation*}
+\left\lfloor\frac{n}{m}\right\rfloor=\max{\left\{k\in\Z:\ k\leq\frac{n}{m}\right\}}.
+\end{equation*}
+
+\noindent\newline No, obzirom da je $m\in\Z^{+}$ (ako i nije, možemo namjestiti da bude; za sada neæemo biti toliko precizni niti æemo dokazivati postojanje maksimuma i slièno), imamo:
+
+\begin{equation*}
+\left\lfloor\frac{n}{m}\right\rfloor=\max{\{k\in\Z:\ k m\leq n\}}.
+\end{equation*}
+
+\noindent\newline Lako se vidi kako je $\left\lfloor\frac{n}{m}\right\rfloor$ jednak koeficijentu $k$ koji daje najveæi višekratnik broja $m$ manji od $n$. Stoga je najveæi višekratnik broja $m$ manji od $n$ u stvari $m\left\lfloor\frac{n}{m}\right\rfloor$.
+
+\noindent\newline{\bf Propozicija.} Neka je $m\in\Z^{+}$. Broj višekratnika od $m$ u skupu $\{1,\ldots,n\}$, gdje je $n\in\N$, je $\left\lfloor\frac{n}{m}\right\rfloor$.
+
+\noindent\newline{\bf Dokaz.} Neka je $S=\{1,\ldots,n\}$ i $m\in\Z^{+}$. Višekratnici broja $m$ iz skupa $S$ se tada nalaze u skupu $V=\{k m\in S:\ k\in\Z\}$. Želimo znati $|V|$. Znamo kako je najveæi višekratnik broja $m$ manji od $n$ jednak $v=m\left\lfloor\frac{n}{m}\right\rfloor$. Stoga je $\max{V}=v$. Ukoliko $m\notin V$, tada je (jer $V$ ne sadrži nulu, tj. $0\cdot m$), vrijedi $V=\emptyset$ pa je $|V|=0$. Ako $m\notin V$, to znaèi u biti $n<m$ pa je lako uoèiti kako je $\left\lfloor\frac{n}{m}\right\rfloor=0$ (jer je $\frac{n}{m}<1$ za $n<m$). Ako $m=n$, oèito je $v=1$. No, ako je $m>n$, sigurno je i $m\in V$ i $\min\{V\}=m$. Tada je broj višekratnika u $V$ (ne zaboravimo ukljuèiti i najveæi) jednak
+
+\begin{equation*}
+|V|=\frac{m\left\lfloor\frac{n}{m}\right\rfloor-m}{m}+1=\left\lfloor\frac{n}{m}\right\rfloor.
+\end{equation*}
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\noindent{\bf Definicija.} Neka je zadan skup:
+
+\begin{equation*}
+\varphi_m=\{n\in\Z^{+}:\ (\gcd{(m,n)}=1)\wedge(n\leq m)\}.
+\end{equation*}
+
+\noindent\newline Tada je Eulerova funkcija $\varphi:\Z^{+}\rightarrow\Z^{+}$ definirana kao $\varphi(m)=\left|\varphi_m\right|$.
+
+\noindent\newline{\bf Teorem (Euler\footnote{Ovaj teorem sam dokazao pomoæu teorije grupa u svojoj skripti {\it Abstract Algebra}. Dokaz je, uz poznavanje teorije grupa, vrlo izravan i oèigledan.}).} Neka su $a\in\Z-\{0\}$ i $m\in\Z^{+}-\{1\}$ takvi da je $\gcd{(a,m)}=1$. Tada vrijedi:
+
+\begin{equation*}
+a^{\varphi(m)}\equiv 1\pmod m.
+\end{equation*}
+
+\noindent\newline{\bf Dokaz.} Neka je $S=\{k\in\Z^{+}\cap[1,m-1]:\ \gcd{(a,k)}=1\}$. Oèito je kako je $|S|=\varphi(m)$ jer za svaka dva $k_1\neq k_2$, $k_1,k_2\in S$, vrijedi $k_1\not\equiv k_2\pmod m$ (ako bi bili jednaki modulo $m$, obzirom da su oba manji od $m$, bilo bi $k_1=k_2$, što je u suprotnosti s pretpostavkom da su razlièiti). No, promotrimo sada skup $a S=\{a k\in\Z^{+}:\ k\in S\}$. Svi su elementi u $a S$ razlièiti modulo $m$ jer, ako to ne bi bilo tako, postojali bi $k_1\neq k_2$, $k_1,k_2\in S$, $k\leq\varphi(m)$ takvi da je $a k_1\equiv a k_2\pmod m$. No, obzirom da je $\gcd{(a,m)}=1$, po Bezoutovoj lemi postoje $x,y\in\Z^{+}$ takvi da je $a x+m y=1$, tj. $m y=1-a x$, što implicira $1\equiv a x\pmod m$. Stoga, pomnožimo li $a k_1\equiv a k_2\pmod m$ dobivamo $a x k_1\equiv a x k_2\pmod m$, tj. $k_1\equiv k_2\pmod m$. No, obzirom da su $k_1,k_2\in S$, vrijedi $0<k_1,k_2<m$, pa mora biti $k_1=k_2$, što je u suprotnosti s pretpostavkom da su razlièiti. Stoga vrijedi da su svi elementi u $a S$ razlièiti modulo $m$ pa je $|a S|=|S|=\varphi(m)$. To znaèi kako se svi elementi iz $S$ nalaze u $a S$ modulo $m$ i obratno. Dakle, elementi iz $S$ i $a S$ su jednaki modulo $m$ pa su produkti tih elemenata opet jednaki modulo $m$. Ako je $S=\{a_1,\ldots,a_{\varphi(m)}\}$ imamo:
+
+\begin{equation*}
+a_1 a_2\cdots a_{\varphi(m)}\equiv (a a_1)(a a_2)\cdots(a a_{\varphi(m)})\pmod m.
+\end{equation*}
+
+\noindent\newline Ukoliko preuredimo te elemente s desne strane, dobivamo produkt od $\varphi(m)$ elemenata $a$, pa je:
+
+\begin{equation*}
+a_1 a_2\cdots a_{\varphi(m)}\equiv a^{\varphi(m)} a_1 a_2\cdots a_{\varphi(m)}\pmod m.
+\end{equation*}
+
+\noindent\newline No, obzirom da je $\gcd{(a_i,m)}=1$, tada je takoðer $\gcd{(A,m)}=1$, gdje je $A=a_1\cdots a_{\varphi(m)}$. Po Bezoutovoj lemi postoje $p,q\in\Z$ takvi da je $A p+m q=1$, što implicira $A p\equiv 1\pmod m$. Stoga, pomožimo li obje strane gornje kongruencije s $p$, dobivamo:
+
+\begin{equation*}
+1\equiv a^{\varphi(m)}\pmod m.
+\end{equation*}
+
+\noindent\newline No, to je zbog simetriènosti relacije kongruencije isto što i $a^{\varphi(m)}\equiv 1\pmod m$, što je i trebalo dokazati.
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\noindent{\bf Lema.} Neka je $p\in P$ te $m,n\in\Z^{+}$. Tada, $\gcd{(p^m,n)}=1$ ako i samo ako $\gcd{(p,n)}=1$.
+
+\noindent\newline{\bf Dokaz.} {\it Nužnost.} Neka je $\gcd{(p^m,n)}=1$. Tada postoje $x,y\in\Z$ takvi da je $p^m x+n y=1$. Iz toga dobivamo $p(p^{m-1} x)+n y=1$. Pretpostavimo li da $\gcd{(p,n)}=g$ i $g\neq 1$, tada je $p=p' g$ i $n=n' g$. No iz toga slijedi, obzirom da je $p$ prost i $g\neq 1$, kako je $g=p$ pa je $n=n' p$. Stoga imamo $p(p^{m-1}x)+n'p y=1$. Tada je $p\left(p^{m-1}x+n'y\right)=1$ i mora biti $p=1$, što je nemoguæe jer $1\notin P$. Dakle, $\gcd{(p,n)}=1$. {\it Dovoljnost.} Neka je $\gcd{(p,n)}=1$. Pretpostavimo li kako je $\gcd{(p^m,n)}=g$, gdje je $g\neq 1$, tada $g|p^m$ i $g|n$. Iz $g|p^m$, po Euklidovoj lemi, slijedi kako je $g=p^k$, gdje je $1<k\leq m$. Iz toga bi slijedilo kako $p^k|n$ i da postoji $n'\in\Z$ takav da je $n=n' p^k$, tj. $n=p(n'p^{k-1})$. Stoga $p|n$. No, kako i $p|p$ slijedi $\gcd{(p,n)}=p$, što je u suprotnosti s pretpostavkom.
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\noindent{\bf Teorem.} Vrijedi $\varphi(p^m)=p^{m-1}(p-1)$, za svaki $p\in P$ i $m\in\Z^{+}$.
+
+\noindent\newline{\bf Dokaz.} Promotrimo skup:
+
+\begin{equation*}
+\varphi_{p^m}=\{n\in\Z^{+}:\ (\gcd{(p^m,n)}=1)\wedge(n\leq p^m)\}.
+\end{equation*}
+
+\noindent\newline Po prethodnoj lemi, $\gcd{(p^m,n)}=1$ ako i samo ako $\gcd{(p,n)}=1$. Stoga prethodni skup zapisati na ekvivalentan naèin:
+
+\begin{equation*}
+\varphi_{p^m}=\{n\in\Z^{+}:\ (\gcd{(p,n)}=1)\wedge(n\leq p^m)\}.
+\end{equation*}
+
+\noindent\newline Skup $\varphi_{p^m}$ ne sadrži samo višekratnike broja $p$ manje od $p^m$ (i veæe od $1$). Po prethodnoj propoziciji, broj višekratnika u $\{1,\ldots,p^m\}$ je $\left\lfloor\frac{p^m}{p}\right\rfloor=\left\lfloor p^{m-1}\right\rfloor$. No, jer je $m\geq 1$, tada je $p^{m-1}\in\Z^{+}$ pa mora biti $\left\lfloor p^{m-1}\right\rfloor=p^{m-1}$. Kako skup $\{1,\ldots,p^{m}\}$ sadrži $p^m$ èlanova, broj èlanova u tom skupu koji nisu višekratnici broja $p$ je $p^m-p^{m-1}$. Dakle,
+
+\begin{equation*}
+|\varphi_{p^m}|=p^m-p^{m-1}=p^{m-1}(p-1).
+\end{equation*}
+
+\noindent\newline Dakle, $\varphi(p^m)=p^{m-1}(p-1)$.
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\noindent{\bf Primjedba.} Primijetimo da zbog ovog svojstva, multiplikativnosti Eulerove funkcije (tj. $\varphi(m n)=\varphi(m)\varphi(n)$ ako i samo ako $\gcd{(m,n)}=1$; dokaz æu ostaviti za svoje spise iz algebre) i fundamentalnog teorema aritmetike, Eulerovu funkciju možemo raèunati kao:
+
+\begin{equation*}
+\varphi(n)=\varphi\left(\prod_{\stackrel{p\in P}{\alpha(p)\geq 1}}{p^{\alpha(p)}}\right)=\prod_{\stackrel{p\in P}{\alpha(p)\geq 1}}{\varphi\left(p^{\alpha(p)}\right)}=\prod_{\stackrel{p\in P}{\alpha(p)\geq 1}}{\left(p^{\alpha(p)-1}(p-1)\right)}.
+\end{equation*}
+
+\noindent\newline{\bf Propozicija.} Neka su $m,n\in\Z^{+}$. Ako $n|m$ tada $\varphi(n)|\varphi(m)$.
+
+\noindent\newline{\bf Dokaz.} Zapišimo kvocijent brojeva $m$ i $n$ po fundamentalnom teoremu aritmetike kao:
+
+\begin{equation*}
+\frac{m}{n}=\frac{\prod_{\stackrel{p\in P}{\alpha(p)\geq 1}}{p^{\alpha(p)}}}{\prod_{\stackrel{p\in P}{\beta(p)\geq 1}}{p^{\beta(p)}}}.
+\end{equation*}
+
+\noindent\newline Slièno, možemo promotriti i kvocijent:
+
+\begin{equation*}
+\frac{\varphi(m)}{\varphi(n)}=\frac{\prod_{\stackrel{p\in P}{\alpha(p)\geq 1}}{p^{\alpha(p)-1}(p-1)}}{\prod_{\stackrel{p\in P}{\beta(p)\geq 1}}{p^{\beta(p)-1}(p-1)}}.
+\end{equation*}
+
+\noindent\newline Obzirom da $n|m$, tada za svaki $p\in P$ vrijedi $\alpha(p)-\beta(p)\geq 0$. Takoðer, $\alpha(p)-1-(\beta(p)-1)=\alpha(p)-\beta(p)\geq 0$. Èlanovi $(p-1)$ se takoðer pokrate uz odgovarajuæe $p\in P$, pa je $\frac{\varphi(m)}{\varphi(n)}=q$, gdje je $q\in\Z^{+}$. Iz toga slijedi $\varphi(m)=q\varphi(n)$, tj. $\varphi(n)|\varphi(m)$.
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\newpage
+
+\begin{center}
+{\bf Primitivni korijen}
+\end{center}
+
+\vskip 0.5cm
+
+\noindent{\bf Definicija.} Neka je $m\in\Z^{+}-\{1\}$ i $g\in\Z$, $\gcd{(g,m)}=1$. Ako za svaki $a\in\Z$, gdje je $\gcd{(a,m)}=1$, postoji $k\in\Z$ takav da vrijedi $g^k\equiv a\pmod m$, kažemo da je $g$ {\bf primitivan korijen} modulo $m$.
+
+\noindent\newline{\bf Primjedba.} Kroz teoriju grupa, mogli bismo reæi kako je primitivan korijen generator grupe $\zmodinv{m}$, tj. $g\in\zmod{m}$ takav da vrijedi $\cyc{g}=\zmodinv{m}$ (gdje $\cyc{g}$ oznaèava ciklièku grupu generiranu elementom $g$, a ne principalan ideal polja $\zmod{m}$ generiran elementom $g$).
+
+\noindent\newline{\bf Definicija.} Neka je $m\in\Z^{+}-\{1\}$. {\bf Redom elementa} $a\in\Z$ nazivamo nenegativan broj $n=\min{\{k\in\Z^{+}:\ a^k\equiv 1\pmod m\}}$ i pišemo $\ordm{a}{m}=n$. Ukoliko takav broj ne postoji pišemo $\ordm{a}{m}=0$ i kažemo kako je element $a$ {\bf beskonaènog reda}.
+
+\noindent\newline{\bf Propozicija.} Neka je $m\in\Z^{+}-\{1\}$. Tada, $\ordm{a}{m}>0$ ako i samo ako $\gcd{(a,m)}=1$.
+
+\noindent\newline{\bf Dokaz.} {\it Nužnost.} Neka je $\ordm{a}{m}>0$. Tada je $\ordm{a}{m}\neq 0$ i postoji $k\in\Z^{+}$ takav da je $a^k\equiv 1\pmod m$. Po definiciji relacije kongruencije, postoji $q\in\Z$ takav da je $a^k-1=q m$. Pretpostavimo kako je $\gcd{(a,m)}=g>1$. Tada $a=b g$ i $m=n g$, za neke $b,n\in\Z$. Iz $a^k-1=q m$ dobivamo $(b g)^k-1=q(n g)$. To je pak ekvivalentno izrazu $b^k g^k-1=q n g$, tj. $g(g^{k-1} b^k-q n)=1$. Obzirom da je $g\in\Z^{+}$ i $g^{k-1} b^k-q n\in\Z$, može samo biti $g=1$, što je u kontradikciji s pretpostavkom da je $\gcd{(a,m)}>1$ i mora biti $\gcd{(a,m)}=1$. {\it Dovoljnost.} Pretpostavimo kako je $\gcd{(a,m)}=1$. Po Eulerovom teoremu, $a^{\varphi(m)}\equiv 1\pmod m$. Kako je $\varphi(m)>0$, za svaki $m\in\Z^{+}$, postoji barem jedan element skupa $\min{\{k\in\Z^{+}:\ a^k\equiv 1\pmod m\}}$, pa red elementa $a$ ne može biti nula. Stoga, $\ordm{a}{m}>0$.
+
+\begin{flushright}
+$\square$
+\end{flushright}
+
+\noindent{\bf Teorem.} Neka je $m\in\Z^{+}-\{1\}$ i $a\in\Z$. Ako je $a^k\equiv 1\pmod m$, za neki $k\in\Z$, tada $\ordm{a}{m}|k$.
+
+\noindent\newline{\bf Dokaz.} Pretpostavimo kako je $a^k\cong 1\pmod m$, gdje je $k\in\Z$. Po teoremu o dijeljenju s ostatkom postoje $q,r\in\Z$ takvi da je $k=q\ordm{a}{m}+r$, gdje je $0\leq r<\ordm{a}{m}$. Tada je $a^k=a^{q\ordm{a}{m}+r}=a^{q\ordm{a}{m}}a^r=\left(a^{\ordm{a}{m}}\right)^q a^r$. Kako je $a^k\equiv 1\pmod m$, tada je $\left(a^{\ordm{a}{m}}\right)^q a^r\equiv 1\pmod m$. Takoðer, obzirom da je $a^{\ordm{a}{m}}\equiv 1\pmod m$, imamo $1^q a^r\equiv 1\pmod m$, tj. $a^r\equiv 1\pmod m$. No, obzirom da je $0\leq r<\ordm{a}{m}$, a $\ordm{a}{m}$ je po definiciji najmanji takav broj da je $a^{\ordm{a}{m}}\equiv 1\pmod m$, mora biti $r=0$. Tada iz $k=q\ordm{a}{m}+r$ slijedi $k=q\ordm{a}{m}$, tj. $\ordm{a}{m}|k$.
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\noindent{\bf Korolar.} Neka su $m\in\Z^{+}-\{1\}$ i $a\in\Z$ takvi da je $\gcd{(a,m)}=1$. Tada $\ordm{a}{m}|\varphi(m)$.
+
+\noindent\newline{\bf Dokaz.} Kako je $\gcd{(a,m)}=1$, po Eulerovom teoremu vrijedi $a^{\varphi(m)}\equiv 1\pmod m$. Po prethodnom teoremu tada $\ordm{a}{m}|\varphi(m)$.
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\noindent{\bf Teorem.} Neka je $m\in\Z^{+}-\{1\}$ i $a\in\Z$ takvi da je $\gcd{(a,m)}=1$. Tada, $\ordm{a}{m}=\varphi(m)$ ako i samo ako za svaki $p\in P$ takav da $p|\varphi(m)$ vrijedi:
+
+\begin{equation*}
+a^{\frac{\varphi(m)}{p}}\not\equiv 1\pmod m.
+\end{equation*}
+
+\noindent\newline{\bf Dokaz.} {\it Nužnost.} Pretpostavimo kako je $\ordm{a}{m}=\varphi(m)$, ali kako postoji $p\in P$ takav da $p|\varphi(m)$ i $a^{\frac{\varphi(m)}{p}}\equiv 1\pmod m$. Obzirom da je $\frac{\varphi(m)}{p}\in\Z^{+}$ i kako je $\frac{phi(m)}{p}<\varphi(m)=\ordm{a}{m}$, dolazimo u kontradikciju s èinjenicom da je $\varphi(m)$ red od $a$. Stoga mora biti $a^{\frac{\varphi{m}}{p}}\not\equiv 1\pmod m$, za svaki $p\in P$ takav da $p|\varphi(m)$.
+
+{\it Dovoljnost.} Pretpostavimo da je $a^{\frac{\varphi(m)}{p}}\not\equiv 1\pmod m$ za svaki $p\in P$ takav da $p|\varphi(m)$. Po korolaru prethodnog teorema, jer je $\gcd{(a,m)}=1$, slijedi $\ordm{a}{m}|\varphi(m)$, tj. postoji $q\in\Z$ takav da je $\varphi(m)=q\ordm{a}{m}$. Ako je $q=1$, tada je $\varphi(m)=\ordm{a}{m}$ pa smo gotovi. Ako je $q>1$, tada $q|\varphi(m)$ pa postoji $p\in P$ takav da $p|q$ i $p|\varphi(m)$. Stoga imamo:
+
+\begin{equation*}
+a^{\frac{\varphi(m)}{p}}=a^{\frac{q\ordm{a}{m}}{p}}.
+\end{equation*}
+
+\noindent\newline Obzirom da $p|q$, možemo to preslagati tako da bude:
+
+\begin{equation*}
+a^{\frac{\varphi(m)}{p}}=\left(a^{\ordm{a}{m}}\right)^{\frac{q}{p}}.
+\end{equation*}
+
+\noindent\newline Kako je $a^{\ordm{a}{m}}\equiv 1\pmod m$, tada je $\left(a^{\ordm{a}{m}}\right)^{\frac{q}{p}}\equiv 1^{\frac{q}{p}}\pmod m\equiv 1\pmod m$ te dobivamo:
+
+\begin{equation*}
+a^{\frac{\varphi(m)}{p}}=\left(a^{\ordm{a}{m}}\right)^{\frac{q}{p}}\equiv 1\pmod m.
+\end{equation*}
+
+\noindent\newline Iz toga naravno slijedi $a^{\frac{\varphi(m)}{p}}\equiv 1\pmod m$, što je u suprotnosti s pretpostavkom da za svaki $p\in P$ takav da $p|\varphi(m)$ vrijedi $a^{\frac{\varphi(m)}{p}}\not\equiv 1\pmod p$. Dakle, mora biti $q=1$ pa opet dobivamo $\ordm{a}{m}=\varphi(m)$.
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\noindent{\bf Korolar.} Neka su $m\in\Z^{+}-\{1\}$ i $a\in\Z$ takvi da je $\gcd{(a,m)}=1$. Tada, $\ordm{a}{m}=\varphi(m)$ ako i samo ako je $a$ primitivni korijen modulo $m$.
+
+\noindent\newline{\bf Dokaz.} {\it Nužnost.} Neka je $\ordm{a}{m}=\varphi(m)$. Prisjetimo se kako je $\zmodinv{m}$ grupa s $\varphi(m)$ elemenata. Obzirom da je $\gcd{(a,m)}=1$, vrijedi $\overline{a}\in\zmodinv{m}$. Tada je $\overline{a}^{\ordm{a}{m}}=\overline{1}$, jer je $a^{\ordm{a}{m}}\equiv 1\pmod m$. To znaèi kako $\ord{\overline{a}}|{\ordm{a}{m}}$. No, takoðer, $\overline{a}^{\ord{\overline{a}}}=\overline{1}$ što implicira $a^{\ord{\overline{a}}}\equiv 1\pmod m$ pa vrijedi $\ordm{a}{m}|\ord{\overline{a}}$ i na kraju $\ord{\overline{a}}=\ordm{a}{m}=\varphi(m)$. Stoga, uzmemo li $\cyc{\overline{a}}\leq\zmodinv{m}$, vrijedi $\left|\cyc{\overline{a}}\right|=\varphi(m)$. Zbog prethodne dvije jednakosti, i jer su $\cyc{a}$ i $\zmodinv{m}$ konaèni skupovi, slijedi $\cyc{\overline{a}}=\zmodinv{m}$. Uzmimo $b\in\Z$, $\gcd{(b,m)}=1$ i pokažimo kako postoji $k\in\Z$ takav da je $a^k\equiv b\pmod m$. Kako je $\gcd{(b,m)}=1$, vrijedi $\overline{b}\in\zmodinv{m}$ pa je i $\overline{b}\in\cyc{\overline{a}}$. To znaèi kako postoji $k\in\Z$ takav da je $\overline{a}^k=\overline{b}$, drugim rijeèima $a^k\equiv b\pmod m$. Dakle $a$ je primitivni korijen modulo $m$.
+
+{\it Dovoljnost.} Neka je $a$ primitivni korijen modulo $m$. Tada je $\overline{a}\in\zmodinv{m}$. Uzmimo $\cyc{\overline{a}}\leq\zmodinv{m}$. Pretpostavimo kako postoji $\overline{b}\in\zmodinv{m}-\cyc{a}$. To bi znaèilo kako ne postoji $k\in\Z$ takav da vrijedi $\overline{b}=\overline{a}^k$, tj. $a^k\equiv b\pmod m$, što je u suprotnosti s pretpostavkom da je $a$ primitivni korijen modulo $m$. To znaèi da je $\cyc{\overline{a}}=\zmodinv{m}$. No, to povlaèi i $\left|\cyc{\overline{a}}\right|=\left|\zmodinv{m}\right|=\varphi(m)$, a takoðer i $\ord{\overline{a}}=\varphi(m)$. Kako je $a^{\ordm{a}{m}}\equiv 1\pmod m$, to znaèi da je $\overline{a}^{\ordm{a}{m}}=\overline{1}$, pa slijedi da $\ord{\overline{a}}|\ordm{a}{m}$, tj. $\varphi(m)|\ordm{a}{m}$. No, po prethodnoj propoziciji imamo $\ordm{a}{m}|\varphi(m)$, pa to implicira $\ordm{a}{m}=\varphi(m)$.
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\noindent{\bf Primjedba.} Prethodni teorem uz korolar govori takoðer kako je $a$ primitivni korijen modulo $m$ ako i samo ako za svaki $p\in P$ takav da $p|\varphi(m)$ vrijedi $a^{\frac{\varphi(m)}{p}}\not\equiv 1\pmod m$. Ovu èinjenicu koristimo za provjeru je li $a$ primitivni korijen modulo $m$.
+
+\noindent\newline{\bf Teorem.} Neka su $m\in\Z^{+}-\{1\}$ i $a\in\Z$ takvi da je $\gcd{(a,m)}=1$. Neka je $k\in\Z^{+}$. Tada vrijedi:
+
+\begin{equation*}
+\ordm{a^k}{m}=\frac{\ordm{a}{m}}{\gcd{\left(\ordm{a}{m},k\right)}}.
+\end{equation*}
+
+\noindent\newline{\bf Dokaz.} Kako je $\left(a^k\right)^{\ordm{a^k}{m}}\equiv 1\pmod m$, vrijedi $\left(a^k\right)^{\ordm{a^k}{m}}=a^{k\ordm{a^k}{m}}\equiv 1\pmod m$. Stoga po prethodnom teoremu $\ordm{a}{m}|k\ordm{a^k}{m}$ pa postoji $q\in\Z$ takav da je $k\ordm{a^k}{m}=q\ordm{a}{m}$. Neka je $g=\gcd{\left(\ordm{a}{m},k\right)}$. Tada je $k=k'g$ i $\ordm{a}{m}=o'g$. Tada iz $k\ordm{a^k}{m}=q\ordm{a}{m}$ dobivamo $k'g\ordm{a^k}{m}=q o'g$, tj. $k'\ordm{a^k}{m}=q o'$. Kako je $\gcd{\left(k',o'\right)}=1$, i kako $o'|k'\ordm{a^k}{m}$, po Euklidovoj lemi mora biti $o'|\ordm{a^k}{m}$. Dalje, $\left(a^k\right)^{o'}=a^{k o'}=a^{k'o'g}=a^{k'\ordm{a}{m}}\equiv 1\pmod m$. Po prethodnom teoremu, $\ordm{a^k}{m}|o'$. To, uz $o'|\ordm{a^k}{m}$, implicira $\ordm{a^k}{m}=o'$. Iz $\ordm{a}{m}=o'g$ vidimo kako je $\ordm{a^k}{m}=o'=\frac{\ordm{a}{m}}{g}$.
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\noindent{\bf Lema.} Neka su $m\in\Z^{+}-\{1\}$ i $a\in\Z$ takvi da je $\gcd{(a,m)}=1$. Ako je
+
+\begin{equation*}
+a^{\frac{\varphi(m)}{p}}\not\equiv 1\pmod m,
+\end{equation*}
+
+\noindent\newline za neki $p\in P$ takav da $p|\varphi(m)$, tada je
+
+\begin{equation*}
+a^{\frac{\varphi(m)}{p^k}}\not\equiv 1\pmod m,
+\end{equation*}
+
+\noindent\newline za svaki $k\in\Z^{+}$ takav da $p^k|\varphi(m)$.
+
+\noindent\newline{\bf Dokaz.} Pretpostavimo kako je:
+
+\begin{equation*}
+a^{\frac{\varphi(m)}{p}}\not\equiv 1\pmod m,
+\end{equation*}
+
+\noindent\newline ali da za neki $p^k|\varphi(m)$ vrijedi:
+
+\begin{equation*}
+a^{\frac{\varphi(m)}{p^k}}\equiv 1\pmod m.
+\end{equation*}
+
+\noindent\newline Primijetimo kako je $k\geq 1$, pa je $k-1\geq 0$. Tada imamo:
+
+\begin{equation*}
+\left(a^{\frac{\varphi(m)}{p^k}}\right)^{p^{k-1}}\equiv 1\pmod m.
+\end{equation*}
+
+\noindent\newline No, to je u kontradikciji s
+
+\begin{equation*}
+\left(a^{\frac{\varphi(m)}{p^k}}\right)^{p^{k-1}}=a^{\frac{\varphi(m)}{p}}\not\equiv 1\pmod m,
+\end{equation*}
+
+\noindent\newline pa naša pretpostavka nije bila valjana.
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\noindent{\bf Teorem.} Neka su $m\in\Z^{+}-\{1\}$ i $a\in\Z$ takvi da je $\gcd{(a,m)}=1$. Ako je
+
+\begin{equation*}
+a^{\frac{\varphi(m)}{p}}\not\equiv 1\pmod m,
+\end{equation*}
+
+\noindent\newline za neki $p\in P$ takav da $p|\varphi(m)$, tada je
+
+\begin{equation*}
+\ordm{a^{\frac{\varphi(m)}{p^{\alpha}}}}{m}=p^{\alpha}.
+\end{equation*}
+
+\noindent\newline{\bf Dokaz.} Neka je po fundamentalnom teoremu aritmetike $\varphi(m)=\prod_{i=1}^{n}{p_i^{\alpha_i}}$. Uzmimo $p=p_1$ i $\alpha=\alpha_1$. Tada $\ordm{a}{m}|\varphi(m)$ pa je $\ordm{a}{m}=p_1^{\beta_1}\cdots p_n^{\beta_n}$. Vidimo kako je:
+
+\begin{equation*}
+\ordm{a^{\frac{\varphi(m)}{p^{\alpha_1}}}}{m}=\frac{p_1^{\beta_1}\cdots p_n^{\beta_n}}{p_2^{m_2}\cdots p_n^{m_n}},
+\end{equation*}
+
+\noindent\newline gdje je $m_i=\min{\{\alpha_i,\beta_i\}}$. Ako je $m_i=\alpha_i$ tada je $\alpha_1\leq\beta_1$ pa ne može biti $p^{\beta_1}|p^{\alpha_1}$. Dakle, mora biti $m_i=\beta_i$. Stoga je:
+
+\begin{equation*}
+\ordm{a^{\frac{\varphi(m)}{p^{\alpha_1}}}}{m}=\frac{p_1^{\beta_1}\cdots p_n^{\beta_n}}{p_2^{\beta_2}\cdots p_n^{\beta_n}}=p_1^{\beta_1}.
+\end{equation*}
+
+\noindent\newline Pretpostavimo kako je $\beta_1<\alpha_1$. Tada je:
+
+\begin{equation*}
+\left(a^{\frac{\varphi(m)}{p^{\alpha_1}}}\right)^{p^\beta_1}=a^{\frac{\varphi(m)}{p^{\alpha_1-\beta_1}}}\equiv 1\pmod m.
+\end{equation*}
+
+\noindent\newline Po prethodnoj lemi, obzirom da je $\alpha_1-\beta_1>0$ i jer je
+
+\begin{equation*}
+a^{\frac{\varphi(m)}{p_1}}\not\equiv 1\pmod m,
+\end{equation*}
+
+\noindent\newline slijedi kako je:
+
+\begin{equation*}
+a^{\frac{\varphi(m)}{p^{\alpha_1-\beta_1}}}\not\equiv 1\pmod m.
+\end{equation*}
+
+\noindent\newline Dakle, ne može biti $\beta_1<\alpha_1$ pa mora biti $\beta_1\geq\alpha_1$, što uz $\beta_1\leq\alpha_1$ daje $\beta_1=\alpha_1$. Stoga je:
+
+\begin{equation*}
+\ordm{a^{\frac{\varphi(m)}{p^{\alpha_1}}}}{m}=p_1^{\alpha_1}.
+\end{equation*}
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\noindent{\bf Primjedba.} Gornji teorem je osnova postupka za pronalaženje primitivnih korijena modulo $m$. No, ostaje još pitanje postoji li primitivan korijen modulo $m$, za svaki $m\in\Z^{+}-\{1\}$ te, ukoliko postoji, koliko ih postoji? Ukoliko $m$ nije prost broj, primitivni korijeni modulo $m$ ne moraju nužno postojati. No, ako je $m$ prost broj, postojat æe, i o tome, kao i o njihovom broju, govorit æe sljedeæi teorem.
+
+\noindent\newline{\bf Lema.} Neka je $m\in\Z^{+}-\{1\}$ i neka su $a,b\in\Z$ takvi da je $\gcd{\{\ordm{a}{m},\ordm{b}{m}\}}=1$. Tada vrijedi $\ordm{a b}{m}=\ordm{a}{m}\ordm{b}{m}$.
+
+\noindent\newline{\bf Dokaz.} Uzmimo $\ordm{a}{m}=p$ i $\ordm{b}{m}=q$. Takoðer, neka je $l=\lcm{p,q}=p q$. Tada je $(a b)^l=a^l b^l=a^{p q} b^{p q}=(a^p)^q(b^q)^p\equiv 1\pmod p$, jer su $p$ i $q$ redovi elemenata $a$ i $b$, istim redoslijedom. To povlaèi kako $\ordm{a b}{m}|l$, tj. postoji $t\in\Z$ takav da je $l=t\ordm{a b}{m}$. Iz toga dobivamo $\ordm{a b}{m}=\frac{p q}{t}$. Neka je $t_1=\gcd{(t,p)}$. Tada $t_1|t$ pa postoji $t_2\in\Z$ takav da je $t=t_1 t_2$. Kako je $\ordm{a b}{m}\in\Z$, tada je $\frac{p}{t_1}\in\Z$ i $\frac{q}{t_2}\in\Z$. Pretpostavimo da je $\gcd{(t_1,t_2)}=t'$. Tada je $t_1=t' s_1$ i $t_2=t' s_2$. To bi impliciralo, jer $t_1|p$ i $t_2|q$, da $t'|p$ i $t'|q$, što je u suprotnosti s pretpostavkom da su $p$ i $q$ relativno prosti. Dakle, $\gcd{(t_1,t_2)}=1$. Tada imamo:
+
+\begin{equation*}
+(a b)^{\frac{p q}{t_1 t_2}}\equiv 1\pmod p.
+\end{equation*}
+
+\noindent\newline No, takoðer vrijedi i:
+
+\begin{eqnarray*}
+(a b)^{t_1\frac{p q}{t_1 t_2}}&\equiv& 1\pmod p,\\\\
+(a b)^{t_2\frac{p q}{t_1 t_2}}&\equiv& 1\pmod p.
+\end{eqnarray*}
+
+\noindent\newline Iz tih kongruencija, istim redoslijedom, dobivamo:
+
+\begin{eqnarray*}
+a^{p\frac{q}{t_2}}b^{p\frac{q}{t_2}}&\equiv& 1\pmod p,\\\\
+a^{q\frac{p}{t_1}}b^{q\frac{p}{t_1}}&\equiv& 1\pmod p.
+\end{eqnarray*}
+
+\noindent\newline No, kako je $p$ red od $a$, a $q$ red od $b$, te dvije kongruencije možemo, istim redoslijedom zapisati kao:
+
+\begin{eqnarray*}
+b^{p\frac{q}{t_2}}&\equiv& 1\pmod p,\\\\
+a^{q\frac{p}{t_1}}&\equiv& 1\pmod p.
+\end{eqnarray*}
+
+\noindent\newline No, to znaèi kako $q|p\frac{q}{t_2}$ i $p|q\frac{p}{t_1}$. Po Euklidovoj lemi, zbog $\gcd{(p,q)}=1$, i jer je $\frac{q}{t_2},\frac{p}{t_1}\in\Z$, imamo $q|\frac{q}{t_2}$ i $p|\frac{p}{t_1}$, tj. postoje $r_1,r_2\in\Z$ takvi da je $\frac{q}{t_2}=r_1 q$ i $\frac{p}{t_1}=r_2 p$. To implicira $r_1 t_2=1$ i $t_1 r_2=1$, što je moguæe samo ako je $r_1=t_2=r_2=t_1=1$. Dakle, $\ordm{a b}{m}=\frac{p q}{t}=\frac{p q}{t_1 t_2}=p q=\ordm{a}{m}\ordm{b}{m}$.
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\noindent{\bf Teorem.} Neka je $p\in P$. Tada je $\zmodinv{p}$ ciklièka grupa\footnote{Obzirom da je ciklièka, postoji element $\overline{g}\in\zmodinv{p}$ takav da je $\cyc{\overline{g}}=\zmodinv{p}$, tj. za svaki $\overline{a}\in\zmodinv{p}$ postoji $k\in\Z$ takav da je $\overline{g}^k=\overline{a}$, tj. $g^k\equiv a\pmod p$.}.
+
+\noindent\newline{\bf Dokaz.} Neka su $\{p_1,\cdots,p_m\}\subset P$ djelitelji od $\varphi(p)=p-1$. Neka je $p_i\in\{p_1,\cdots,p_m\}$. Pretpostavimo kako ne postoji element $a\in\Z$, $\gcd{(a,p)}=1$, takav da je:
+
+\begin{equation*}
+a^{\frac{p-1}{p_i}}\not\equiv 1\pmod p.
+\end{equation*}
+
+\noindent\newline Tada, za svaki $a\in\Z$ vrijedi:
+
+\begin{equation*}
+a^{\frac{p-1}{p_i}}\equiv 1\pmod p.
+\end{equation*}
+
+\noindent\newline No, obzirom da je $\zmodinv{p}$ polje, možemo uzeti $\overline{a}\in\zmodinv{p}$ i tada bi
+
+\begin{equation*}
+a^{\frac{p-1}{p_i}}\equiv 1\pmod p
+\end{equation*}
+
+\noindent\newline bilo ekvivalentno upravo
+
+\begin{equation*}
+\overline{a}^{\frac{p-1}{p_i}}-\overline{1}=\overline{0}.
+\end{equation*}
+
+\noindent\newline To implicira kako je svaki $\overline{a}\in\zmodinv{p}$ korijen polinoma:
+
+\begin{equation*}
+p(x)=x^{\frac{p-1}{p_i}}-\overline{1}.
+\end{equation*}
+
+\noindent\newline No, kako je $\left|\zmodinv{p}\right|=p-1$, to bi znaèilo da $p(x)$ ima $p-1$ korijena, što je nemoguæe jer je $\deg{p(x)}=\frac{p-1}{p_i}<p-1$. Dakle, mora postojati $\overline{a_i}\in\zmodinv{p}$ takav da vrijedi:
+
+\begin{equation*}
+\overline{a_i}^{\frac{p-1}{p}}\neq\overline{1}
+\end{equation*}
+
+\noindent\newline što je ekvivalentno izrazu:
+
+\begin{equation*}
+a_i^{\frac{p-1}{p_i}}\not\equiv 1\pmod p.
+\end{equation*}
+
+\noindent\newline Po prethodnom teoremu je tada:
+
+\begin{equation*}
+\ordm{a_i^\frac{p-1}{p_i^{\alpha}}}{p}=p_i^{\alpha},
+\end{equation*}
+
+\noindent\newline gdje je $\alpha=\max{\{k\in\Z:\ p_i^k|p-1\}}$. Obzirom da je izbor $p_i$ bio arbitraran, za svaki $p_i$ postoji $a_i$ èiji je red jednak najveæoj potenciji $p_i$ koja dijeli $p-1$. Po prethodnoj lemi, jer je $\gcd{\left(p_i^{\alpha_i},p_j^{\alpha_j}\right)}=1$, za svaki $i\neq j$, $i,j\in\{1,\ldots,m\}$, vrijedi:
+
+\begin{equation*}
+\ordm{a_1\cdots a_m}{p}=p^{\alpha_1}\cdots p^{\alpha_m}=p-1.
+\end{equation*}
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\noindent{\bf Korolar.} Neka je $p\in P$. Tada, za svaki $d\in\Z$ takav da $d|p-1$ postoji $a\in\Z$ takav da je $\ordm{a}{p}=d$.
+
+\noindent\newline{\bf Dokaz.} Po prethodnom teoremu, postoji $a\in\Z$ takav da je $\ordm{a}{p}=p-1$. Kako $d|p-1$, postoji $q\in\Z$ takav da je $p-1=q d$. Primijetimo kako je, jer $q|p-1$, tada $\gcd{(p-1,q)}=q$. Po formuli za red potencije elementa $a$ imamo:
+
+\begin{equation*}
+\ordm{a^{q}}{p}=\frac{p-1}{\gcd{(p-1,q)}}=\frac{p-1}{q}=d.
+\end{equation*}
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\noindent{\bf Korolar.} Neka je $p\in P$. Tada, za svaki $d\in\Z$ takav da $d|p-1$, postoji $\varphi(d)$ elemenata, nekongruentnih $p$, reda $d$ modulo $p$.
+
+\noindent\newline{\bf Dokaz.} Po prethodnom korolaru, postoji $a\in\Z$ takav da je $\ordm{a}{p}=d$. Promotrimo skup $C(a)=\{a^k:\ k\in\{0,\ldots,d-1\}\}$. Pretpostavimo kako je $a^i\equiv a^j\pmod p$, za neki $i\neq j$, $i,j\in\{0,\ldots,d-1\}$. Bez smanjenja opæenitosti pretpostavimo $i>j$. Obzirom da je $0\leq i,j<d$, tada je $0\leq i-j<d=\ordm{a}{p}$. Tada iz $a^i\equiv a^j\pmod p$ slijedi  $a^{i-j}\equiv 1\pmod p$. No, to bi znaèilo kako $\ordm{a}{p}|i-j$, tj. postoji $q\in\Z$ takav da je $i-j=q\ordm{a}{p}<\ordm{a}{p}$. Kako je $\ordm{a}{p}>0$ dobivamo $i-j=q<1$, što je moguæe, obzirom da je $i-j\in\Z^{+}_0$, samo ako je $i-j=0$. No iz toga bi slijedilo $i=j$, što je u suprotnosti s pretpostavkom da je $i\neq j$. Dakle, svi elementi u $C(a)$ su nekongruentni modulo $p$ i ima ih upravo $d$. Po prethodnoj formuli imamo:
+
+\begin{equation*}
+\ordm{a^k}{p}=\frac{\ordm{a}{p}}{\gcd{(\ordm{a}{p},k)}}.
+\end{equation*}
+
+\noindent\newline Lako je vidjeti kako æe biti $\ordm{a^k}{p}=\ordm{a}{p}(=d)$ ako i samo ako je:
+
+\begin{equation*}
+\gcd{(\ordm{a}{p},k)}=1,
+\end{equation*}
+
+\noindent\newline tj. $\gcd{(d,k)}=1$. Takvih elemenata nekongruentno $p$ (koji se nalaze u $C(a)$) ima upravo, najmanje, $\varphi(d)$ (oèigledno iz same definicije Eulerove funkcije). No, postoji li moguænost da postoji neki element reda $d$ modulo $p$ a da nije u $C(a)$? Promotrimo jednadžbu $x^d-1\equiv 0\pmod p$. Oèito je kako $(a^k)^d\equiv 1\pmod p$ (jer je $\ordm{a}{p}=d$, pa je $(a^d)^k\equiv 1\pmod p$). Dakle, svi elementi iz $C(a)$ su rješenja kongruencije $x^d-1\equiv 0\pmod p$. No, obzirom da se i dalje radi o polju $\zmod{p}$, polinom $x^d-\overline{1}$ takvih rješenja može imati najviše $d$. Stoga, sva su rješenja u $C(a)$ i ne mogu biti u nijednom drugom skupu. To implicira kako je broj elemenata reda $d$ modulo $p$ toèno $\varphi(d)$.
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+\end{document}

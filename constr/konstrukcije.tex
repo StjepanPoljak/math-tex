@@ -1,0 +1,1599 @@
+\documentclass [12pt]{article}
+\usepackage{latexsym,amsfonts,amssymb,amsmath,amsbsy}
+\usepackage{graphics}
+\usepackage[croatian]{babel}
+\usepackage[cp1250]{inputenc}
+\usepackage{color}
+
+\textwidth=15.5cm \textheight=24cm
+
+\setlength{\oddsidemargin}{.25in}
+\setlength{\evensidemargin}{.25in} \addtolength\topmargin{-.5in}
+
+\renewcommand{\thesection}{\arabic{section}.}
+\renewcommand{\thesubsection}{\thesection\arabic{subsection}.}
+\renewcommand{\thesubsubsection}{\thesubsection\arabic{subsubsection}.}
+
+\newtheorem{sadrzaj}{Sadr\v{z}aj}[section]
+\newtheorem{zadatak}{Zadatak}[section]
+\newtheorem{primjer}{Primjer}[section]
+\newtheorem{rjesenje}{Rje\v{s}enje}[section]
+\newtheorem{teorem}{Teorem}[section]
+\newtheorem{korolar}{Korolar}[section]
+\newtheorem{propozicija}{Propozicija}[section]
+\newtheorem{problem}{Problem}[section]
+\newtheorem{primjedba}{Primjedba}[section]
+\newtheorem{tvrdnja}{Tvrdnja}[section]
+\newtheorem{lema}{Lema}[section]
+\newtheorem{Def}{Definicija}[section]
+\renewcommand{\thesadrzaj}{\thesection\arabic{sadrzaj}}
+\renewcommand{\thezadatak}{\thesection\arabic{zadatak}}
+\renewcommand{\therjesenje}{\thesection\arabic{rjesenje}}
+\renewcommand{\theprimjer}{\thesection\arabic{primjer}}
+\renewcommand{\thetvrdnja}{\thesection\arabic{tvrdnja}}
+\renewcommand{\theteorem}{\thesection\arabic{teorem}}
+\renewcommand{\thekorolar}{\thesection\arabic{korolar}}
+\renewcommand{\thepropozicija}{\thesection\arabic{propozicija}}
+\renewcommand{\theproblem}{\thesection\arabic{problem}}
+\renewcommand{\theprimjedba}{\thesection\arabic{primjedba}}
+\renewcommand{\thelema}{\thesection\arabic{lema}}
+\renewcommand{\theDef}{\thesection\arabic{Def}}
+
+\def\C{{\mathbb{C}}}
+\def\R{{\mathbb{R}}}
+\def\Z{{\mathbb{Z}}}
+\def\N{{\mathbb{N}}}
+\def\R{{\mathbb{R}}}
+\def\Q{{\mathbb{Q}}}
+\def\C{{\mathbb{C}}}
+\def\N{{\mathbb{N}}}
+\def\Z{{\mathbb{Z}}}
+
+\newcommand{\ord}[1]{\textnormal{ord}\left(#1\right)}
+\newcommand{\lcm}[1]{\textnormal{lcm}\left(#1\right)}
+\newcommand{\dom}[1]{\textnormal{dom}\left(#1\right)}
+\newcommand{\cod}[1]{\textnormal{cod}\left(#1\right)}
+\renewcommand{\ker}[1]{\textnormal{ker}\left(#1\right)}
+\newcommand{\ran}[1]{\textnormal{ran}\left(#1\right)}
+\newcommand{\cyc}[1]{\left\langle#1\right\rangle}
+\newcommand{\Aut}[1]{\textnormal{Aut}\left(#1\right)}
+\newcommand{\cis}[1]{\textnormal{cis}\left(#1\right)}
+\newcommand{\Orb}[2]{\textnormal{Orb}_{#2}\left(#1\right)}
+\newcommand{\Stab}[2]{\textnormal{Stab}_{#2}\left(#1\right)}
+\newcommand{\End}[1]{\textnormal{End}\left(#1\right)}
+\newcommand{\Fix}[2]{\textnormal{Fix}_{#2}\left(#1\right)}
+\newcommand{\Norm}[2]{\textnormal{N}_{#2}\left(#1\right)}
+\newcommand{\Syl}[2]{\textnormal{Syl}_{#1}\left(#2\right)}
+\newcommand{\rad}[1]{\textnormal{rad}\left(#1\right)}
+\newcommand{\Ann}[1]{\textnormal{Ann}\left(#1\right)}
+
+\font\tencyr=wncyr10
+
+\def\cyr{\tencyr\cyracc}
+
+\begin{document}
+\baselineskip=17pt
+
+\begin{center}
+{\bf Konstrukcija pravilnog peterokuta}
+\end{center}
+
+\vskip 0.5cm
+
+Kako bismo konstruirali pravilan peterokut, oèito je kako moramo biti u stanju, koristeæi samo šestar i ravnalo, konstruirati njegov karakteristièan trokut, te onda nanijeti njegovu bazu pet puta na kružnicu koja za središte ima vrh nasuprotan bazi tog trokuta, a za polumjer duljinu krakova. No, za to moramo, takoðer biti u stanju konstruirati ili sve stranice ili barem jedan kut karakteristiènog trokuta. Kako duljina baze zapravo implicitno ovisi o velièini kuta, koncentrirat æemo se na konstrukciju kuta $\alpha$, kao što je prikazano na slici ispod.
+
+\begin{figure}[h]\label{verumest}
+\centerline{\scalebox{0.4}{\includegraphics{peterokut1.eps}}}
+\caption{Peterokut i njegov karakteristièan trokut.}
+\end{figure}
+
+\noindent\newline Primijetimo kako smo oznaèili i dužinu $\overline{BN}$, koja æe biti kritièna u našoj konstrukciji, jer sijeèe dužinu $\overline{OA}$ pod pravim kutom. To se može lako pokazati jer su trokuti $OAB$ i $OEA$ sukladni. Takoðer su, kako vrijedi $|OB|=|OE|$ i kako je kut izmeðu pri vrhu $O$ u oba trokuta velièine $\alpha$, trokuti $ONB$ i $OEN$ sukladni. Stoga, kutovi $\angle NBO$ i $\angle OEN$ imaju jednake velièine, a isto tako i $\angle ONB$ i $\angle ENO$ (oznaèimo kraæe s $\gamma_1$ i $\gamma_2$). Kako $\gamma_1$ i $\gamma_2$ leže na istom pravcu, njihov zbroj mora biti $180^{\circ}$, i.e. mora biti $\gamma_1+\gamma_2=180^{\circ}$. Ali, $\gamma_1=\gamma_2$ (oznaèimo sad oba s $\gamma$), jer smo dokazali kako se radi o sukladnim trokutima pa mora vrijediti $2\gamma=180^{\circ}$, tj. $\gamma=90^{\circ}$. Iako ne znamo, u nekom smislu, konstruirati kut $\alpha=\frac{360^{\circ}}{5}=72^{\circ}$, možemo zaobiæi problem konstrukcijom dužine $ON$, a zatim okomice iz te dužine te onda nanijeti duljinu $OB$ iz vrha $O$ na $BN$, te tako zapravo dobiti kut $\alpha$. No, duljina dužine $ON$ je zapravo jednaka kosinusu kuta $\alpha$. Stoga se naš problem svodi na izraèunavanje kosinusa kuta od $72^{\circ}$. U ovom koraku èinimo bitan prijelaz, koristeæi èinjenicu kako je $\left(\C,+\right)\cong\left(\R^2,+\right)$ (skup kompleksnih brojeva uz operaciju zbrajanja izomorfan je skupu vektora u ravnini takoðer uz operaciju zbrajanja) te æemo koristiti kompleksne korijene jednadžbe $x^5-1=0$ (oznaèene s $\omega_k$, gdje je $k=0,\ldots,4$). Kompleksni korijeni jednadžbe $x^5-1=0$ imaju zanimljivo svojstvo, a to je upravo èinjenica da èine vrhove pravilnog peterokuta, što se može vidjeti iz formule za korijen kompleksnog broja (jer iz $x^5-1=0$ slijedi $x=\sqrt[5]{1}$):
+
+\begin{equation*}
+\omega_{k}=\cos{2\pi\frac{k}{n}}+i\sin{2\pi\frac{k}{n}},
+\end{equation*}
+
+\noindent\newline gdje je $k=0,\ldots,n-1$ (u našem sluèaju je $n=5$). Primijetimo kako smo u gornjoj formuli iskoristili èinjenicu da je $r=1$ (koristimo jediniènu kružnicu) i $\arg{1}=0$ (jer kompleksan broj $z=1$ leži na realnoj osi pa mu je imaginaran dio jednak nuli). Isto tako primijetimo kako smo sigurni da æe jedno rješenje jednadžbe $x^5-1=0$ biti $\omega_0=1$ jer je $1^5-1=1-1=0$. Distribucija temeljnih korijena za $n=5$ u Gaussovoj ravnini može se jasnije vidjeti na slici ispod.
+
+\begin{figure}[h]\label{quodlegitur}
+\centerline{\scalebox{0.4}{\includegraphics{peterokut2.eps}}}
+\caption{Rješenja jednadžbe $x^5-1=0$.}
+\end{figure}
+
+\noindent\newline Važna opservacija je takoðer da vrijedi $\omega_{k}=(\omega_1)^k$ (što se može lako pokazati po DeMoivreovoj formuli). Primijetimo kako je $\omega_{k}=\overline{\omega_{n-k}}$ (konjugirano kompleksan broj od $z$ oznaèavat æemo s $\overline{z}$), što se takoðer može vrlo lako pokazati:
+
+\begin{eqnarray*}
+\omega_{n-k}&=&\cos{2\pi\frac{n-k}{n}}+i\sin{2\pi\frac{n-k}{n}}\\
+&=&\cos{2\pi-2\pi\frac{k}{n}}+i\sin{2\pi-2\pi\frac{k}{n}}.
+\end{eqnarray*}
+
+\noindent\newline Koristeæi èinjenicu kako je $\cos{2\pi-x}=\cos{2\pi}\cos{x}+\sin{2\pi}\sin{x}=\cos{x}$ i $\sin{2\pi-x}=\sin{2\pi}\cos{x}-\sin{x}\cos{2\pi}=-\sin{x}$, imamo:
+
+\begin{equation*}
+\omega_{n-k}=\cos{2\pi\frac{k}{n}}-i\sin{2\pi\frac{k}{n}}=\overline{\omega_{k}}.
+\end{equation*}
+
+\noindent\newline Iz ovoga slijedi još bitnija èinjenica, a to je da je $\omega_{k}+\omega_{n-k}=2\cos{2\pi\frac{k}{n}}$. Stoga, uzmemo li $k=1$, i naravno $n=5$, imamo $\omega_{1}+\omega_{4}=2\cos{72^{\circ}}$. Takoðer, dobivamo realan broj i kada zbrojimo $\omega_{2}$ i $\omega_{3}$ (to se može i bolje uoèiti ukoliko promotrimo zbrajanje kompleksnih brojeva kao zbrajanje vektora, što je zapravo "ista stvar"). Trenutno nas zanima samo velièina $\cos{72^\circ}=\frac{\omega_1+\omega_2}{2}$ jer iz nje, ukoliko želimo, možemo dobiti zapravo sve koordinate ovih korijena. Dalje, znamo da je, kako smo prethodno i napomenuli, jedno rješenje realan broj $1$. Stoga slijedi da je polinom $x^n-1$ djeljiv polinomom $x-1$. Ukoliko ih podijelimo u kontekstu jednadžbe $x^n-1=0$ dobivamo:
+
+\begin{equation*}
+(x-1)(x^{n-1}+x^{n-2}+\ldots+x+1)=0.
+\end{equation*}
+
+\noindent\newline Dakle, mora vrijediti $x^{n-1}+x^{n-2}+\ldots+x+1=0$ i kako smo argumentirali da je $\omega_{k}=(\omega_1)^{k}$ ($\omega_1$ æemo odsada, upravo zbog ovog svojstva, oznaèavati samo s $\omega$), mora vrijediti i $\omega^{n-1}+\omega^{n-2}+\ldots+\omega+1=0$, tj. vrijedi sljedeæa lema:
+
+\noindent\newline{\bf Lema.} Za temeljne korijene reda $n$ vrijedi:
+
+\begin{equation*}
+\sum_{k=0}^{n-1}{\omega^k}=0.
+\end{equation*}
+
+\noindent\newline Primijetimo da isto tako, onda vrijedi i:
+
+\begin{equation*}
+\sum_{k=1}^{n-1}{\omega^k}=-1.
+\end{equation*}
+
+\noindent\newline Vratimo se na naš peterokut. Oznaèimo $x_1=\omega_1+\omega_4$ i $x_2=\omega_2+\omega_3$. Po prethodnoj lemi oèito je kako vrijedi $x_1+x_2=-1$. Isto tako, uzmemo li umnožak ova dva realna broja, dobivamo:
+
+\begin{equation*}
+x_1 x_2=\omega_1\omega_2+\omega_1\omega_3+\omega_4\omega_2+\omega_4\omega_3.
+\end{equation*}
+
+\noindent\newline Malo se igramo s oznakama, jer rekli smo kako je zapravo $\omega_k\omega_l=\omega^k\omega^l=\omega^{k+l}=\omega_{k+l}$ (opet se lako dokaže po formuli za množenje kompleksnih brojeva u trigonometrijskom obliku, ukoliko je potrebno daljnje opravdanje). Stoga imamo:
+
+\begin{equation*}
+x_1 x_2=\omega_3+\omega_4+\omega_6+\omega_7.
+\end{equation*}
+
+\noindent\newline Oèito je $\omega^6=\omega^{5+1}=\omega^5\omega^1=\omega^0\omega^1=\omega$, a isto tako i $\omega_7=\omega_2$. Stoga je:
+
+\begin{equation*}
+x_1 x_2=\omega_3+\omega_4+\omega_1+\omega_2=-1.
+\end{equation*}
+
+\noindent\newline Sada znamo umnožak i zbroj od $x_1$ i $x_2$ pa njihove vrijednosti možemo pronaæi pomoæu kvadratne jednadžbe $x^2-(x_1+x_2)x+x_1 x_2=0$. Imamo, dakle, $x^2+x-1=0$. Rješenja su tada:
+
+\begin{equation*}
+x_{1,2}=\frac{-1\pm\sqrt{5}}{2}.
+\end{equation*}
+
+\noindent\newline Preostaje jednostavno promisliti koje æe rješenje odgovarati zbroju $\omega_1+\omega_4$. Znamo kako je $-1-\sqrt{5}<0$. No, zbroj kosinusa od $\omega_1$ i $\omega_4$ mora biti pozitivan (jer se nalaze na pozitivnoj strani realne osi, što se može vidjeti iz prethodne slike) pa oèito mora biti:
+
+\begin{equation*}
+\omega_1+\omega_4=\frac{\sqrt{5}-1}{2}.
+\end{equation*}
+
+\noindent\newline No, rekli smo kako je $\omega_1+\omega_4=2\cos{72^{\circ}}$, pa vrijedi:
+
+\begin{equation*}
+\cos{72^\circ}=\frac{\sqrt{5}-1}{4}.
+\end{equation*}
+
+\noindent\newline Dakle, kako imamo samo korijene i operacije zbrajanja i množenja, dužinu $\overline{ON}$ (dakle, upravo ovaj kosinus) možemo konstruirati. No, potpunosti radi, izraèunajmo toèno vrijednosti ovih temeljnih korjena u radikalima. Znamo kako vrijedi $\sin{x}=\pm\sqrt{1-\cos{x}^2}$ pa je stoga:
+
+\begin{equation*}
+\sin{72^\circ}=\pm\sqrt{1-\frac{5-2\sqrt{5}+1}{16}}=\pm\frac{1}{2}\sqrt{\frac{5+\sqrt{5}}{2}}.
+\end{equation*}
+
+\noindent\newline Nadalje, želimo odrediti i $\omega_2$ i $\omega_3$. Kako je $\omega_2+\omega_3=-\frac{1+\sqrt{5}}{2}=2\cos{36^{\circ}}$ (sa slike se lako može vidjeti, a i pokazati da $\omega_2$ i $\omega_3$ s apscisom zatvaraju kut od $36^{\circ}$), vrijedi $\cos{36^{\circ}}=-\frac{\sqrt{5}+1}{4}$. Dalje je
+
+\begin{equation*}
+\sin{36^{\circ}}=\pm\sqrt{1-\frac{5+2\sqrt{5}+1}{16}}=\pm\frac{1}{2}\sqrt{\frac{5-\sqrt{5}}{2}}.
+\end{equation*}
+
+\noindent\newline Dakle, pravilan peterokut upisan u jediniènu kružnicu u Gaussovom koordinatnom sustavu ima za vrhove sljedeæe kompleksne brojeve:
+
+\begin{eqnarray*}
+\omega_0&=&1,\\
+\omega_1&=&\frac{\sqrt{5}-1}{4}+\frac{i}{2}\sqrt{\frac{5+\sqrt{5}}{2}},\\
+\omega_2&=&-\frac{\sqrt{5}+1}{4}+\frac{i}{2}\sqrt{\frac{5-\sqrt{5}}{2}},\\
+\omega_3&=&-\frac{\sqrt{5}+1}{4}-\frac{i}{2}\sqrt{\frac{5-\sqrt{5}}{2}},\\
+\omega_4&=&\frac{\sqrt{5}-1}{4}-\frac{i}{2}\sqrt{\frac{5+\sqrt{5}}{2}}.
+\end{eqnarray*}
+
+\noindent\newline Tako se problem konstrukcije peterokuta svodi na problem konstrukcije broja $\frac{\sqrt{5}-1}{4}$. Dat æemo jedan naèin konstrukcije:
+
+\begin{enumerate}
+
+\item Prvo konstruiramo kružnicu $K$ (nekog polumjera $r$) te promjer $A'A$ na istoj kružnici. U toèki $A$ povuèemo tangentu $t$, odnosno okomicu na $A'A$.
+
+\begin{figure}[h]\label{fronte}
+\centerline{\scalebox{0.45}{\includegraphics{petkor1.eps}}}
+%\caption{Konstrukcija peterokuta - prvi korak.}
+\end{figure}
+
+\newpage
+
+\item Na tangentu $t$ nanesemo toèku $P$ tako da bude $|AP|=|SA|$. Time smo dobili pravokutan trokut (koji se i ne vidi na slici), s katetama $r$ i $2r$. Njegova hipotenuza $\overline{A'P}$ æe biti duljine $r\sqrt{5}$.
+
+\begin{figure}[h]\label{capilata}
+\centerline{\scalebox{0.45}{\includegraphics{petkor2.eps}}}
+%\caption{Konstrukcija peterokuta - prvi korak.}
+\end{figure}
+
+\item Nanesemo duljinu katete $\overline{A'P}$ na pravac $A'A$ kako bismo dobili toèku $P'$ takvu da je $|A'P'|=|A'P|$. Tada je $|SP'|=r\sqrt{5}-r=r(\sqrt{5}-1)$.
+
+\begin{figure}[h]\label{sedplerumque}
+\centerline{\scalebox{0.45}{\includegraphics{petkor3.eps}}}
+%\caption{Konstrukcija peterokuta - prvi korak.}
+\end{figure}
+
+\item Pronaðemo polovište $Q$ dužine $\overline{SP'}$ te æe tada biti $|SQ|=r\frac{\sqrt{5}-1}{2}$.
+
+\begin{figure}[h]\label{sequitur}
+\centerline{\scalebox{0.45}{\includegraphics{petkor4.eps}}}
+%\caption{Konstrukcija peterokuta - prvi korak.}
+\end{figure}
+
+\newpage
+
+\item Nadalje, pronaðemo simetralu dužine $\overline{SQ}$, te u toèkama kojima sijeèe kružnicu $K$ dobivamo dva vrha peterokuta, $B$ i $E$. Oèito je kako je udaljenost od $S$ do te simetrale jednaka $r\frac{\sqrt{5}-1}{4}$ (što odgovara kosinusu kuta $\angle BSA$).
+
+\begin{figure}[h]\label{occasio}
+\centerline{\scalebox{0.45}{\includegraphics{petkor5.eps}}}
+%\caption{Konstrukcija peterokuta - prvi korak.}
+\end{figure}
+
+\item Na kraju, nanosimo duljinu dužine $\overline{AB}$ iz toèke $B$ na kružnicu $K$ i dobivamo vrh $C$ te takoðer nanesemo duljinu dužine $\overline{EA}$ iz toèke $E$ i dobivamo vrh $D$. Dobili smo sve vrhove peterokuta.
+
+\begin{figure}[h]\label{calvata}
+\centerline{\scalebox{0.45}{\includegraphics{petkor6.eps}}}
+%\caption{Konstrukcija peterokuta - prvi korak.}
+\end{figure}
+
+\item Spojimo toèke $A$, $B$, $C$, $D$ i $E$ te time završavamo konstrukciju pravilnog peterokuta. Na slici ispod prikazana je završena konstrukcija sa svim tragovima konstrukcije.
+
+\begin{figure}[h]\label{tragovi}
+\centerline{\scalebox{0.45}{\includegraphics{petkor7.eps}}}
+%\caption{Konstrukcija peterokuta - prvi korak.}
+\end{figure}
+
+\end{enumerate}
+
+\newpage
+
+\begin{center}
+{\bf Svojstva pravilnog peterokuta}
+\end{center}
+
+\vskip 0.5cm
+
+Ostalo je još prokomentirati odnos duljine stranice peterokuta $a$ i polumjera njemu opisane kružnice $r$. Primijetimo kako za karakteristièni trokut pravilnog peterokuta po kosinusovom pouèku vrijedi:
+
+\begin{equation*}
+a^2=2r^2-2r^2\cos{72^{\circ}}.
+\end{equation*}
+
+\noindent\newline Iz toga možemo zakljuèiti kako je:
+
+\begin{equation*}
+a=r\sqrt{2-\frac{\sqrt{5}-1}{2}}=r\sqrt{\frac{5-\sqrt{5}}{2}}.
+\end{equation*}
+
+\noindent\newline Visina $v$ karakteristiènog trokuta na stranicu $a$ je tada jednaka:
+
+\begin{equation*}
+v=\sqrt{r^2-r^2\frac{5-\sqrt{5}}{8}}=\frac{r}{2}\sqrt{\frac{\sqrt{5}+3}{2}}.
+\end{equation*}
+
+\noindent\newline Tada je površina karakteristiènog trokuta jednaka:
+
+\begin{equation*}
+P'=\frac{r^2}{4}\sqrt{\frac{5\sqrt{5}+15-5-3\sqrt{5}}{4}}=\frac{r^2}{4}\sqrt{\frac{5+\sqrt{5}}{2}}.
+\end{equation*}
+
+\noindent\newline Površina pravilnog peterokuta je tada jednaka peterostrukoj površini karakteristiènog trokuta, tj. $P=5P'$ ili preciznije:
+
+\begin{equation*}
+P=r^2\frac{5}{4}\sqrt{\frac{5+\sqrt{5}}{2}}
+\end{equation*}
+
+\noindent\newline Kako je visina karakteristiènog trokuta jednaka $v$, tada je "velika visina", odnosno visina spuštena iz vrha peterokuta na nasuprotnu stranicu jednostavno $w=r+v$, a to je:
+
+\begin{equation*}
+w=r\frac{3}{2}\sqrt{\frac{\sqrt{5}+3}{2}}.
+\end{equation*}
+
+\noindent\newline Duljine svih dijagonala su jednakih velièina, što je lako dokazivo pomoæu npr. SSS pouèka o sukladnosti dvaju trokuta. Njihova duljina može se izraèunati pomoæu kosinusovog pouèka:
+
+\begin{equation*}
+d=\sqrt{2a^2\left(1-\cos{108^{\circ}}\right)}.
+\end{equation*}
+
+\noindent\newline Za to nam je potreban kosinus kuta od $108^{\circ}$. Znamo kosinus kuta od $72^{\circ}$ i znamo kako je $108^{\circ}=180^{\circ}-72^{\circ}$. Dakle, tražimo:
+
+\begin{equation*}
+\cos{\left(180^{\circ}-72^{\circ}\right)}=\cos{180^{\circ}}\cos{72^{\circ}}+\sin{180^{\circ}}\sin{72^{\circ}}=-\cos{72^{\circ}}=\frac{1-\sqrt{5}}{4}.
+\end{equation*}
+
+\noindent\newline Uvrštavajuæi to u formulu za $d$ imamo:
+
+\begin{equation*}
+d=a\sqrt{\frac{3+\sqrt{5}}{2}}=r\sqrt{\frac{5+\sqrt{5}}{2}}.
+\end{equation*}
+
+\noindent\newline Definirajmo vektore koji èine stranice peterokuta (uzmimo da $A\in\R^2$ odgovara $\omega_0\in\C$, $B\in\R^2$ odgovara $\omega_1\in\C$, itd.). Tada je:
+
+\begin{eqnarray*}
+\overrightarrow{AB}&=&\frac{\sqrt{5}-5}{4}\vec{i}+\frac{\vec{j}}{2}\sqrt{\frac{5+\sqrt{5}}{2}},\\
+\overrightarrow{BC}&=&-\frac{\sqrt{5}}{2}\vec{i}+\frac{\vec{j}}{2}\left(\sqrt{\frac{5-\sqrt{5}}{2}}-\sqrt{\frac{5+\sqrt{5}}{2}}\right),
+\end{eqnarray*}
+
+\begin{eqnarray*}
+\overrightarrow{CD}&=&-\vec{j}\sqrt{\frac{5-\sqrt{5}}{2}},\\
+\overrightarrow{DE}&=&\frac{\sqrt{5}}{2}\vec{i}+\frac{\vec{j}}{2}\left(\sqrt{\frac{5-\sqrt{5}}{2}}-\sqrt{\frac{5+\sqrt{5}}{2}}\right),\\
+\overrightarrow{EA}&=&\frac{5-\sqrt{5}}{4}\vec{i}+\frac{\vec{j}}{2}\sqrt{\frac{5+\sqrt{5}}{2}}.
+\end{eqnarray*}
+
+\noindent\newline Napomenimo samo, prije nego pokažemo zašto su ovi vektori bitni u konstrukciji dodekaedra, kako unutrašnji kut pravilan peterokuta iznosi $72^\circ$. Kako se pravilan peterokut sastoji od pet karakteristiènih trokuta, preostala dva kuta su $\frac{180^{\circ}-72^{\circ}}{2}=54^{\circ}$. Kako svaki krak karakteristiènog trokuta dijeli kut peterokuta na dva jednaka dijela, kut pravilnog peterokuta je jednak $108^{\circ}$ (što se može pokazati i pomoæu $\frac{540^{\circ}}{5}$).
+
+\newpage
+
+\begin{center}
+{\bf Dihedralna grupa $D_5$}
+\end{center}
+
+\vskip 0.5cm
+
+Navest æemo još jedno bitno svojstvo pravilnog peterokuta koje zaslužuje svoje posebno poglavlje i nadam se kako æe biti lijepa nadopuna mom radu iz apstraktne algebre. Naime, simetrije peterokuta èine jednu posebnu grupu koja se naziva dihedralna grupa i oznaèava se s $D_5$ (grupa $D_6$ odgovara simetrijama šesterokuta, et cetera). Možemo primijetiti kako je peterokut sam po sebi zapravo invarijantan na rotacije oko ishodišta za kut od $72^{\circ}$ jer ga takva rotacija preslikava u njega samog. No, to se takoðer dogaða i za rotacije $2\cdot 72^{\circ}$, $3\cdot 72^{\circ}$, $4\cdot 72^{\circ}$ i $5\cdot72^{\circ}=360^{\circ}$. Posljednja rotacija æe biti identiteta jer svaku toèku preslika u sebe samu. Ove rotacije, za višekratnike kuta $72^{\circ}$ oznaèavat æemo redom $R$, $R^2$ (rotacija za $2\cdot 72^{\circ}$), $R^3$ i $R^4$. Neutralan element oznaèit æemo s $E$ (i odgovarat æe rotaciji $R^5$, tj. $R^0$). Primijetimo kako æe svaka rotacija imati svoj inverz, a to je $\left(R^{n}\right)^{-1}=R^{-n}=R^{5-n}$, gdje je $n=1,2,3,4$. Dakle, bit æe $R^{-1}=R^4$, $R^{-2}=R^{3}$, $R^{-3}=R^2$ i $R^{-4}=R$. Dalje imamo osne simetrije, tj. refleksije, koje su prikazane na slici ispod.
+
+\begin{figure}[h]\label{estuans}
+\centerline{\scalebox{0.45}{\includegraphics{simetrije.eps}}}
+\caption{Osi simetrije pravilnog peterokuta.}
+\end{figure}
+
+\noindent\newline Jasno je kako æe svaka simetrija biti inverz sama sebi. No, mogu li se prikazati ostale simetrije pomoæu kompozicije jedne fiksne simetrije (npr. osi simetrije koja se podudara s apscisom) i nekoliko rotacija? Uvedimo oznaku $S_A=S$. Lako je vidjeti kako vrijede sljedeæe tablice permutacija:
+
+\begin{center}\begin{parbox}{0.4\linewidth}{
+\begin{equation*}
+S=\left(\begin{array}{ccccc}
+A & B & C & D & E\\
+A & E & D & C & B\\
+\end{array}\right),
+\end{equation*}}
+\end{parbox}
+\hskip 0.5cm
+\begin{parbox}{0.4\linewidth}{
+\begin{equation*}
+R=\left(\begin{array}{ccccc}
+A & B & C & D & E\\
+B & C & D & E & A\\
+\end{array}\right).
+\end{equation*}}
+\end{parbox}\end{center}
+
+\noindent\newline Nadalje, sa slike se može vidjeti kako se $S_B$ zapravo može prikazati kao:
+
+\begin{equation*}
+S_B=\left(\begin{array}{ccccc}
+A & B & C & D & E\\
+C & B & A & E & D\\
+\end{array}\right)=\left(\begin{array}{ccccc}
+A & B & C & D & E\\
+C & D & E & A & B\\
+\end{array}\right)\left(\begin{array}{ccccc}
+A & B & C & D & E\\
+A & E & D & C & B\\
+\end{array}\right)=R^2 S.
+\end{equation*}
+
+\noindent\newline Ostale simetrije mogu se prikazati na sljedeæi naèin:
+
+\begin{equation*}
+S_C=\left(\begin{array}{ccccc}
+A & B & C & D & E\\
+E & D & C & B & A\\
+\end{array}\right)=\left(\begin{array}{ccccc}
+A & B & C & D & E\\
+E & A & B & C & D\\
+\end{array}\right)\left(\begin{array}{ccccc}
+A & B & C & D & E\\
+A & E & D & C & B\\
+\end{array}\right)=R^4 S.
+\end{equation*}
+
+\begin{equation*}
+S_D=\left(\begin{array}{ccccc}
+A & B & C & D & E\\
+B & A & E & D & C\\
+\end{array}\right)=\left(\begin{array}{ccccc}
+A & B & C & D & E\\
+B & C & D & E & A\\
+\end{array}\right)\left(\begin{array}{ccccc}
+A & B & C & D & E\\
+A & E & D & C & B\\
+\end{array}\right)=R S.
+\end{equation*}
+
+\begin{equation*}
+S_E=\left(\begin{array}{ccccc}
+A & B & C & D & E\\
+D & C & B & A & E\\
+\end{array}\right)=\left(\begin{array}{ccccc}
+A & B & C & D & E\\
+D & E & A & B & C\\
+\end{array}\right)\left(\begin{array}{ccccc}
+A & B & C & D & E\\
+A & E & D & C & B\\
+\end{array}\right)=R^3 S.
+\end{equation*}
+
+\noindent\newline Pogledajmo što se dogaða napravimo li prvo rotaciju, a zatim simetriju:
+
+\begin{equation*}
+S R=\left(\begin{array}{ccccc}
+A & B & C & D & E\\
+A & E & D & C & B\\
+\end{array}\right)\left(\begin{array}{ccccc}
+A & B & C & D & E\\
+B & C & D & E & A\\
+\end{array}\right)=\left(\begin{array}{ccccc}
+A & B & C & D & E\\
+E & D & C & B & A\\
+\end{array}\right)=R^4 S.
+\end{equation*}
+
+\noindent\newline Iz ovih jednadžbi možemo pronaæi i ostale kompozicije. Tako vrijedi:
+
+\begin{eqnarray*}
+S R^2&=&(S R)R=(R^4 S) R=R^4 (S R)=R^4 R^4 S=R^5 R^3 S=R^3 S,\\
+S R^3&=&(S R^2)R=(R^3 S) R=R^3 (S R)=R^3 R^4 S=R^2 R^5 S=R^2 S,\\
+S R^4&=&(S R^3)R=(R^2 S) R=R^2 (S R)=R^2 R^4 S=R R^5 S=R S.
+\end{eqnarray*}
+
+\noindent\newline Pokušamo li komponirati gornje izraze dalje s $R$, dobivamo još neke izraze koji nam možda budu od pomoæi:
+
+\begin{eqnarray*}
+R S R&=&R (S R)=R (R^4 S)=R^5 S=S,\\
+R S R^2&=&R (R^3 S)=R^4 S,\\
+R S R^3&=&R (R^2 S)=R^3 S,\\
+R S R^4&=&R (R S)=R^2 S.
+\end{eqnarray*}
+
+\newpage
+
+\noindent Konstruirajmo sada tablicu kompozicija:
+
+\begin{center}
+\begin{tabular}{c|cccccccccc}
+$\circ$ & $E$ & $R$ & $R^2$ & $R^3$ & $R^4$ & $S$ & $R S$ & $R^2 S$ & $R^3 S$ & $R^4 S$\\
+\hline
+$E$ & $E$ & $R$ & $R^2$ & $R^3$ & $R^4$ & $S$ & $R S$ & $R^2 S$ & $R^3 S$ & $R^4 S$\\
+$R$ & $R$ & $R^2$ & $R^3$ & $R^4$ & $E$ & $R S$ & $R^2 S$ & $R^3 S$ & $R^4 S$ & $S$\\
+$R^2$ & $R^2$ & $R^3$ & $R^4$ & $E$ & $R$ & $R^2 S$ & $R^3 S$ & $R^4 S$ & $S$ & $R S$\\
+$R^3$ & $R^3$ & $R^4$ & $E$ & $R$ & $R^2$ & $R^3 S$ & $R^4 S$ & $S$ & $R S$ & $R^2 S$\\
+$R^4$ & $R^4$ & $E$ & $R$ & $R^2$ & $R^3$ & $R^4 S$ & $S$ & $R S$ & $R^2 S$ & $R^3 S$\\
+$S$ & $S$ & $R^4 S$ & $R^3 S$ & $R^2 S$ & $R S$ & $E$ & $R^4$ & $R^3$ & $R^2$ & $R$\\
+$RS$ & $RS$ & $S$ & $R^4 S$ & $R^3 S$ & $R^2 S$ & $R$ & $E$ & $R^4$ & $R^3$ & $R^2$\\
+$R^2 S$ & $R^2 S$ & $R S$ & $S$ & $R^4 S$ & $R^3 S$ & $R^2$ & $R$ & $E$ & $R^4$ & $R^3$\\
+$R^3 S$ & $R^3 S$ & $R^2 S$ & $R S$ & $S$ & $R^4 S$ & $R^3$ & $R^2$ & $R$ & $E$ & $R^4$\\
+$R^4 S$ & $R^4 S$ & $R^3 S$ & $R^2 S$ & $R S$ & $S$ & $R^4$ & $R^3$ & $R^2$ & $R$ & $E$\\
+\end{tabular}
+\end{center}
+
+\noindent\newline Znamo kako operator rotacije $R_{\theta}\in SO(2)$ (gdje je $\theta$ kut rotacija, a $SO(2)$ specijalna ortogonalna grupa matrica dimenzija $2\times 2$) u matriènom obliku možemo zapisati kao:
+
+\begin{equation*}
+R_{\theta}=\left[\begin{array}{cc}
+\cos{\theta} & -\sin{\theta}\\
+\sin{\theta} & \cos{\theta}\\
+\end{array}\right].
+\end{equation*}
+
+\noindent\newline Tada je operator rotacije za $72^{\circ}$, $R\in SO(2)$ (ne zaboravimo kako je $\cos{72^{\circ}}=\frac{\sqrt{5}-1}{4}$ i $\sin{72^{\circ}}=\frac{1}{2}\sqrt{\frac{5+\sqrt{5}}{2}}$) zadan matricom:
+
+\begin{equation*}
+R=\left[\begin{array}{cc}
+\frac{\sqrt{5}-1}{4} & -\frac{1}{2}\sqrt{\frac{5+\sqrt{5}}{2}}\\
+\frac{1}{2}\sqrt{\frac{5+\sqrt{5}}{2}} & \frac{\sqrt{5}-1}{4}\\
+\end{array}\right].
+\end{equation*}
+
+\noindent\newline Prokomentirajmo samo korisnost ove matrice. Znamo kako je temeljno rješenje od $x^5-1=0$ zapravo $\omega=\frac{\sqrt{5}-1}{4}+\frac{i}{2}\sqrt{\frac{5+\sqrt{5}}{2}}$. Sva ostala rješenja, odnosno korijene, možemo dobiti potenciranjem ovog korijena. Stoga možemo napisati:
+
+\begin{center}\begin{parbox}{0.4\linewidth}{
+\begin{equation*}
+R=\left[\begin{array}{cc}
+\textnormal{Re}(\omega) & \textnormal{Im}(\overline{\omega})\\
+\textnormal{Im}(\omega) & \textnormal{Re}(\omega)\\
+\end{array}\right],\end{equation*}}\end{parbox}
+\hskip 0.5cm
+\begin{parbox}{0.4\linewidth}{
+\begin{equation*}
+R^2=\left[\begin{array}{cc}
+\textnormal{Re}(\omega^2) & \textnormal{Im}(\overline{\omega^2})\\
+\textnormal{Im}(\omega^2) & \textnormal{Re}(\omega^2)\\
+\end{array}\right],\end{equation*}}\end{parbox}\end{center}
+
+\begin{center}\begin{parbox}{0.4\linewidth}{
+\begin{equation*}
+R^3=\left[\begin{array}{cc}
+\textnormal{Re}(\omega^3) & \textnormal{Im}(\overline{\omega^3})\\
+\textnormal{Im}(\omega^3) & \textnormal{Re}(\omega^3)\\
+\end{array}\right],\end{equation*}
+}\end{parbox}
+\hskip 0.5cm
+\begin{parbox}{0.4\linewidth}{
+\begin{equation*}
+R^4=\left[\begin{array}{cc}
+\textnormal{Re}(\omega^4) & \textnormal{Im}(\overline{\omega^4})\\
+\textnormal{Im}(\omega^4) & \textnormal{Re}(\omega^4)\\
+\end{array}\right],\end{equation*}
+}\end{parbox}\end{center}
+
+\begin{equation*}
+R^5=\left[\begin{array}{cc}
+\textnormal{Re}(\omega^5) & \textnormal{Im}(\overline{\omega^5})\\
+\textnormal{Im}(\omega^5) & \textnormal{Re}(\omega^5)\\
+\end{array}\right]=\left[\begin{array}{cc}
+1 & 0\\
+0 & 1\\
+\end{array}\right]=E.
+\end{equation*}
+
+\noindent\newline No, primijetimo kako i operator osne simetrije $S$ (ne zaboravimo kako smo za to uzeli simetriju obzirom na apscisu pa æemo mijenjati samo predznak ordinati) možemo zapisati kao:
+
+\begin{equation*}
+S=\left[\begin{array}{cc}
+1 & 0\\
+0 & -1\\
+\end{array}\right].
+\end{equation*}
+
+\noindent\newline Autor ovog rada je veæ pokazao u svom radu apstraktne algebre kako je uistinu matrica operatora rotacije iz specijalne ortogonalne grupe, no vrijedi li to i za matricu operatora simetrije? Promotrimo transponiranu matricu matrice $S$:
+
+\begin{equation*}
+S^T=\left[\begin{array}{cc}
+1 & 0\\
+0 & -1\\
+\end{array}\right]=S.
+\end{equation*}
+
+\noindent\newline Kako bi vrijedilo $S\in O(2)$, tj. da je ova matrica u ortogonalnoj grupi matrica, mora biti $S^T S=S S^T=I$ (gdje je $I$ jedinièna matrica). Na našu sreæu vrijedi $S^T=S$ pa mora biti $S^2=I$. Iako znamo kako je to toèno, možemo ipak lako provjeriti:
+
+\begin{equation*}
+S^2=\left[\begin{array}{cc}
+1 & 0\\
+0 & -1\\
+\end{array}\right]\left[\begin{array}{cc}
+1 & 0\\
+0 & -1\\
+\end{array}\right]=\left[\begin{array}{cc}
+1 & 0\\
+0 & 1\\
+\end{array}\right]=I.
+\end{equation*}
+
+\noindent\newline Dakle, vrijedi $S\in O(2)$. No, je li $S\in SO(2)$? Za to nam je potreban još jedan uvjet, da to je $\det{S}=1$. Lako je uoèiti kako je $\det{S}=1\cdot(-1)-0=-1$ te stoga ne može biti da je $S\in SO(2)$. Najbolje što možemo reæi jeste kako je $R,S\in O(2)$. Tada su i njihove proizvoljne kompozicije u $O(2)$ (što je dokazano u mom drugom radu). Napomenimo još kako smo uzeli zapravo $E=I$, a $I$ je trivijalno u $SO(2)$ pa tako i u $O(2)$. Nadalje, neka je $D_5=\{E,R,R^2,R^3,R^4,S,R S, R^2 S, R^3 S, R^4 S\}$ skup. Pokazali smo kako su kompozicije svih elemenata iz $D_5$ opet u $D_5$ (a to je vidljivo iz gornje tablice), te kako svaki element iz $D_5$ ima inverz (komentirano odmah na poèetku poglavlja). Takoðer, vrijedi $D_5\subset O(2)$. Ova tri zanimljiva svojstva su upravo ono što nam je dovoljno da proglasimo $D_5$ uz operaciju kompozicije podgrupom od $O(2)$, a time i grupom (koja nažalost nije komutativna jer napraviti $S R$ nije isto što i napraviti $R S$; oèito iz $S R=R^4 S$). Dakle ureðeni par $\left(D_5,\circ\right)$ je nekomutativna grupa koja se naziva dihedralnom grupom (u našem sluèaju za peterokut) i oznaèava se jednostavno s $D_5$. Prokomentirajmo samo kako je ova grupa zapravo podgrupa od $O(2)$ generirana elementima $R,S\in O(2)$ uz definirajuæe jednadžbe $R^4=E$, $S^2=E$ i $S R=R^4 S$.
+
+Možemo definirati jednu (recimo trivijalnu) podgrupu, vidljivu iz gornje tablice. To je podgrupa (oznaèimo ju s $\mathcal{R}$) koja sadrži samo rotacije:
+
+\begin{center}
+\begin{tabular}{c|ccccc}
+$\circ$ & $E$ & $R$ & $R^2$ & $R^3$ & $R^4$\\
+\hline
+$E$ & $E$ & $R$ & $R^2$ & $R^3$ & $R^4$\\
+$R$ & $R$ & $R^2$ & $R^3$ & $R^4$ & $E$\\
+$R^2$ & $R^2$ & $R^3$ & $R^4$ & $E$ & $R$\\
+$R^3$ & $R^3$ & $R^4$ & $E$ & $R$ & $R^2$\\
+$R^4$ & $R^4$ & $E$ & $R$ & $R^2$ & $R^3$\\
+\end{tabular}
+\end{center}
+
+\noindent\newline Primijetimo kako je ova grupa izomorfna grupi $\Omega$ (tj. vrijedi $\mathcal{R}\cong\Omega$) koju èine rješenja jednadžbe $x^5-1=0$ na kružnici (oznaèimo samo $e=\omega^0$):
+
+\begin{center}
+\begin{tabular}{c|ccccc}
+$\cdot$ & $e$ & $\omega$ & $\omega^2$ & $\omega^3$ & $\omega^4$\\
+\hline
+$e$ & $e$ & $\omega$ & $\omega^2$ & $\omega^3$ & $\omega^4$\\
+$\omega$ & $\omega$ & $\omega^2$ & $\omega^3$ & $\omega^4$ & $e$\\
+$\omega^2$ & $\omega^2$ & $\omega^3$ & $\omega^4$ & $e$ & $\omega$\\
+$\omega^3$ & $\omega^3$ & $\omega^4$ & $e$ & $\omega$ & $\omega^2$\\
+$\omega^4$ & $\omega^4$ & $e$ & $\omega$ & $\omega^2$ & $\omega^3$\\
+\end{tabular}
+\end{center}
+
+\noindent\newline Možemo pak primijetiti kako su obje grupe izomorfne grupi $(\Z_5,+)$. Još jedan naèin gledanja na grupu rotacija jeste preko permutacija. Uzmemo li oznaku $\underbrace{f\circ f\circ\cdots\circ f}_{n\ \textnormal{puta}}=f^n$ i definiramo li permutaciju
+
+\begin{equation*}
+f=\left(\begin{array}{ccccc}
+1 & 2 & 3 & 4 & 5\\
+2 & 3 & 4 & 5 & 1\\
+\end{array}\right),
+\end{equation*}
+
+\noindent\newline tada možemo lako vidjeti (još u izvodu dihedralne grupe $D_5$) kako æe grupa permutacija $\mathcal{F}=\{\epsilon,f,f^2,f^3,f^4\}$ biti izomorfna grupi $\mathcal{R}$. Jedno bitno svojstvo ove podgrupe jeste to da je normalna podgrupa od $D_5$ jer je zatvorena na konjugaciju. Koji god $x\in\mathcal{R}$ i $y\in D_5$ uzeli, vrijedit æe $yxy^{-1}\in\mathcal{R}$ (vidljivo u donjem desnom $5\times 5$ bloku tablice od $D_5$). Ne moramo ni napomenuti kako je dihedralna grupa $D_5$ zapravo izomorfna grupi permutacija generiranoj permutacijama $f$ (definirano iznad) i $g$, gdje je:
+
+\begin{equation*}
+g=\left(\begin{array}{ccccc}
+1 & 2 & 3 & 4 & 5\\
+1 & 5 & 4 & 3 & 2\\
+\end{array}\right).
+\end{equation*}
+
+\newpage
+
+\begin{center}
+{\bf Konstrukcija dodekaedra}
+\end{center}
+
+\vskip 0.5cm
+
+Prvo æemo pokazati kako konstruirati jedan dio mreže u ravnini za konstrukciju dodekaedra, a kasnije æemo pokazati da je pomoæu te mreže (i malo linearne algebre) uistinu moguæe konstruirati dodekaedar. Dodat æemo šest novih toèki, $E'$, $D'$ i $C'$ te $A''$, $E''$ i $D''$, kao što je prikazano na slici ispod. Drugim rijeèima, nad svaku stranicu poèetnog pravilnog peterokuta konstruirat æemo novi pravilni peterokut.
+
+
+\begin{figure}[h]\label{mortuus}
+\centerline{\scalebox{0.5}{\includegraphics{petmreza1.eps}}}
+\caption{Fragment mreže peterokuta.}
+\end{figure}
+
+\noindent\newline Pokažimo kako je $\overrightarrow{CB}=\overrightarrow{AE'}$. Kako bi to vrijedilo, mora biti $|CB|=|AE'|$ (trivijalno) i $CB\parallel AE'$. Promotrimo sliku ispod.
+
+\begin{figure}[h]\label{inanima}
+\centerline{\scalebox{0.5}{\includegraphics{petmreza2.eps}}}
+\caption{Trokuti $CAB$ i $AE'B$ u mreži peterokuta.}
+\end{figure}
+
+\noindent\newline Na slici su naznaèeni kutovi jednakih velièina ($\beta=108^{\circ}$) i stranice jednakih duljina (tj. $a$). Po stranica-kut-stranica pouèku, oèito je $CAB\cong AE'B$. Kako su ti trokuti jednakokraèni ($|CB|=|BA|=|AE'|=a$), tada su i kutovi $\angle BCA$, $\angle CAB$ pa tako i $\angle ABE'$ te $\angle AE'B$ jednakih velièina. Iz toga slijedi i da su $\angle E'BC$ i $\angle CAE'$ jednakih velièina. Kako je $CAE'B$ èetverokut kojemu su nasuprotni kutovi jednakih velièina i parovi nasuprotnih stranica jednakih duljina, radi se o paralelogramu pa je $CB\parallel AE$. Dakle, $\overrightarrow{CB}=\overrightarrow{AE'}$. Dokazat æemo još i kako vrijedi $\overrightarrow{CD}=\overrightarrow{D'E'}$ na slièan naèin pomoæu slike ispod.
+
+\begin{figure}[h]\label{curamgero}
+\centerline{\scalebox{0.5}{\includegraphics{petmreza3.eps}}}
+\caption{Èetverokut $DED'C$ u mreži peterokuta.}
+\end{figure}
+
+\noindent\newline Za poèetak, oèito je kako su trokuti $AE'D'$ i $BC'D'$ sukladni (po stranica-kut-stranica pouèku) pa su dijagonale $\overline{BD'}$ i $\overline{AD'}$ jednakih duljina (tj. $b$). Nadalje, po tome su sukladni i trokuti $BAD'$ i $DAB$. Kut $\angle CBD'$ je tada velièine $\delta+2\gamma$. No, $\beta=108^{\circ}$ pa je $\delta=36^{\circ}$. Tako je i $\alpha=108^{\circ}-72^{\circ}=36^{\circ}$. Zatim je $2\gamma=180^{\circ}-36^{\circ}=144^{\circ}$. Tako je $\delta+2\gamma=180^{\circ}$. Dakle, radi se o èetverokutu $DE'D'C$ kojemu su nasuprotni kutovi jednaki ($\beta$ i $\delta+\alpha$), i dvije nasuprotne stranice jednake ($a+b$ i $a$) pa se radi o paralelogramu. Odavdje dobivamo ne samo $\overrightarrow{CD}=\overrightarrow{D'E'}$, veæ i $\overrightarrow{DA}=\overrightarrow{BD'}$. Ovo je korisna èinjenica jer se ostale toèke u mreži mogu dobiti translacijom veæ poznatih toèki poèetnog peterokuta za vektore koje odreðuju njegove stranice (ili pak dijagonale, po potrebi). Za ostale se vektore može dokazati analogno. Dakle, vrijedi:
+
+\begin{eqnarray*}
+E'&=&A-\overrightarrow{BC}=\frac{1}{2}\left(2+\sqrt{5},\sqrt{\frac{5+\sqrt{5}}{2}}-\sqrt{\frac{5-\sqrt{5}}{2}}\right),\\
+D'&=&E'-\overrightarrow{CD}=\frac{1}{2}\left(2+\sqrt{5},\sqrt{\frac{5+\sqrt{5}}{2}}+\sqrt{\frac{5-\sqrt{5}}{2}}\right),
+\end{eqnarray*}
+
+\begin{eqnarray*}
+C'&=&B+\overrightarrow{EA}=\left(1,\sqrt{\frac{5+\sqrt{5}}{2}}\right),\\
+A''&=&B-\overrightarrow{CD}=\left(\frac{\sqrt{5}-1}{4},\sqrt{\frac{5-\sqrt{5}}{2}}+\frac{1}{2}\sqrt{\frac{5+\sqrt{5}}{2}}\right),\\
+E''&=&A''-\overrightarrow{DE}=\left(-\frac{\sqrt{5}+1}{4},\sqrt{\frac{5+\sqrt{5}}{2}}+\frac{1}{2}\sqrt{\frac{5-\sqrt{5}}{2}}\right),\\
+D''&=&C+\overrightarrow{AB}=\frac{1}{2}\left(-3,\sqrt{\frac{5-\sqrt{5}}{2}}+\sqrt{\frac{5+\sqrt{5}}{2}}\right).
+\end{eqnarray*}
+
+\noindent\newline U svom radu o transformacijama u Euklidskom prostoru, pokazao sam kako se rotacija toèke $T$ oko pravca zadanog hvatištem $H$ i vektorom smjera ${\bf v}$ za neki kut $\varphi$ dobiva formulom:
+
+\begin{equation*}
+T_{{\bf v},\varphi}=T'+{\bf w}\cos{\varphi}+{\bf u}\frac{\|{\bf w}\|}{\|{\bf u}\|}\sin{\varphi},
+\end{equation*}
+
+\noindent\newline gdje je ${\bf u}={\bf v}\times{\bf w}$ (vektorski produkt). Vektor ${\bf w}=\overrightarrow{T'T}$ je zadan formulom,
+
+\begin{equation*}
+{\bf w}=\overrightarrow{HT}-{\bf v}\frac{\langle{\bf v},\overrightarrow{HT}\rangle}{\langle{\bf v},{\bf v}\rangle},
+\end{equation*}
+
+\noindent\newline Za pravac koji æe biti os rotacije koristit æemo vektore $\overrightarrow{AB}$ (s hvatištem u $A$) i $\overrightarrow{BC}$ (s hvatištem u $B$). Za poèetak želimo rotirati toèku $C'$ oko pravca $t\rightarrow A+t\overrightarrow{AB}$. Taj je pravac zadan kao:
+
+\begin{equation*}
+t\rightarrow\left(1,0,0\right)+\frac{t}{2}\left(\frac{\sqrt{5}-5}{2},\sqrt{\frac{5+\sqrt{5}}{2}},0\right).
+\end{equation*}
+
+\noindent\newline Za $T$ uzimamo $C'$, a za $H$ uzimamo $A$ pa je oèito:
+
+\begin{equation*}
+\overrightarrow{HT}=\overrightarrow{AC'}=\left(1,\sqrt{\frac{5+\sqrt{5}}{2}},0\right)-\left(1,0,0\right)=\left(0,\sqrt{\frac{5+\sqrt{5}}{2}},0\right);
+\end{equation*}
+
+\noindent\newline Izraèunajmo vektor ${\bf w}$ (za ${\bf v}$ naravno uzimamo $\overrightarrow{AB}$):
+
+\begin{equation*}
+{\bf w}=\overrightarrow{HT}-\overrightarrow{AB}\frac{\langle\overrightarrow{AB},\overrightarrow{HT}\rangle}{\langle\overrightarrow{AB},\overrightarrow{AB}\rangle}.
+\end{equation*} 
+
+\noindent\newline Skalarni produkt vektora $\overrightarrow{AB}$ sa samim sobom je lagano izraèunati (kvadrat veæ
+\noindent\newline izraèunate duljine stranice peterokuta):
+
+\begin{equation*}
+\langle\overrightarrow{AB},\overrightarrow{AB}\rangle=|AB|^2=\frac{5-\sqrt{5}}{2}.
+\end{equation*}
+
+\noindent\newline Iduæi skalarni produkt isto nije teško izraèunati buduæi da je jedna komponenta jednaka nuli:
+
+\begin{equation*}
+\langle\overrightarrow{AB},\overrightarrow{HT}\rangle=\frac{5+\sqrt{5}}{4}.
+\end{equation*}
+
+\noindent\newline Tada vrijedi:
+
+\begin{equation*}
+\frac{\langle\overrightarrow{AB},\overrightarrow{HT}\rangle}{\langle\overrightarrow{AB},\overrightarrow{AB}\rangle}=\frac{5+\sqrt{5}}{2(5-\sqrt{5})}=\frac{3+\sqrt{5}}{4}.
+\end{equation*}
+
+\noindent\newline Vektor ${\bf w}$ sada iznosi:
+
+\begin{equation*}
+{\bf w}=\left(0,\sqrt{\frac{5+\sqrt{5}}{2}},0\right)-\frac{3+\sqrt{5}}{8}\left(\frac{\sqrt{5}-5}{2},\sqrt{\frac{5+\sqrt{5}}{2}},0\right).
+\end{equation*}
+
+\noindent\newline To je, nakon malo raèunanja, jednako:
+
+\begin{equation*}
+{\bf w}=\frac{5-\sqrt{5}}{8}\left(\frac{3+\sqrt{5}}{2},\sqrt{\frac{5+\sqrt{5}}{2}},0\right).
+\end{equation*}
+
+\noindent\newline Norma gornjeg vektora iznosi (zaèuðujuæe jednostavno) $\|{\bf w}\|=\frac{\sqrt{5}}{2}$. Toèka $T'=T-{\bf w}$ (kod nas je to $C'_p=C'-{\bf w}$) je tada dobivena kao:
+
+\begin{equation*}
+C'_p=\frac{3+\sqrt{5}}{8}\left(\frac{7-3\sqrt{5}}{2},\sqrt{\frac{5+\sqrt{5}}{2}},0\right).
+\end{equation*}
+
+\noindent\newline Dalje, vektor ${\bf u}$ dobijemo kao vektorski produkt:
+
+\begin{equation*}
+{\bf u}=\overrightarrow{AB}\times{\bf w}=
+\left|\begin{array}{ccc}
+\vec{i} & \vec{j} & \vec{k}\\
+\frac{\sqrt{5}-5}{4} & \frac{1}{2}\sqrt{\frac{5+\sqrt{5}}{2}} & 0\\
+\frac{5+\sqrt{5}}{8} & \frac{5-\sqrt{5}}{8}\sqrt{\frac{5+\sqrt{5}}{2}} & 0\\
+\end{array}\right|.
+\end{equation*}
+
+\noindent\newline To je tada:
+
+\begin{equation*}
+{\bf u}=\vec{k}\left(\frac{-(\sqrt{5}-5)^2}{32}\sqrt{\frac{5+\sqrt{5}}{2}}-\frac{5+\sqrt{5}}{16}\sqrt{\frac{5+\sqrt{5}}{2}}\right).
+\end{equation*}
+
+\noindent\newline Kada zbrojimo ove èlanove dobivamo:
+
+\begin{equation*}
+{\bf u}=\vec{k}\left(\frac{10\sqrt{5}-30}{32}-\frac{10+2\sqrt{5}}{32}\right)\sqrt{\frac{5+\sqrt{5}}{2}}=\vec{k}\left(\frac{\sqrt{5}-5}{4}\right)\sqrt{\frac{5+\sqrt{5}}{2}}.
+\end{equation*}
+
+\noindent\newline No, problem je u tome što je $\sqrt{5}<5$ pa vektor ${\bf u}$ ima negativnu aplikatu. Želimo vršiti rotaciju toèke $C'$ tako da aplikata rotacije bude pozitivna. Takoðer, ovaj vektor nam za formulu treba biti normiran, a obzirom da ima samo aplikatu, bit æe:
+
+\begin{equation*}
+\frac{{\bf u}}{\|{\bf u}\|}=(0,0,-1).
+\end{equation*}
+
+\noindent\newline Kako rotacija neæe ovisiti o smjeru vektora $\overrightarrow{AB}$, njegov predznak u vektorskom produktu možemo promijeniti (i onda imati $\overrightarrow{BA}$) i tako dobiti $-{\bf u}$ a time i pozitivnu rotaciju. Pomnožimo li tada $(0,0,1)$ s $\|{\bf w}\|$, dobit æemo $(0,0,\frac{\sqrt{5}}{2})$. Stoga su koordinate nove toèke, rotirane za neki kut $\varphi$ u pozitivnom smjeru (smjer suprotan kretanju kazaljke na satu):
+
+\begin{equation*}
+C'_{\overrightarrow{BA},\varphi}=C'_p+{\bf w}\cos{\varphi}+{\bf u}\frac{\|{\bf w}\|}{\|{\bf u}\|}\sin{\varphi}.
+\end{equation*}
+
+\noindent\newline Uvrštavanjem konkretnih vrijednosti dobivamo:
+
+\begin{eqnarray*}
+C'_{\overrightarrow{BA},\varphi}=&&\frac{3+\sqrt{5}}{8}\left(\frac{7-3\sqrt{5}}{2},\sqrt{\frac{5+\sqrt{5}}{2}},0\right)\\
+&+&\frac{5-\sqrt{5}}{8}\left(\cos{\varphi}\frac{3+\sqrt{5}}{2},\cos{\varphi}\sqrt{\frac{5+\sqrt{5}}{2}},0\right)\\
+&+&\left(0,0,\frac{\sqrt{5}}{2}\sin{\varphi}\right).
+\end{eqnarray*}
+
+\noindent\newline Nakon malo sreðivanja, to je:
+
+\begin{eqnarray*}
+C'_{\overrightarrow{BA},\varphi}=\frac{1}{8}\left[\begin{array}{c}
+3-\sqrt{5}+(5+\sqrt{5})\cos{\varphi}\\
+\left(3+\sqrt{5}+(5-\sqrt{5})\cos{\varphi}\right)\sqrt{\frac{5+\sqrt{5}}{2}}\\
+4\sqrt{5}\sin{\varphi}\\
+\end{array}\right].
+\end{eqnarray*}
+
+\noindent\newline Takoðer želimo dobiti formulu za rotaciju toèke $A''$ oko pravca $t\rightarrow B+t\overrightarrow{BC}$ (opet æemo morati uzeti $\overrightarrow{CB}$ kako bismo dobili pozitivan smjer rotacije pri rastu aplikate). Za poèetak imamo:
+
+\begin{equation*}
+\overrightarrow{HT}=\overrightarrow{BA''}=\left(0,\sqrt{\frac{5-\sqrt{5}}{2}}\right).
+\end{equation*}
+
+\noindent\newline Tada je, nakon malo raèunanja (oznake ${\bf w}$, ${\bf u}$ su u prethodnom izvodu bile privremene pa æe tako biti tretirane i ovdje):
+
+\begin{equation*}
+{\bf w}=\frac{1}{8}\left(\sqrt{5}-5,(5+\sqrt{5})\sqrt{\frac{5-\sqrt{5}}{2}},0\right).
+\end{equation*}
+
+\noindent\newline Norma vektora ${\bf w}$ iznosi:
+
+\begin{equation*}
+\|{\bf w}\|=\frac{5+\sqrt{5}}{4}\sqrt{\frac{3-\sqrt{5}}{2}}.
+\end{equation*}
+
+\noindent\newline Dalje, kako su ${\bf w},\overrightarrow{CB}\in\R^2$, njihov normiran vektorski produkt pomnožen s $\|{\bf w}\|$ mora biti:
+
+\begin{equation*}
+{\bf u}\frac{\|{\bf w}\|}{\|{\bf u}\|}=\left(0,0,\frac{5+\sqrt{5}}{4}\sqrt{\frac{3-\sqrt{5}}{2}}\right).
+\end{equation*}
+
+\noindent\newline Projekcija toèke $A''$ na pravac $BC$ tada je:
+
+\begin{equation*}
+A''_p=\frac{1}{8}\left(3+\sqrt{5},(3-\sqrt{5})\sqrt{\frac{5-\sqrt{5}}{2}}+4\sqrt{\frac{5+\sqrt{5}}{2}},0\right).
+\end{equation*}
+
+\noindent\newline I toèka $A''$ rotirana za $\varphi$ je napokon zadana formulom:
+
+\begin{equation*}
+A''_{\overrightarrow{CB},\varphi}=\frac{1}{8}\left[\begin{array}{c}
+3+\sqrt{5}+(\sqrt{5}-5)\cos{\varphi}\\
+(3-\sqrt{5}+(5+\sqrt{5})\cos{\varphi})\sqrt{\frac{5-\sqrt{5}}{2}}+4\sqrt{\frac{5+\sqrt{5}}{2}}\\
+2(5+\sqrt{5})\sqrt{\frac{3-\sqrt{5}}{2}}\sin{\varphi}\\
+\end{array}\right].
+\end{equation*}
+
+\noindent\newline Na slici ispod se vidi što smo zapravo htjeli postiæi (u $xy$-ravnini). Rotirajuæi toèke $C'_{\overrightarrow{BA},\varphi}$ i $A''_{\overrightarrow{CB},\varphi}$ oko pravaca $AB$ i $BC$ želimo pokazati kako možemo uistinu dobiti toèku $F$.
+
+\begin{figure}\label{cudis}
+\centerline{\scalebox{0.35}{\includegraphics{petmreza4.eps}}}
+\caption{Toèka $F$ dodekaedra.}
+\end{figure}
+
+Ono što sada želimo jeste definirati funkciju koja æe za neki kut $\varphi$ vraæati udaljenost izmeðu $C'_{\overrightarrow{BA},\varphi}$ i $A''_{\overrightarrow{CB},\varphi}$. To æe, dakle biti funkcija oblika $f:\left[0,2\pi\right\rangle\rightarrow\R$ zadana kao $f(\varphi)=d\left(C'_{\overrightarrow{BA},\varphi},A''_{\overrightarrow{CB},\varphi}\right)^2$, gdje je $d(A,B)$ standardna Euklidska udaljenost izmeðu toèki $A,B\in\R^3$. Primijetimo kako neæemo uzimati korijen, jer nas ne zanima {\it sama} udaljenost, veæ {\it samo} kut $\varphi$ kada je udaljenost izmeðu toèki jednaka nuli. Isto tako neæemo uzimati u obzir ni faktor $\frac{1}{8}$ ispred toèki jer opet, ne zanima nas toèna udaljenost u svakom trenutku rotacije, veæ nas zanima samo kut kada je udaljenost nula. Dakle, nakon malo raèunanja imamo:
+
+\begin{eqnarray*}
+f(\varphi)&=&5-\sqrt{5}+ 10\cos{\varphi} - 10 \sqrt{5}\cos{\varphi} + 25(\cos{\varphi})^2 - 5 \sqrt{5} (\cos{\varphi})^2\\
+&&+ 20 (\sin{\varphi})^2 - 5\sqrt{2 (3 - \sqrt{5})}(\sin{\varphi})^2 - 5\sqrt{10 (3 - \sqrt{5})} (\sin{\varphi})^2.
+\end{eqnarray*}
+
+\noindent\newline Iskoristimo èinjenicu da je $(\sin{\varphi})^2=1-(\cos{\varphi})^2$. To je tada:
+
+\begin{eqnarray*}
+f(\varphi)&=&25 - \sqrt{5} - 5 \sqrt{2 (3 - \sqrt{5})} - 5 \sqrt{10 (3 - \sqrt{5})} +  10\cos{\varphi} - 10 \sqrt{5}\cos{\varphi}\\
+&&+ 5 (\cos{\varphi})^2 - 5 \sqrt{5} (\cos{\varphi})^2 + 5 \sqrt{2 (3 - \sqrt{5})} (\cos{\varphi})^2 + 5 \sqrt{10 (3 - \sqrt{5})}(\cos{\varphi})^2.
+\end{eqnarray*}
+
+\noindent\newline Promotrimo izraz koji se pojavljuje uz $(\cos{\varphi})^2$:
+
+\begin{eqnarray*}
+&&5\left(1-\sqrt{5}+\sqrt{2}\sqrt{3-\sqrt{5}}+\sqrt{10}\sqrt{3-\sqrt{5}}\right)\\
+&=&5\left(1-\sqrt{5}+\sqrt{2}\left(\sqrt{3-\sqrt{5}}+\sqrt{5}\sqrt{3-\sqrt{5}}\right)\right)
+\end{eqnarray*}
+
+\noindent\newline Daljnjim sreðivanjem, to je:
+
+\begin{eqnarray*}
+&&5\left(1-\sqrt{5}+\sqrt{2}\sqrt{3-\sqrt{5}}(1+\sqrt{5})\right)\\
+&=&5\left(1-\sqrt{5}+\sqrt{2}\sqrt{(3-\sqrt{5})(1+\sqrt{5})^2}\right)
+\end{eqnarray*}
+
+\noindent\newline Koristeæi kvadrat binoma, a zatim razliku kvadrata, napokon imamo:
+
+\begin{eqnarray*}
+&=&5\left(1-\sqrt{5}+\sqrt{2}\sqrt{(3-\sqrt{5})(6+2\sqrt{5})}\right)\\
+&=&5\left(1-\sqrt{5}+2\sqrt{(3-\sqrt{5})(3+\sqrt{5})}\right)\\
+&=&5\left(1-\sqrt{5}+4\right)=5\left(5-\sqrt{5}\right).
+\end{eqnarray*}
+
+\noindent\newline Grupirajuæi ostale èlanove dobivamo:
+
+\begin{equation*}
+f(\varphi)=5(5 - \sqrt{5})(\cos{\varphi})^2 + 10(1-\sqrt{5})\cos{\varphi} + 5 - \sqrt{5}.
+\end{equation*}
+
+\noindent\newline No, veæ smo rekli kako nas zanima sluèaj kada je $f(\varphi)=0$. Stoga uzmemo supstituciju $x=\cos{\varphi}$ i dobivamo kvadratnu jednadžbu:
+
+\begin{equation*}
+5(5 - \sqrt{5})x^2 + 10(1-\sqrt{5})x + 5 - \sqrt{5}=0.
+\end{equation*}
+
+\noindent\newline Stvari se pojednostave ukoliko podijelimo cijelu jednadžbu s $(5-\sqrt{5})$ pa je tada:
+
+\begin{equation*}
+5x^2-2\sqrt{5}x+1=0.
+\end{equation*}
+
+\noindent\newline Koristeæi formulu za kvadratnu jednadžbu dobivamo:
+
+\begin{equation*}
+x_{1,2}=\frac{2\sqrt{5}\pm\sqrt{20-20}}{10}.
+\end{equation*}
+
+\noindent\newline Diskriminanta je jednaka nuli pa imamo samo jedno rješenje, tj. $x=\frac{\sqrt{5}}{5}$. Tada je, vraæajuæi supstituciju, $\cos{\varphi}=\frac{\sqrt{5}}{5}$, a tako i (uzet æemo pozitivnu vrijednost jer se želimo kretati u pozitivnom smjeru - sinus odreðuje aplikatu u našim toèkama) $\sin{\varphi}=\sqrt{1-\frac{5}{25}}=\frac{2\sqrt{5}}{5}$.
+
+Uvrštavanjem vrijednosti $\cos{\varphi}=\frac{\sqrt{5}}{5}$ i $\sin{\varphi}=\frac{2\sqrt{5}}{5}$ u formule za $C'_{\overrightarrow{BA},\varphi}$ i $A''_{\overrightarrow{CB},\varphi}$ dobivamo (jednu) toèku $F$ s koordinatama:
+
+\begin{equation*}
+F=\left(\frac{1}{2},\frac{1+\sqrt{5}}{4}\sqrt{\frac{5+\sqrt{5}}{2}},1\right).
+\end{equation*}
+
+\noindent\newline Izluèimo li $\frac{1+\sqrt{5}}{2}$ i zatim racionaliziramo, imamo:
+
+\begin{equation*}
+F=\frac{1+\sqrt{5}}{2}\left(\frac{\sqrt{5}-1}{4},\frac{1}{2}\sqrt{\frac{5+\sqrt{5}}{2}},\frac{\sqrt{5}-1}{2}\right).
+\end{equation*}
+
+\noindent\newline Napravimo li projekciju ove toèke na $xy$-ravninu, dobit æemo:
+
+\begin{equation*}
+F'=\frac{1+\sqrt{5}}{2}\left(\frac{\sqrt{5}-1}{4},\frac{1}{2}\sqrt{\frac{5+\sqrt{5}}{2}}\right).
+\end{equation*}
+
+\noindent\newline Podsjetimo li se malo toèki peterokuta, oèito je $F'=\frac{1+\sqrt{5}}{2}B$, što æe reæi da su projekcija od $F$, toèka $B$ i ishodište kolinearni. Koristeæi simetriju peterokuta (prisjetimo se grupe $D_5$), ostale toèke ($G$, $H$, $I$ i $J$) možemo dobiti na isti naèin (vidi sliku ispod). To možemo napraviti upravo zbog èinjenice što, iako se koristimo koordinatnim sustavom, opæenito je nebitno koje smo dvije stranice odabrali za razvoj mreže peterokuta. Sve stranice i vrhovi dodekaedra su meðusobno neraspoznatljivi (do na koordinate).
+
+\begin{figure}[h]\label{vehementi}
+\centerline{\scalebox{0.35}{\includegraphics{petmreza6.eps}}}
+\caption{Nove toèke dodekaedra.}
+\end{figure}
+
+\noindent\newline Zapišimo prvo $F$ na drugaèiji naèin (prisjetimo se kako je $\omega$ temeljno rješenje jednadžbe $x^5-1=0$):
+
+\begin{equation*}
+F=\frac{1+\sqrt{5}}{2}\left(\textnormal{Re}(\omega),\textnormal{Im}(\omega),2\textnormal{Re}(\omega)\right).
+\end{equation*}
+
+\noindent\newline Tada ostale toèke (radi potpunosti dodat æemo na popis i $F$) moraju biti (ne zaboravimo kako zapravo rotiramo samo prve dvije koordinate, aplikata ostaje ista):
+
+\begin{eqnarray*}
+F&=&\frac{1+\sqrt{5}}{2}\left(\textnormal{Re}(\omega),\textnormal{Im}(\omega),2\textnormal{Re}(\omega)\right),\\
+G&=&\frac{1+\sqrt{5}}{2}\left(\textnormal{Re}(\omega^2),\textnormal{Im}(\omega^2),2\textnormal{Re}(\omega)\right),\\
+H&=&\frac{1+\sqrt{5}}{2}\left(\textnormal{Re}(\omega^3),\textnormal{Im}(\omega^3),2\textnormal{Re}(\omega)\right),\\
+I&=&\frac{1+\sqrt{5}}{2}\left(\textnormal{Re}(\omega^4),\textnormal{Im}(\omega^4),2\textnormal{Re}(\omega)\right),\\
+J&=&\frac{1+\sqrt{5}}{2}\left(\textnormal{Re}(\omega^0),\textnormal{Im}(\omega^0),2\textnormal{Re}(\omega)\right).
+\end{eqnarray*}
+
+\noindent\newline Preciznije, koordinate su tada, trivijalno:
+
+\begin{eqnarray*}
+F&=&\frac{1+\sqrt{5}}{2}\left(\frac{\sqrt{5}-1}{4},\frac{1}{2}\sqrt{\frac{5+\sqrt{5}}{2}},\frac{\sqrt{5}-1}{2}\right),\\
+G&=&\frac{1+\sqrt{5}}{2}\left(-\frac{\sqrt{5}+1}{4},\frac{1}{2}\sqrt{\frac{5-\sqrt{5}}{2}},\frac{\sqrt{5}-1}{2}\right),\\
+H&=&\frac{1+\sqrt{5}}{2}\left(-\frac{\sqrt{5}+1}{4},-\frac{1}{2}\sqrt{\frac{5-\sqrt{5}}{2}},\frac{\sqrt{5}-1}{2}\right),\\
+I&=&\frac{1+\sqrt{5}}{2}\left(\frac{\sqrt{5}-1}{4},-\frac{1}{2}\sqrt{\frac{5+\sqrt{5}}{2}},\frac{\sqrt{5}-1}{2}\right),\\
+J&=&\frac{1+\sqrt{5}}{2}\left(1,0,\frac{\sqrt{5}-1}{2}\right).
+\end{eqnarray*}
+
+\noindent\newline Sada kada smo zapravo "savili" ovih pet peterokuta oko odgovarajuæih stranica našeg poèetnog peterokuta za kut kojemu je kosinus $\frac{1}{\sqrt{5}}$, a sinus pozitivan, zapravo smo zaboravili odrediti koordinate toèki $D'$, $E''$, $E'''$, $A_4$ i $B_5$ (vidi sliku iznad) nakon "savijanja". Izraèunat æemo samo koordinate toèke $E''$ rotirane za $\arccos{\frac{1}{\sqrt{5}}}$ oko pravca $CB$ (koristeæi vektor $\overrightarrow{CB}$) s hvatištem u $C$ i zatim koristiti svojstva simetrije peterokuta kako bismo dobili ostale èetiri toèke. Izraèunajmo vektor $\overrightarrow{HT}=\overrightarrow{CE''}$. To je:
+
+\begin{eqnarray*}
+\overrightarrow{CE''}&=&\left(-\frac{\sqrt{5}+1}{4},\sqrt{\frac{5+\sqrt{5}}{2}}+\frac{1}{2}\sqrt{\frac{5-\sqrt{5}}{2}}\right)+\left(\frac{\sqrt{5}+1}{4},-\frac{1}{2}\sqrt{\frac{5-\sqrt{5}}{2}},0\right)\\
+&=&\left(0,\sqrt{\frac{5+\sqrt{5}}{2}},0\right).
+\end{eqnarray*}
+
+\noindent\newline Zatim, vektor ${\bf w}$ dobivamo kao:
+
+\begin{equation*}
+{\bf w}=\left(0,\sqrt{\frac{5+\sqrt{5}}{2}},0\right)-\overrightarrow{CB}\frac{\left\langle\overrightarrow{CB},\overrightarrow{CE''}\right\rangle}{\left\langle\overrightarrow{CB},\overrightarrow{CB}\right\rangle}.
+\end{equation*}
+
+\noindent\newline Prisjetimo se kako je:
+
+\begin{equation*}
+\overrightarrow{CB}=\frac{1}{2}\left(\sqrt{5},\sqrt{\frac{5+\sqrt{5}}{2}}-\sqrt{\frac{5-\sqrt{5}}{2}},0\right).
+\end{equation*}
+
+\noindent\newline Skalarni produkt u nazivniku jednak je kvadratu duljine stranice peterokuta, a to je $|\overrightarrow{CB}|^2=\frac{5-\sqrt{5}}{2}$. Dalje, skalarni produkt u brojniku je:
+
+\begin{equation*}
+\left\langle\overrightarrow{CB},\overrightarrow{CE''}\right\rangle=\frac{5-\sqrt{5}}{4}.
+\end{equation*}
+
+\noindent\newline Cijeli taj razlomak je oèito jednak $\frac{1}{2}$. To je onda:
+
+\begin{equation*}
+{\bf w}=\frac{1}{4}\left(-\sqrt{5},3\sqrt{\frac{5+\sqrt{5}}{2}}+\sqrt{\frac{5-\sqrt{5}}{2}},0\right).
+\end{equation*}
+
+\noindent\newline Tada je:
+
+\begin{equation*}
+\|{\bf w}\|=\frac{\sqrt{5}}{2}\sqrt{\frac{3+\sqrt{5}}{2}}.
+\end{equation*}
+
+\noindent\newline Izraèunajmo projekciju ove toèke, to je $E''_p=E''-{\bf w}$, dakle:
+
+\begin{equation*}
+E''_p=\frac{1}{4}\left(-1,\sqrt{\frac{5+\sqrt{5}}{2}}+\sqrt{\frac{5-\sqrt{5}}{2}},0\right).
+\end{equation*}
+
+\noindent\newline Nadalje, kako radimo cijelo vrijeme u $xy$ ravnini, normiran vektor ${\bf u}$ æe biti $(0,0,1)$. Pomnožen s normom vektora ${\bf w}$ to je:
+
+\begin{equation*}
+{\bf u}=\left(0,0,\frac{\sqrt{5}}{2}\sqrt{\frac{3+\sqrt{5}}{2}}\right).
+\end{equation*}
+
+\noindent\newline Uvrstimo li to u formulu $K=E''_p+{\bf w}\cos{\varphi}+\|{\bf w}\|\frac{{\bf u}}{\|{\bf u}\|}\sin{\varphi}$, znajuæi kako je $\cos{\varphi}=\frac{1}{\sqrt{5}}$, a $\sin{\varphi}=\frac{2}{\sqrt{5}}$, imamo:
+
+\begin{equation*}
+K=\left(-\frac{1}{2},\frac{\sqrt{5(5 + \sqrt{5})} + \sqrt{5(25 + 11\sqrt{5})}}{10\sqrt{2}},\sqrt{\frac{3 + \sqrt{5}}{2}}\right).
+\end{equation*}
+
+\noindent\newline No, na slici ispod vidimo kako možemo pretpostaviti da su toèke $S$, $K$ i $I$ kolinearne, odnosno da je $K$ zapravo skalirana toèka $E$ istim faktorom kao $I$ uz razliku u predznaku.
+
+\begin{figure}[h]\label{cinis}
+\centerline{\scalebox{0.35}{\includegraphics{petmreza7.eps}}}
+\caption{Toèka $K$ dodekaedra.}
+\end{figure}
+
+\noindent\newline Stoga æemo podijeliti toèku $K$ s $-\frac{\sqrt{5}+1}{2}$ i dobiti (nakon racionalizacije):
+
+\begin{equation*}
+K=-\frac{\sqrt{5}+1}{2}\left(\frac{\sqrt{5}-1}{4},-\left(\sqrt{\frac{5-\sqrt{5}}{40}}+\sqrt{\frac{5+2\sqrt{5}}{20}}\right),-1\right).
+\end{equation*}
+
+\noindent\newline Pokažimo kako æe ordinata (ne raèunajuæi faktor ispred) toèke $K$ biti jednaka ordinati toèke $J$ (takoðer bez faktora), a time i ordinati toèke $E$. Stoga uzmimo ordinatu (bez negativnog predznaka):
+
+\begin{equation*}
+x=\sqrt{\frac{5-\sqrt{5}}{40}}+\sqrt{\frac{5+2\sqrt{5}}{20}}.
+\end{equation*}
+
+\noindent\newline Primijetimo kako mora biti $x>0$. Nakon kvadriranja, to je:
+
+\begin{equation*}
+x^2=\frac{1}{40}\left(15+3\sqrt{5}+2\sqrt{10(3+\sqrt{5})}\right).
+\end{equation*}
+
+\noindent\newline Daljnjim kvadriranjem (nakon premještanja korijena) dobivamo:
+
+\begin{equation*}
+160x^4-24x^2(5+\sqrt{5})+5(3+\sqrt{5})=0.
+\end{equation*}
+
+\noindent\newline Primijetimo kako je $(5+\sqrt{5})^2=(30+10\sqrt{5})=10(3+\sqrt{5})$. Ova èinjenica je jako korisna jer æemo moæi lako izluèiti korijen iz korijena u formuli za rješenja kvadratne jednadžbe. Stoga, pomnožimo gornju jednadžbu s $2$, uèinimo ovu malu izmjenu i uzmemo supstituciju $t=x^2$ pa imamo:
+
+\begin{equation*}
+320t^2-48(5+\sqrt{5})t+(5+\sqrt{5})^2=0.
+\end{equation*}
+
+\noindent\newline Koristeæi formulu za rješenja kvadratne jednadžbe vrijedi:
+
+\begin{equation*}
+t_{1,2}=\frac{48(5+\sqrt{5})\pm\sqrt{2304(5+\sqrt{5})^2-1280(5+\sqrt{5})^2}}{640}=\frac{48(5+\sqrt{5})\pm32(5+\sqrt{5})}{640}.
+\end{equation*}
+
+\noindent\newline Nakon pokraæivanja i izluèivanja zajednièkog faktora to je:
+
+\begin{equation*}
+t_{1,2}=\frac{48(5+\sqrt{5})\pm32(5+\sqrt{5})}{640}=\frac{(5+\sqrt{5})(3\pm 2)}{40}.
+\end{equation*}
+
+\noindent\newline Dakle, imamo $t_1=\frac{5+\sqrt{5}}{8}$ i $t_2=\frac{5+\sqrt{5}}{40}$. Od koristi æe nam biti samo $t_1$ pa vraæajuæi supstituciju $t=x^2$, i.e. $x=\pm\sqrt{t}$, imamo:
+
+\begin{equation*}
+x=\pm\sqrt{\frac{5+\sqrt{5}}{8}}=\pm\frac{1}{2}\sqrt{\frac{5+\sqrt{5}}{2}}.
+\end{equation*}
+
+\noindent\newline No, rekli smo na poèetku kako $x$ mora biti pozitivan pa je tada:
+
+\begin{equation*}
+\sqrt{\frac{5-\sqrt{5}}{40}}+\sqrt{\frac{5+2\sqrt{5}}{20}}=\frac{1}{2}\sqrt{\frac{5+\sqrt{5}}{2}}
+\end{equation*}
+
+\noindent\newline Dakle, koordinate toèke $K$ su sada:
+
+\begin{equation*}
+K=-\frac{\sqrt{5}+1}{2}\left(\frac{\sqrt{5}-1}{4},-\frac{1}{2}\sqrt{\frac{5+\sqrt{5}}{2}},-1\right).
+\end{equation*}
+
+\begin{figure}[h]\label{elementi}
+\centerline{\scalebox{0.4}{\includegraphics{petmreza8.eps}}}
+\caption{Projekcija dodekaedra na $xy$ ravninu uz prethodnu mrežu peterokuta.}
+\end{figure}
+
+\noindent\newline Primijetimo kako se ova toèka, a i ostale, koristeæi svojsta simetrije (vidi sliku iznad), opet može zapisati pomoæu kompleksnih korijena $\omega,\ldots,\omega^4,\omega^5$ na sljedeæi naèin:
+
+\begin{eqnarray*}
+K&=&-\frac{1+\sqrt{5}}{2}\left(\textnormal{Re}(\omega^4),\textnormal{Im}(\omega^4),-\textnormal{Re}(\omega^0)\right),\\
+L&=&-\frac{1+\sqrt{5}}{2}\left(\textnormal{Re}(\omega^0),\textnormal{Im}(\omega^0),-\textnormal{Re}(\omega^0)\right),\\
+M&=&-\frac{1+\sqrt{5}}{2}\left(\textnormal{Re}(\omega),\textnormal{Im}(\omega),-\textnormal{Re}(\omega^0)\right),\\
+N&=&-\frac{1+\sqrt{5}}{2}\left(\textnormal{Re}(\omega^2),\textnormal{Im}(\omega^2),-\textnormal{Re}(\omega^0)\right),\\
+O&=&-\frac{1+\sqrt{5}}{2}\left(\textnormal{Re}(\omega^3),\textnormal{Im}(\omega^3),-\textnormal{Re}(\omega^0)\right).
+\end{eqnarray*}
+
+\noindent\newline Opet dajemo preciznije koordinate ovih toèki:
+
+\begin{eqnarray*}
+K&=&-\frac{1+\sqrt{5}}{2}\left(\frac{\sqrt{5}-1}{4},-\frac{1}{2}\sqrt{\frac{5+\sqrt{5}}{2}},-1\right),\\
+L&=&-\frac{1+\sqrt{5}}{2}\left(1,0,-1\right),\\
+M&=&-\frac{1+\sqrt{5}}{2}\left(\frac{\sqrt{5}-1}{4},\frac{1}{2}\sqrt{\frac{5+\sqrt{5}}{2}},-1\right),\\
+N&=&-\frac{1+\sqrt{5}}{2}\left(-\frac{\sqrt{5}+1}{4},\frac{1}{2}\sqrt{\frac{5-\sqrt{5}}{2}},-1\right),\\
+O&=&-\frac{1+\sqrt{5}}{2}\left(-\frac{\sqrt{5}+1}{4},-\frac{1}{2}\sqrt{\frac{5-\sqrt{5}}{2}},-1\right).
+\end{eqnarray*}
+
+\noindent\newline Na slici ispod prikazane su plohe koje ove toèke zajedno èine.
+
+\begin{figure}[h]\label{dequo}
+\centerline{\scalebox{0.7}{\includegraphics{dodekaedar1.eps}}}
+\caption{Donja polovica dodekaedra (toèke iz $\mathcal{D}_1$).}
+\end{figure}
+
+\noindent\newline Kako bismo dovršili konstrukciju dodekaedra, ne moramo raèunati sve ispoèetka za gornju polovicu, veæ æemo biti snalažljivi i "kopirati" donju polovicu, te ju zrcaliti obzirom na $xy$ ravninu. No, tada se dodekaedar ne bi "uklopio", pa bismo ga morali rotirati za kut koji èine projekcije vektora $\overrightarrow{SJ}$ i $\overrightarrow{SO}$. Tada æe se one toèke koje su u donjoj polovici "više" toèke uklopiti s onim toèkama gornje polovice koje su bile "niže" prije zrcaljenja. Neka je $\mathcal{D}_1$ skup koji sadrži toèke $A$,$B$,\ldots,$N$,$O$. Za poèetak želimo da sve ove toèke imaju obratne predznake u treæoj komponenti, tj. aplikati. To možemo postiæi množeæi ih matricom simetrije:
+
+\begin{equation*}
+S_z=\left[\begin{array}{ccc}
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & -1\\
+\end{array}\right].
+\end{equation*}
+
+\noindent\newline Definirajmo skup $\mathcal{D}_2$ koji sadrži sve toèke iz $\mathcal{D}_1$ reflektirane oko $xy$ ravnine, to jest:
+
+\begin{equation*}
+\left(\forall X\right)\left(X\in\mathcal{D}_1\rightarrow S_z X\in\mathcal{D}_2\right).
+\end{equation*}
+
+\begin{figure}[h]\label{ludunt}
+\centerline{\scalebox{0.7}{\includegraphics{dodekaedar2.eps}}}
+\caption{Toèke iz $\mathcal{D}_1\cup\mathcal{D}_2$.}
+\end{figure}
+
+\noindent\newline Pronaðimo sada kut rotacije. Zapravo, ne moramo pronaæi sam kut, veæ samo njegov kosinus i sinus, jer to je zapravo sve što nam je potrebno za rotaciju. Uzmimo projekciju od $J$ i $O$ (recimo vektore projekcija $\overrightarrow{SJ_p}$ i $\overrightarrow{SO_p}$), te uvrstimo u formulu za kosinus kuta. Prisjetimo se formule za kut izmeðu dva vektora:
+
+\begin{equation*}
+\cos{\psi}=\frac{\left\langle\overrightarrow{SJ},\overrightarrow{SO}\right\rangle}{|\overrightarrow{SJ}||\overrightarrow{SO}|}.
+\end{equation*}
+
+\noindent\newline Projekcije ovih vektora su (primijetimo kako faktore ispred vektora možemo maknuti jer nam ipak treba samo kut):
+
+\begin{eqnarray*}
+\overrightarrow{SO_p}&=&\left(\frac{\sqrt{5}+1}{4},\frac{1}{2}\sqrt{\frac{5-\sqrt{5}}{2}}\right),\\
+\overrightarrow{SJ_p}&=&\left(1,0\right).
+\end{eqnarray*}
+
+\noindent\newline Kako su ovo zapravo "višekratnici" vektora $\overrightarrow{SA}$ i $\overrightarrow{SD}$ norme bez faktora koje smo uklonili su im jednake $1$. Stoga je $|\overrightarrow{SO_p}|=|\overrightarrow{SJ_p}|=1$ pa vrijedi:
+
+\begin{equation*}
+\cos{\psi}=\frac{\sqrt{5}+1}{4}.
+\end{equation*}
+
+\noindent\newline Takoðer, znamo da je tada $\sin{\psi}=\pm\frac{1}{2}\sqrt{\frac{5-\sqrt{5}}{2}}$. Sve smo to mogli veæ vidjeti iz vektora $\overrightarrow{SO_p}$ jer zapravo $\overrightarrow{SJ_p}$ leži na apscisi. Napomenimo samo kako je oèito da se radi o kutu od $36^{\circ}$. Stoga koristimo rotaciju:
+
+\begin{equation*}
+R_{z,36^{\circ}}=\left[\begin{array}{ccc}
+\frac{\sqrt{5}+1}{4} & -\frac{1}{2}\sqrt{\frac{5-\sqrt{5}}{2}} & 0\\
+\frac{1}{2}\sqrt{\frac{5-\sqrt{5}}{2}} & \frac{\sqrt{5}+1}{4} & 0\\
+0 & 0 & 1\\
+\end{array}\right]
+\end{equation*}
+
+\noindent\newline Tada æemo definirati skup $\mathcal{D}_3$ tako da vrijedi:
+
+\begin{equation*}
+\left(\forall X\right)\left(X\in\mathcal{D}_1\rightarrow R_{z,36^{\circ}}S_z X\in\mathcal{D}_2\right).
+\end{equation*}
+
+\begin{figure}[h]\label{venti}
+\centerline{\scalebox{0.7}{\includegraphics{dodekaedar3.eps}}}
+\caption{Toèke iz $\mathcal{D}_1\cup\mathcal{D}_3$.}
+\end{figure}
+
+\noindent\newline Nakon rotacije, uzmemo toèku $J_3=R_{z,36^{\circ}} S_z J\in\mathcal{D}_3$. Ta æe toèka biti toèno ispod toèke $O\in\mathcal{D}_1$. Usporedimo njihove aplikate. Aplikata toèke $O$ iznosi $t_1=\frac{1+\sqrt{5}}{2}$, dok aplikata toèke $J_3$ iznosi $t_2=-1$. Uzmemo njihovu razliku, to æe biti:
+
+\begin{equation*}
+t_1-t_2=\frac{1+\sqrt{5}}{2}-(-1)=\frac{3+\sqrt{5}}{2}.
+\end{equation*}
+
+\noindent\newline Pomaknemo li toèke iz $\mathcal{D}_3$ za $t_1-t_2$ po aplikati, poklopit æe se $O$ i $J_3$, a tako i ostale odgovarajuæe toèke ("više" s "nižima" prije refleksije). Definiramo vektor translacije kao:
+
+\begin{equation*}
+T=\left[\begin{array}{c}
+0\\
+0\\
+\frac{3+\sqrt{5}}{2}\\
+\end{array}\right].
+\end{equation*}
+
+\noindent\newline Sada definiramo napokon skup $\mathcal{D}_4$ tako da bude:
+
+\begin{equation*}
+\left(\forall X\right)\left(X\in\mathcal{D}_1\right)\rightarrow\left(T+R_{z,36^{\circ}}S_z X\in\mathcal{D}_4\right).
+\end{equation*}
+
+\noindent\newline Definirajmo sada novi skup na sljedeæi naèin:
+
+\begin{equation*}
+\mathcal{D}=\mathcal{D}_1\cup\left(\mathcal{D}_4\backslash\mathcal{D}_1\right).
+\end{equation*}
+
+\noindent\newline Primijetimo kako smo uklonili iz skupa $\mathcal{D}_4$ one toèke koje su se poklopile s toèkama iz $\mathcal{D}_1$. Skup $\mathcal{D}$ sadrži sve toèke koje definiraju naš dodekaedar prikazan na slici ispod. Napomenimo kako je $|\mathcal{D}|=20$, tj. imamo ukupno $20$ toèki u dodekaedru. Kako imamo $12$ strana, i.e. peterokuta, brojimo $5\cdot 12$ toèki. Ipak, brojali smo svaku tri puta (jer se u jednoj toèki susreæu tri brida dodekaedra), pa je to $5\cdot 4=20$ toèki).
+
+\begin{figure}[h]\label{nunquam}
+\centerline{\scalebox{0.7}{\includegraphics{dodekaedar.eps}}}
+\caption{Dodekaedar.}
+\end{figure}
+
+\noindent\newline Preostalih pet toèki koje leže u ravnini paralelne s bazom, tj. poèetnim peterokutom su:
+
+\begin{eqnarray*}
+A'&=&-\left(\textnormal{Re}(\omega^3),\textnormal{Im}(\omega^3),-4\left(\textnormal{Re}(\omega^2)\right)^2\right),\\
+B'&=&-\left(\textnormal{Re}(\omega^4),\textnormal{Im}(\omega^4),-4\left(\textnormal{Re}(\omega^2)\right)^2\right),\\
+C'&=&-\left(\textnormal{Re}(\omega^0),\textnormal{Im}(\omega^0),-4\left(\textnormal{Re}(\omega^2)\right)^2\right),\\
+D'&=&-\left(\textnormal{Re}(\omega),\textnormal{Im}(\omega),-4\left(\textnormal{Re}(\omega^2)\right)^2\right),\\
+E'&=&-\left(\textnormal{Re}(\omega^2),\textnormal{Im}(\omega^2),-4\left(\textnormal{Re}(\omega^2)\right)^2\right).
+\end{eqnarray*}
+
+\noindent\newline Preciznije koordinate su:
+
+\begin{eqnarray*}
+A'&=&-\left(-\frac{\sqrt{5}+1}{4},-\frac{1}{2}\sqrt{\frac{5-\sqrt{5}}{2}},-\frac{3+\sqrt{5}}{2}\right),\\
+B'&=&-\left(\frac{\sqrt{5}-1}{4},-\frac{1}{2}\sqrt{\frac{5+\sqrt{5}}{2}},-\frac{3+\sqrt{5}}{2}\right),\\
+C'&=&-\left(1,0,-\frac{3+\sqrt{5}}{2}\right),\\
+D'&=&-\left(\frac{\sqrt{5}-1}{4},\frac{1}{2}\sqrt{\frac{5+\sqrt{5}}{2}},-\frac{3+\sqrt{5}}{2}\right),\\
+E'&=&-\left(-\frac{\sqrt{5}+1}{4},\frac{1}{2}\sqrt{\frac{5-\sqrt{5}}{2}},-\frac{3+\sqrt{5}}{2}\right),\\
+\end{eqnarray*}
+
+\noindent\newline Ono što sada želimo jeste upisati dodekaedar u kuglu (ukoliko je to moguæe). Primijetimo kako je razlika izmeðu aplikati "najnižih" i "najviših" toèki jednaka $v=\frac{3+\sqrt{5}}{2}$. Možemo pretpostaviti kako æe se na polovici te visine nalaziti središte kugle. Apscisa i ordinata središta su naravno nula (jer su to apscisa i ordinata središta opisanih kružnica u ravninama $z=0$ i $z=v$). Dakle bit æe:
+
+\begin{equation*}
+S=\left(0,0,\frac{3+\sqrt{5}}{4}\right).
+\end{equation*}
+
+\noindent\newline Preostaje nam odrediti polumjer, a za to moramo uzeti samo udaljenost od $S$ do neke toèke, recimo $A$. Imamo:
+
+\begin{equation*}
+d(S,A)=\sqrt{(1-0)^2+(0-0)^2+\left(0-\frac{3+\sqrt{5}}{4}\right)^2}=\sqrt{\frac{15+3\sqrt{5}}{8}}.
+\end{equation*}
+
+\begin{equation*}
+x^2+y^2+(z-\frac{3+\sqrt{5}}{4})^2=\left(\sqrt{\frac{15+3\sqrt{5}}{8}}\right)^2.
+\end{equation*}
+
+\noindent\newline To možemo malo srediti rješavanjem kvadrata:
+
+\begin{equation*}
+x^2+y^2+z^2-z\frac{3+\sqrt{5}}{2}+\frac{7+3\sqrt{5}}{8}=\frac{15+3\sqrt{5}}{8}.
+\end{equation*}
+
+\noindent\newline Konaèno, to je:
+
+\begin{equation*}
+x^2+y^2+z^2=1+z\frac{3+\sqrt{5}}{2}.
+\end{equation*}
+
+\noindent\newline Dugotrajan je, ali ne težak, posao provjeriti kako æe svaka toèka ležati na sferi ove kugle (autor ostavlja to èitatelju na provjeru, ako ima vremena za izgubiti). No, ovaj dodekaedar koji smo dobili nadogradnjom nad rješenja jednadžbe $x^5-1=0$ možemo staviti i u bolji položaj, kada bismo translatirali središte kružnice u ishodište. To znaèi kako bismo htjeli uzeti $\mathcal{D}'$ takav da bude:
+
+\begin{equation*}
+\mathcal{D}'=\mathcal{D}-\left[\begin{array}{c}
+0\\
+0\\
+\frac{3+\sqrt{5}}{4}\\
+\end{array}\right].
+\end{equation*}
+
+\noindent\newline Tada bi jednadžba dodekaedru (èiji su vrhovi $\mathcal{D}'$) opisane kružnice glasila:
+
+\begin{equation*}
+x^2+y^2+z^2=\frac{15+3\sqrt{5}}{8}.
+\end{equation*}
+
+\noindent\newline Ukoliko bismo željeli, a uistinu to i želimo, da radijvektori vrhova dodekaedra, tj. toèki iz $\mathcal{D}'$, budu normirani, pomnožit æemo svaku toèku iz prethodnog skupa s reciproènom vrijednošæu polumjera iz gornjeg izraza:
+
+\begin{equation*}
+\mathcal{D}_N=\frac{2}{15}\left(5-\sqrt{5}\right)\mathcal{D}'=\frac{2}{15}\left(5-\sqrt{5}\right)\left(\mathcal{D}-\left[\begin{array}{c}
+0\\
+0\\
+\frac{3+\sqrt{5}}{4}\\
+\end{array}\right]\right).
+\end{equation*}
+
+\begin{figure}[h]\label{principio}
+\centerline{\scalebox{0.47}{\includegraphics{dodekproj1.eps}}}
+\caption{Ortogonalna projekcija dodekaedra na $xz$-ravninu.}
+\end{figure}
+
+\noindent\newline No, zaèudo, želimo takoðer i naš dodekaedar staviti u nezgodniji položaj. Na slici iznad je prikazana ortogonalna projekcija dodekaedra s vrhovima iz $\mathcal{D}_N$ na $xz$-ravninu. Želimo rotirati dodekaedar za kut $\Phi$ tako da toèka $C'$ doðe u položaj toèke $C'_R$. Lako æemo izraèunati kut $\Phi$ (ili barem njegove sinuse i kosinuse). Sa slike je oèito kako je trokut $SC'P$ pravokutan i kako je duljina dužine $\overline{PC'}$ zapravo jednaka duljini visine karakteristiènog trokuta peterokuta te kako je $|SP|$ jednaka duljini polovice visine dodekaedra. Dakle, vrijedi:
+
+\begin{eqnarray*}
+|PC'|&=&\frac{1}{2}\sqrt{\frac{\sqrt{5}+3}{2}},\\
+|SP|&=&\frac{3+\sqrt{5}}{4}.
+\end{eqnarray*}
+
+\noindent\newline Preko Pitagorinog pouèka možemo odrediti $|SC'|$ te æe tako biti:
+
+\begin{equation*}
+|SC'|=\frac{1}{2}\sqrt{5+2\sqrt{5}}.
+\end{equation*}
+
+\noindent\newline Sada možemo izraèunati kosinus traženog kuta:
+
+\begin{equation*}
+\cos{\Phi}=\frac{3+\sqrt{5}}{2\sqrt{5+2\sqrt{5}}}=\sqrt{\frac{5+\sqrt{5}}{10}}.
+\end{equation*}
+
+\noindent\newline Tada vrijedi i (iz $\sin{\Phi}=\pm\sqrt{1-\left(\cos{\Phi}\right)^2}$):
+
+\begin{equation*}
+\sin{\Phi}=\pm\sqrt{\frac{5-\sqrt{5}}{10}}.
+\end{equation*}
+
+\noindent\newline Sada mislimo kako bismo mogli uvrstiti pozitivan sinus u rotacijsku matricu, no moram paziti da je naša želja kretati se od $x$ osi prema $z$ osi, a to je zapravo negativan smjer (provjeri npr. pravilom vijka da se radi o lijevo orijentiranom koordinatnom sustavu). Stoga uzimamo negativnu vrijednost. Dakle, imamo rotacijsku matricu:
+
+\begin{equation*}
+R_{xz}=\left[\begin{array}{ccc}
+\sqrt{\frac{5+\sqrt{5}}{10}} & 0 & -\sqrt{\frac{5-\sqrt{5}}{10}}\\
+0 & 1 & 0\\
+\sqrt{\frac{5-\sqrt{5}}{10}} & 0 & \sqrt{\frac{5+\sqrt{5}}{10}}\\
+\end{array}\right].
+\end{equation*}
+
+\noindent\newline Kada bismo uzeli sada skup vrhova $\mathcal{D}_R$ takav da vrijedi:
+
+\begin{equation*}
+\mathcal{D}_R=\frac{2}{15}\left(5-\sqrt{5}\right)\left[\begin{array}{ccc}
+\sqrt{\frac{5+\sqrt{5}}{10}} & 0 & -\sqrt{\frac{5-\sqrt{5}}{10}}\\
+0 & 1 & 0\\
+\sqrt{\frac{5-\sqrt{5}}{10}} & 0 & \sqrt{\frac{5+\sqrt{5}}{10}}\\
+\end{array}\right]\left(\mathcal{D}-\left[\begin{array}{c}
+0\\
+0\\
+\frac{3+\sqrt{5}}{4}\\
+\end{array}\right]\right),
+\end{equation*}
+
+\noindent\newline primijetili bismo kako imamo toèke iz $\mathcal{D}_R$ oblika:
+
+\begin{equation*}
+\left(\pm\frac{\sqrt{3}}{3},\pm\frac{\sqrt{3}}{3},\pm\frac{\sqrt{3}}{3}\right).
+\end{equation*}
+
+\noindent\newline Stoga zapravo želimo skalirati vrhove dodekaedra za $\sqrt{3}$ (tako da dodekaedar zapravo bude upisan u kružnicu polumjera $\sqrt{3}$). Tada bismo dobili prilièno zgodan naèin zapisivanja vrhova dodekaedra (dakle ako uzmemo toèke iz $\mathcal{D}_S=\mathcal{D}_R\sqrt{3}$:
+
+\begin{eqnarray*}
+&&\left(\pm1,\pm1,\pm1\right),\\
+&&\left(0,\pm\frac{1}{\varphi},\pm\varphi\right),\\
+&&\left(\pm\frac{1}{\varphi},\pm\varphi,0\right),\\
+&&\left(\pm\varphi,0,\pm\frac{1}{\varphi}\right),
+\end{eqnarray*}
+
+\noindent\newline gdje je $\varphi$ zlatni rez, tj. $\varphi=\frac{1+\sqrt{5}}{2}$. Slièno je $\frac{1}{\varphi}=\frac{\sqrt{5}-1}{2}$. Na slici ispod dajemo jednu mrežu za konstrukciju dodekaedra.
+
+\begin{figure}[h]\label{net}
+\centerline{\scalebox{0.7}{\includegraphics{dodekonstr1.eps}}}
+\caption{Mreža za konstrukciju dodekaedra.}
+\end{figure}
+
+\newpage
+
+\begin{center}
+{\bf Konstrukcija dodekaedra II}
+\end{center}
+
+\vskip 0.5cm
+
+Napomenimo samo kako, ukoliko imamo dvije toèke, $A=(x_A, y_A, z_A)$ i $B=(x_B, y_B, z_B)$, množenjem tih toèki s $\lambda\in\R$, njihova Euklidska udaljenost se poveæa $|\lambda|$ puta. Znamo kako je $d(A,B)=\sqrt{(x_A-x_B)^2+(y_A-y_B)^2+(z_A-z_B)^2}$. No uzmemo li $\lambda A=(\lambda x_A, \lambda y_A, \lambda z_A)$ te $\lambda B=(\lambda x_B, \lambda y_B, \lambda z_B)$ imamo:
+
+\begin{eqnarray*}
+d(\lambda A, \lambda B)&=&\sqrt{(\lambda x_A-\lambda x_B)^2+(\lambda y_A-\lambda y_B)^2+(\lambda z_A-\lambda z_B)^2}\\
+&=&\sqrt{\lambda^2\left((x_A-x_B)^2+(y_A-y_B)^2+(z_A-z_B)^2\right)}\\
+&=&|\lambda|\sqrt{(x_A-x_B)^2+(y_A-y_B)^2+(z_A-z_B)^2}=\lambda d(A,B).
+\end{eqnarray*}
+
+\noindent\newline Stoga, svi meðuodnosi toèki, koje smo raèunali u peterokutu, unatoè rastezanju od $\sqrt{3}$ prilikom konstrukcije dodekaedra, ostaju u omjeru. Promotrimo sada projekciju dodekaedra na $xy$-ravninu.
+
+\begin{figure}[h]\label{what}
+\centerline{\scalebox{0.75}{\includegraphics{dodekproj2.eps}}}
+\caption{Projekcija dodekaedra na $xy$-ravninu.}
+\end{figure}
+
+\noindent\newline Primijetimo kako je duljina stranice kvadrata "opisanog" projekciji dodekaedra jednaka $2\phi$. Kako æemo zapravo "rezbariti" dodekaedar iz kocke, bitnije nam je znati kolika æe duljina brida dodekaedra biti u odnosu na brid kocke. Stoga uzmimo za duljinu brida kocke $2\phi a x$. Tada je duljina brida dodekaedra (duljina dužine $\overline{DJ}$) jednaka $|DJ|=\frac{2}{\pi}a x$ (vidi sliku iznad). Želimo da nam duljina brida kocke bude $x$, pa æemo za $a$ uzeti $a=\frac{1}{2\phi}$. Tada je duljina brida dodekaedra $|DJ|=\frac{1}{\phi^2}x$, gdje je $x$ duljina brida kocke (npr. duljina $|SP|$). Izraèunajmo $|DJ|$. Imamo:
+
+\begin{equation*}
+\phi^2=\left(\frac{1+\sqrt{5}}{2}\right)^2=\frac{6+2\sqrt{5}}{4}=\frac{3+\sqrt{5}}{2}.
+\end{equation*}
+
+\noindent\newline Tada je:
+
+\begin{equation*}
+\frac{1}{\phi^2}=\frac{2}{3+\sqrt{5}}=\frac{2(3-\sqrt{5})}{9-5}=\frac{3-\sqrt{5}}{2}.
+\end{equation*}
+
+\noindent\newline Primijetimo kako je $|DJ|$ takoðer duljina dužine $\overline{EC}$. Naravno, u odnosu na brid kocke to je $|DJ|=|EC|=\frac{3-\sqrt{5}}{2}x$. Izraèunajmo duljine $|QE|$ i $|CP|$. Oèito je (sa slike) $|QE|=|CP|$. Imamo:
+
+\begin{equation*}
+2|QE|=x-\frac{3-\sqrt{5}}{2}x=\frac{2-3+\sqrt{5}}{2}x=\frac{\sqrt{5}-1}{2}x.
+\end{equation*}
+
+\noindent\newline Dakle, vrijedi $|QE|=|CP|=\frac{\sqrt{5}-1}{4}x$. Pokazat æemo samo kako su toèke $G$, $F$ i $E$ kolinearne. Uzmemo li vektore $\overrightarrow{GF}=\left[-1+\phi,1\right]^T$ i $\overrightarrow{GE}=\left[-\phi^{-1}+\phi,\phi\right]^T$ vidimo kako je zapravo $\overrightarrow{GE}=\phi^{-1}\overrightarrow{GF}$, jer je:
+
+\begin{equation*}
+-\phi+\phi^2=-\frac{1+\sqrt{5}}{2}+\frac{3+\sqrt{5}}{2}=\frac{2}{2}=1.
+\end{equation*}
+
+\noindent\newline Takoðer je:
+
+\begin{equation*}
+-\phi^{-1}+\phi=\frac{1-\sqrt{5}}{2}+\frac{1+\sqrt{5}}{2}=\frac{2}{2}=1.
+\end{equation*}
+
+\noindent\newline Sada, koristeæi Pitagorin pouèak, možemo vidjeti kako je:
+
+\begin{equation*}
+|GE|=\sqrt{\left(\frac{\sqrt{5}-1}{4}x\right)^2+\left(\frac{x}{2}\right)^2}=\sqrt{\frac{3-\sqrt{5}}{8}x^2+\frac{x^2}{4}}=\sqrt{\frac{5-\sqrt{5}}{8}x^2}=\frac{x}{2}\sqrt{\frac{5-\sqrt{5}}{2}}.
+\end{equation*}
+
+\noindent\newline No, nama je najbitnija konstrukcija dužina $\overline{DJ}$, $\overline{EC}$, $\overline{IK}$ itd. Nezgodna je konstrukcija ovih dužina jer uvijek moramo ostati unutar mjere manje od $x$. Stoga je, nakon malo razmišljanja, lakše zapisati:
+
+\begin{equation*}
+|DJ|=\frac{3-\sqrt{5}}{2}x=2\left(x-\frac{1+\sqrt{5}}{4}x\right).
+\end{equation*}
+
+\noindent\newline Ovako bismo mogli konstruirati lagano dužinu $\overline{DJ}$, no još bi bilo lakše konstruirati dužinu $\overline{QE}$, odnosno $\overline{TD}$ (koje su vidljivo jednakih duljina). Prvo što trebamo napraviti jeste konstruirati toèku $O$ (za grafièki prikaz konstrukcije vidi sliku ispod) na svakoj strani kocke. To lagano napravimo praveæi dijagonale kvadrata, kao što je prikazano na slici. Toèke $G$ i $A$, te $T$ i $U$ možemo dobiti lagano ukoliko povuèemo paralele (ili okomice) na odgovarajuæe stranice. Toèku $W$ konstruiramo kao polovište dužine $\overline{OT}$, njena je duljina $\frac{x}{4}$ (ne zaboravimo, u odnosu na duljinu brida kocke $x$). Ne moramo konstruirati toèku $W$ pomoæu simetrale, dovoljno je napraviti dužinu $\overline{GP}$ i tamo gdje sijeèe $\overline{OT}$ bit æe toèka $W$. Jasno je kako æe po Talesovom pouèku biti:
+
+\begin{equation*}
+\frac{|TW|}{|QG|}=\frac{|PT|}{|PQ|}=\frac{1}{2}.
+\end{equation*}
+
+\noindent\newline Dakle, vrijedi $2|TW|=|QG|=|OT|$. Zatim, ukoliko povuèemo dužinu $\overline{TS}$, vidjet æemo kako je njena duljina (zapravo ista kao i od $\overline{GP}$):
+
+\begin{equation*}
+|TS|=\sqrt{\frac{x^2}{4}+x^2}=\sqrt{\frac{5x^2}{4}}=\frac{\sqrt{5}}{2}x.
+\end{equation*}
+
+\noindent\newline Konstruiramo polovište $Z$ dužine $\overline{TS}$ (na isti naèin kao i za $W$). Pomoæu Talesovog pouèka vidimo kako vrijedi:
+
+\begin{equation*}
+\frac{|TZ|}{|ZS|}=\frac{|PA|}{|AS|}=1.
+\end{equation*}
+
+\noindent\newline Stoga je $|TZ|=|ZS|=\frac{\sqrt{5}}{4}x$. Spustimo šestarom toèku $Z$ na dužinu $\overline{TU}$ (s vrhom u $T$) i dobivamo toèku $Z'$. Vrijedi $|TZ'|=x\frac{\sqrt{5}}{4}x$. Zatim, uzmemo u šestar duljinu dužine $\overline{TW}$, zabodemo vrh šestara u toèku $Z'$ i nanesemo na dužinu $\overline{OT}$ toèku $D$ i bit æe $|DT|=\frac{\sqrt{5}}{4}x-\frac{x}{4}=\frac{\sqrt{5}-1}{4}x$. Uzmemo duljinu dužine $\overline{OD}$, zabodemo vrh šestara u toèku $O$ te nanesemo toèku $J$ s druge strane. Dobili smo traženu dužinu $\overline{DJ}$. Još je poželjno nanijeti odmah i toèke $G'$ i $A'$ na istoj kružnici, ali na dužini $\overline{GA}$, kao što je prikazano na slici.
+
+\begin{figure}[h]\label{youproject}
+\centerline{\scalebox{0.5}{\includegraphics{dodekrez34.eps}}}
+\caption{Konstrukcija dužine $\overline{DJ}$ te toèki $E$, $C$, $I$ i $K$.}
+\end{figure}
+
+\noindent\newline Kada smo to napravili, potrebno je povuæi iz toèki $G'$ i $A'$ paralele s dužinom $\overline{TU}$ kako bismo dobili toèke $E$, $C$, $I$ i $K$, kao što je prikazano na slici iznad. Zatim konstruiramo dužine $\overline{EG}$, $\overline{GI}$, $\overline{KA}$ i $\overline{AC}$. Po tim dužinama æemo napraviti "rezove" kako bismo dobili šesterostranu prizmu. Ovaj postupak treba ponoviti na svakom bridu kocke (osim na nasuprotnoj strani strane na kojoj smo taj postupak veæ napravili; dakle, bit æe potrebno ponoviti ovaj postupak tri puta uz moguæe optimizacije i preèace prepuštene èitatelju) s tim da se treba paziti na raspored, bolje reèeno smjer, "kopija" dužina $\overline{DJ}$ koje æe zapravo biti bridovi dodekaedra. Svake dvije dužine ("kopije" od $\overline{DJ}$) na susjednim stranama moraju biti okomite, dok dužine na nasuprotnim stranama kocke moraju biti paralelne i u istoj ravnini. Na slici ispod skiciran je alternirajuæi raspored bridova dodekaedra na stranama kocke.
+
+\begin{figure}[h]\label{attheuniverse}
+\centerline{\scalebox{0.6}{\includegraphics{kockarasp.eps}}}
+\caption{Raspored bridova dodekaedra na kocki.}
+\end{figure}
+
+\noindent\newline Radi potpunosti na slici na iduæoj strani prikazat æemo još jednom odnose duljina u dodekaedru spram duljine brida kocke. Iz ovoga se mogu vrlo lako napraviti i numerièki izraèuni danih duljina.
+
+\newpage
+
+\begin{figure}[h]\label{istherealfua}
+\centerline{\scalebox{0.65}{\includegraphics{dodeknum1.eps}}}
+\caption{Odnosi duljina dodekaedra spram brida kocke.}
+\end{figure}
+
+\newpage
+
+\begin{center}
+{\bf Svojstva dodekaedra}
+\end{center}
+
+\vskip 0.5cm
+
+Za poèetak æemo spomenuti neka kombinatorna svojstva. Znamo, iz prethodnog izvoda, kako se dodekaedar sastoji od dvanaest pravilnih peterokuta. Dakle, broj njegovih strana je $F=12$. Postavlja se pitanje koliko ima vrhova, bridova i dijagonala. Znamo kako dvije strane dijele samo jedan brid i kako svaka strana ima pet bridova. Dakle broj bridova je, za poèetak jednostavno $12\cdot 5$. Ipak, kako smo za dvije strane brojili jedan brid dva puta, pa je stoga $B=\frac{12\cdot 5}{2}=6\cdot 5=30$. Sada, postoji dva naèina da izbrojimo vrhove i iskoristit æemo oba kako bismo bili sigurniji u naš rezultat. Prvi je pomoæu bridova. Svaki brid sadrži dva vrha. Kako imamo $30$ bridova to je $30\cdot 2$ vrhova. No, stvar je u tome što se u jednom vrhu susreæu tri brida, pa smo svaki vrh zapravo prebrojali tri puta. Stoga je broj vrhova $V=\frac{30\cdot 2}{3}=20$. To možemo provjeriti i promatrajuæi strane, dakle svaka od $12$ strana ima $5$ vrhova pa bi to bilo $5\cdot 12$ vrhova. Kako se u svakom vrhu susreæu tri strane, svaki vrh smo prebrojali $3$ puta pa imamo $V=\frac{5\cdot 12}{3}=20$. Vidimo kako se to uklapa u Eulerov identitet za poliedre $20-30+12=-10+12=2$. Dalje se postavlja pitanje, koliko dijagonala možemo definirati u dodekaedru? Pa, promatrajuæi svaki vrh, 
+kako se u njemu susreæu tri brida, imat æemo, iz svakog vrha po $20\cdot(20-3)$ dijagonala, no svaku smo brojali po dva puta pa je to ukupno $\frac{20\cdot(20-3)}{2}=170$ dijagonala.
+
+\newpage
+
+\begin{center}
+{\bf Oktaedralna grupa}
+\end{center}
+
+\vskip 0.5cm
+
+U svom radu o algebri sam dao laganu motivaciju za prebrojavanje simetrija kocke i oktaedra. No, ovdje bih postavio temeljitiji dokaz i analizu oktaedralne grupe jer spada više u sferu geometrije nego u sferu algebre. Takoðer, potrebno je više ilustracija koje usporavaju uèitavanje datoteke, a obzirom da moj rad iz algebre, zasad, ima tri stotine stranica, jednostavnije je sve to staviti u datoteku gdje veæ ima mnogo ilustracija. Možda jednog dana, ako ne poèinim samoubojstvo, uspijem napraviti neku knjižicu od svega toga. Za poèetak, definirat æemo skup koji sadrži sve (i samo) vrhove kocke:
+
+\begin{equation*}
+\mathcal{C}=\{(n,n,n):\ n\in\{1,-1\}\}.
+\end{equation*}
+
+\noindent\newline Na slikama, uvest æemo sljedeæe oznake tih vrhova:
+
+\begin{center}
+\begin{tabular}{cccc}
+$A(-1,-1,-1)$ & $B(1,-1,-1)$ & $C(1,1,-1)$ & $D(-1,1,-1)$\\
+$E(-1,-1,1)$ & $F(1,-1,1)$ & $G(1,1,1)$ & $H(-1,1,1)$
+\end{tabular}
+\end{center}
+
+\noindent\newline Bitno je primijetiti, takoðer, kako se susjedni vrhovi razlikuju samo za jedan negativan èlan. Stoga, možemo uvesti i particiju skupa $\mathcal{C}$, tako da je:
+
+\begin{eqnarray*}
+\mathcal{C}_0&=&\{A\},\\
+\mathcal{C}_1&=&\{B,D,E\},\\
+\mathcal{C}_2&=&\{C,F,H\},\\
+\mathcal{C}_3&=&\{G\}.
+\end{eqnarray*}
+
+\noindent\newline Ta se particija lako može inducirati relacijom ekvivalencije koju æemo sada definirati. Za poèetak neka je $S_{\mathcal{C}}$ simetrièna grupa nad $\mathcal{C}$. Neka je $f:\mathcal{C}\rightarrow\mathcal{C}$ funkcija definirana formulom $f(x,y,z)=(y,z,x)$. Lako je provjeriti da je $f$ permutacija skupa $\mathcal{C}$ pa je $f\in S_{\mathcal{C}}$. Neka je $F=\left\langle f\right\rangle$. Kako je $f(x,y,z)=(y,z,x)$, tada je $f(f(x,y,z))=f(y,z,x)=(z,x,y)$. Takoðer, $f(f(f(x,y,z)))=f(f(y,z,x))=f(z,x,y)=(x,y,z)$. Dakle, $\left|F\right|=\ord{f}=3$. Nadalje, definiramo relaciju $(x_1,y_1,z_1)\sim(x_2,y_2,z_2)$ ako i samo ako postoji $k\in\Z$ tako da je $f^k.(x_1,y_1,z_1)=(x_2,y_2,z_2)$. Ista relacija ekvivalencije (generalizirana na $n$) se koristi za dokaz malog Fermatovog teorema pomoæu orbit-stabilizer teorema. Takoðer, znat æemo jesu li dva vrha, $(x_1,y_1,z_1)$ i $(x_2,y_2,z_2)$, susjedna ako i samo ako za svaki $k\in\Z$, $f^k.(x_1,y_1,z_1)\neq(x_2,y_2,z_2)$. Sada æemo pomoæu orbit-stabilizer teorema pokazati da je grupa $O$ (oktaedralna grupa) svih rotacija kocke (koje ju èine nepromijenjenom do na oznake vrhova) reda $24$.
+
+\noindent\newline{\bf Primjedba.} Primijetimo kako se ravnina $\pi$ u Euklidskom prostoru može definirati na tri naèina: (1) toèkom $T$ i normalom $n$ (pravcem okomitim na tu ravninu) kao $\pi[T\bot n]$; (2) toèkom $T$ i pravcem $p$ koji ne sadrži tu toèku kao $\pi[T,p]$; (3) pomoæu dva pravca $p$ i $q$ koji se sijeku ili su paralelni kao $\pi[p,q]$; (4) pomoæu tri nekolinearne toèke $T_1$, $T_2$ i $T_3$ kao $\pi[T_1,T_2,T_3]$. Oèito je kako se prva, druga i treæa definicija mogu izvesti iz èetvrte.
+
+\noindent\newline{\bf Propozicija.} Neka je zadan pravac $p$ te toèke $T_1$, $T_2$ i $T_3$ u Euklidskom prostoru. Neka je $T\in p$. Ako je $T_i T\bot p$, za svaki $i\in\{1,2,3\}$, tada su toèke $T$, $T_1$, $T_2$ i $T_3$ koplanarne, tj. postoji ravnina $\pi$ takva da je $\pi[T\bot p]=\pi[T_1,T_2,T_3]$.
+
+\noindent\newline{\bf Dokaz.} Uzmimo ravninu $\pi[T\bot p]$. Ta ravnina sadrži sve pravce okomite na $p$ koji prolaze toèkom $T$, a tu spadaju i $T_i T$. Stoga imamo $T_1,T_2,T_3\in\pi[T\bot p]$ pa je $\pi[T\bot p]=\pi[T_1,T_2,T_3]$.
+
+\begin{flushright}
+$\square$\\
+\end{flushright}
+
+Prva os rotacije, na slici ispod, koju æemo promotriti jeste os koja se poklapa s aplikatom. Oèito je kako je kut rotacije tada $\frac{\pi}{2}$ ili $90^{\circ}$ pa možemo zapisati $r_z=(A\ B\ C\ D)(E\ F\ G\ H)$. Radi se o dva disjunktna ciklusa, oba duljine èetiri, te je lako uoèiti kako je $\ord{r_z}=4$.
+
+\begin{figure}[h]\label{cube0}
+\centerline{\scalebox{0.7}{\includegraphics{cube0.eps}}}
+\caption{Aplikata kao os rotacije kocke.}
+\end{figure}
+
+\noindent\newline Promotrimo os rotacije $A G$ sa slike ispod i projekcije toèki iz $\mathcal{C}_1$ i $\mathcal{C}_2$ na $A G$. Oèito je kako, obzirom da je $A=(-1,-1,-1)$ i $G(1,1,1)$, toèke $A$ i $G$ definiraju pravac $t\rightarrow t(1,1,1)$ ($1\rightarrow(1,1,1)$, $(-1)\rightarrow(-1,-1,-1)$) te kako taj pravac prolazi ishodištem (za $t=0$ imamo $0\rightarrow 0\cdot(1,1,1)$, tj. $0\rightarrow(0,0,0)$). Vektor smjera je dakle $\overrightarrow{A G}=(1,1,1)$. Promotrimo sada projekcije toèki iz $\mathcal{C}_1$ na $A G$. Neka je $S_1$ projekcija toèke $B=(1,-1,-1)$ na $A G$. Oèito je kako, jer $S_1\in A G$, mora vrijediti $S_1=q(1,1,1)$. Tada je $\overrightarrow{B S_1}$ jednak $(q-1,q+1,q+1)$. Vektor $\overrightarrow{B S_1}$ mora biti okomit na $\overrightarrow{A G}$ pa mora vrijediti i $(1,1,1)(q-1,q+1,q+1)=0$ (skalarni produkt je nula). Iz toga imamo $q-1+q+1+q+1=0$, tj. $3q+1=0$. Dobili smo $q=-\frac{1}{3}$ pa je $S_1=-\frac{1}{3}\left(1,1,1\right)$. Stoga, $\overrightarrow{B S_1}=\frac{2}{3}\left(-2,1,1\right)$. Lako se provjeri kako je $D S_1\bot A G$ i $E S_1\bot A G$. Takoðer lako je vidjeti kako je $\overrightarrow{D S_1}=\frac{2}{3}\left(1,-2,1\right)$ i $\overrightarrow{E S_1}=\frac{2}{3}\left(1,1,-2\right)$. Kako su koordinate vektora $\overrightarrow{E S_1}$ i $\overrightarrow{D S_1}$ samo rotacije (u smislu permutacije) od $\overrightarrow{B S_1}$, te obzirom da je $\overrightarrow{A G}=(1,1,1)$, vrijedit æe $E S_1\bot A G$ i $D S_1\bot A G$, te su po prethodnoj propoziciji toèke $B$, $D$, $E$ i $S_1$ koplanarne. Ta ravnina može se definirati kao $\pi[B S_1, D S_1](u,v)=-\frac{1}{3}(1,1,1)+u(-2,1,1)+v(1,-2,1)$, tj.
+
+\begin{equation*}
+\pi[B,D,E](u,v)=\pi[B S_1, D S_1](u,v)=\left(v-2u-\frac{1}{3},u-2v-\frac{1}{3},u+v-\frac{1}{3}\right).
+\end{equation*}
+
+\noindent\newline Ta se ravnina može zapisati i kao $x+y+z+1=0$ što je lako provjeriti rješavanjem sustava.
+
+\begin{figure}[h]\label{cube1}
+\centerline{\scalebox{0.7}{\includegraphics{cube1.eps}}}
+\caption{Dijagonala kocke kao os rotacije.}
+\end{figure}
+
+\noindent\newline Slièno se pokaže kako æe projekcije toèki iz $\mathcal{C_2}$ na $A G$ biti u jednoj toèki $S_2=\frac{1}{3}\left(1,1,1\right)$. Vektori æe biti $\overrightarrow{C S_2}=-\frac{2}{3}\left(1,1,-2\right)$, $\overrightarrow{D S_2}=-\frac{2}{3}\left(1,-2,1\right)$ i $\overrightarrow{C S_2}=-\frac{2}{3}\left(-2,1,1\right)$. Takoðer æe tada biti definirana i ravnina:
+
+\begin{equation*}
+\pi[C,H,F](u,v)=\left(v-2u+\frac{1}{3},u-2v+\frac{1}{3},u+v+\frac{1}{3}\right).
+\end{equation*}
+
+\noindent\newline Drugi zapis te ravnine je $x+y+z-1=0$. Sumirano:
+
+\begin{eqnarray*}
+\overrightarrow{B S_1}&=&\frac{2}{3}\left(-2,1,1\right)=-\overrightarrow{H S_2},\\
+\overrightarrow{D S_1}&=&\frac{2}{3}\left(1,-2,1\right)=-\overrightarrow{F S_2},\\
+\overrightarrow{E S_1}&=&\frac{2}{3}\left(1,1,-2\right)=-\overrightarrow{C S_2}.
+\end{eqnarray*}
+
+
+\noindent\newline Pokušajmo izraèunati kutove izmeðu ovih vektora. Imamo poznatu formulu $\cos{\phi}=\frac{a\cdot b}{|a|\cdot|b|}$. Za to nam prvo, dakle, trebaju norme gornjih vektora. Tada je $\left|\overrightarrow{B S_1}\right|=\frac{2}{3}\sqrt{4+1+1}=\frac{2}{3}\sqrt{6}$. Primijetimo kako su duljine svih vektora jednake, jer se koordinate toèki u $\mathcal{C}_1$ razlikuju samo po razlièitom premještaju koordinata (ili za koeficijent $-1$ gledajuæi odgovarajuæe vektore u $\mathcal{C}_2$). No, obzirom da æe se koeficijent $\frac{2}{3}$ uzimati i u skalarnom produktu i u normi, možemo jednostavno promatrati (u formuli) vektor bez tog koeficijenta. Stoga imamo:
+
+\begin{eqnarray*}
+\cos{\angle\left(\overrightarrow{B S_1},\overrightarrow{D S_1}\right)}=\frac{(-2,1,1)(1,-2,1)}{\sqrt{6}\cdot\sqrt{6}}=\frac{-2-2+1}{6}=-\frac{3}{6}=-\frac{1}{2}.
+\end{eqnarray*}
+
+\noindent\newline Iz toga zakljuèujemo kako je $\angle\left(\overrightarrow{B S_1},\overrightarrow{D S_1}\right)=\frac{2\pi}{3}$ (ili $120^{\circ}$). Lako se provjeri kako je to kut izmeðu svaka dva vektora definirana toèkama iz $\mathcal{C}_1$ i svaka dva vektora definirana toèkama iz $\mathcal{C}_2$. Stoga, ukoliko koristimo pravac $A G$ kao os rotacije kocke, primijetit æemo da, obzirom da toèke iz $\mathcal{C}_1$ leže u ravnini okomitoj na $A G$, a isto tako i toèke i $\mathcal{C}_2$, pri rotaciji od $120^{\circ}$ toèke $A$ i $G$ ostaju fiksne, dok $B$ prelazi u $E$, $E$ u $D$ te $D$ u $B$, a toèka $C$ prelazi u $F$, $F$ u $H$, a $H$ u $C$. Stoga tu rotaciju, $r_D$, možemo zapisati pomoæu grupne akcije kao $r_D=(B\ E\ D)(C\ F\ H)$. Obzirom da se radi o dva disjunktna ciklusa duljine $3$, vrijedi $\ord{r_D}=3$. Stoga, promatramo li toèku $A$, vrijedit æe $\Stab{A}{O_r}=\{e,r_D,r^2_D\}$, gdje je $O_r$ grupa koja sadrži sve rotacije kocke (koje preslikavaju vrh u vrh). Nijedna druga rotacija ne može ostaviti $A$ fiksnom jer os rotacije mora prolaziti kroz toèku $A$. Izraèunajmo što se dogodi kada rotiramo kocku oko pravca $A G$ a onda oko aplikate. Imamo:
+
+\begin{equation*}
+r_z r_D=(A\ B\ C\ D)(E\ F\ G\ H)(B\ E\ D)(C\ F\ H)=(C\ G\ H\ D)(F\ E\ A\ B).
+\end{equation*}
+
+\noindent\newline Promatrajuæi sliku možemo uoèiti kako se radi o rotaciji oko ordinate, tj. $r_z r_D=r_y$. Možemo primijetiti kako toèku $A$ možemo preslikati u toèke $B$, $C$ i $D$ pomoæu $r_z$, $r^2_z$, $r^3_z$, istim redoslijedom, te kako možemo pomoæu $r^2_y$ i $r^3_y$ preslikati toèku $A$ u $F$ i $E$, istim redoslijedom. Izraèunajmo rotaciju kocke za $240^{\circ}$ oko osi $A G$:
+
+\begin{equation*}
+r_D^2=(B\ E\ D)(C\ F\ H)(B\ E\ D)(C\ F\ H)=(C\ H\ F)(B\ D\ E).
+\end{equation*}
+
+\noindent\newline Tada nam sljedeæa kompozicija rotacija govori kako možemo preslikati toèku $A$ u toèku $H$:
+
+\begin{equation*}
+r_D^2 r_z^2=(C\ H\ F)(B\ D\ E)(A\ C)(B\ D)(E\ G)(F\ H)=(A\ H\ C)(B\ E\ G).
+\end{equation*}
+
+\noindent\newline Primijetimo kako se gore radi o rotaciji oko pravca $F D$ (dvije toèke koje su fiksne). Primijetimo:
+
+\begin{equation*}
+r_z^3=(A\ B\ C\ D)(E\ F\ G\ H)(A\ C)(B\ D)(E\ G)(F\ H)=(A\ D\ C\ B)(E\ H\ G\ F).
+\end{equation*}
+
+\noindent\newline Tada možemo uzeti:
+
+\begin{equation*}
+r_z^3 r_D^2 r_z^2=(A\ D\ C\ B)(E\ H\ G\ F)(A\ H\ C)(B\ E\ G)=(A\ G)(B\ H)(D\ C)(F\ E).
+\end{equation*}
+
+\noindent\newline Vidimo kako gornja rotacija (koju æemo uskoro opisati) preslikava $A$ u $G$. Stoga smo pokazali kako toèku $A$ možemo preslikati u toèku $B$ pomoæu $r_z$, u $C$ pomoæu $r^2_z$, u $D$ pomoæu $r^3_z$, u $E$ pomoæu $r^3_y=(r_z r_D)^3$, u $F$ pomoæu $r^2_y=(r_z r_D)^2$, u $G$ pomoæu $r_z^3 r_D^2 r_z^2$ i u $H$ pomoæu $r_D^2 r_z^2$. Stoga je $\Orb{A}{O_r}=\{A,B,C,D,E,F,G,H\}$. Oèito je kako $e\in O_r$ preslikava $A$ u $A$. Po orbiter-stabilizer teoremu, tada vrijedi:
+
+\begin{equation*}
+\left|O_r\right|=\left|\Orb{A}{O_r}\right|\cdot\left|\Stab{A}{O_r}\right|=8\cdot 3=24.
+\end{equation*}
+
+\noindent\newline Nešto što æe daleko pojednostavniti stvar jeste èinjenica da oktaedralna grupa u stvari djeluje ne samo na svaki vrh posebno, nego na parove nasuprotnih vrhova. Stoga æemo uvesti oznake:
+
+\begin{eqnarray*}
+\overline{A}&=&\{A,G\},\\
+\overline{B}&=&\{B,H\},\\
+\overline{C}&=&\{C,E\},\\
+\overline{D}&=&\{D,F\}.
+\end{eqnarray*}
+
+\noindent\newline Sada možemo primijetiti, i iz gornjih jednakosti i rezultata, kako je $r_z^3 r_D^2 r_z^2=(\overline{C}\ \overline{D})$ (jer oèito npr. $(A\ G)$ ne mijenja ništa jer opet ostaju oba vrha unutar $\overline{A}$). Primijetimo kako je sada $r_z=(\overline{A}\ \overline{B}\ \overline{C}\ \overline{D})$, $r_D^2 r_z^2=(A\ H\ C)(B\ E\ G)=(\overline{A}\ \overline{B}\ \overline{C})$ i slièno. Na slici ispod se jasnije vidi geometrijsko znaèenje transpozicije. Oèito je kako æe tada postojati i ostale transpozicije u oktaedralnoj grupi: $(\overline{A}\ \overline{B})$, $(\overline{A}\ \overline{C})$ i $(\overline{A}\ \overline{D})$. Obzirom da oktaedralna grupa mora sadržavati i sve ostale produkte ovih transpozicija (a znamo kako ovakve transpozicije generiraju simetriènu grupu èetvrtog reda), te kako sadrži jednak broj elemenata kao i $S_4$, možemo zakljuèiti $O_r\cong S_4$.
+
+\begin{figure}[h]\label{cube2}
+\centerline{\scalebox{0.7}{\includegraphics{cube2.eps}}}
+\caption{Os rotacije koja djeluje kao transpozicija $(\overline{C}\ \overline{B})$.}
+\end{figure}
+
+\newpage
+
+\begin{center}
+{\bf 
+\end{center}
+
+\end{document}
